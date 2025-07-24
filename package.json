@@ -1,0 +1,31 @@
+{
+  "name": "personal_portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PratypartyY2K/Personal_Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PratypartyY2K/Personal_Portfolio/issues"
+  },
+  "homepage": "https://github.com/PratypartyY2K/Personal_Portfolio#readme",
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "locomotive-scroll": "^4.1.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
+  },
+  "type": "commonjs"
+}
