@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center px-4">
+    <section className="relative min-h-[85vh] flex items-center justify-center px-4">
       <HeroParallaxBackground />
 
       <div className="relative z-10 mx-auto w-full max-w-5xl">
