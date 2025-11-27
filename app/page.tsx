@@ -12,9 +12,11 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main className="pt-14">
-        <Hero />
-        <HighlightsSection />
+      <main className="bg-slate-950">
+        <section className="relative">
+          <Hero />
+          <HighlightsSection />
+        </section>
         <ProjectsSection />
         <ExperienceSection />
         <SkillsSection />
