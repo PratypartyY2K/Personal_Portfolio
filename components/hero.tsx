@@ -68,7 +68,7 @@ export function Hero() {
               asChild
               variant="outline"
               size="lg"
-              className="border-slate-600/80 bg-slate-950/60 text-slate-100 backdrop-blur hover:bg-slate-900"
+                className="border-slate-600/80 bg-slate-900/60 text-slate-100 backdrop-blur hover:bg-slate-800/60 hover:text-sky-300"
             >
               <a href="#contact">Get in Touch</a>
             </Button>
