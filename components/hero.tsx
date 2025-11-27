@@ -50,9 +50,9 @@ export function Hero() {
           </h1>
 
           <p className="mt-4 text-sm md:text-base text-slate-200/90">
-            Associate Software Engineer at Enphase, incoming MSCS student,
-            and badminton & anime enjoyer. I work on MapReduce frameworks,
-            ABD key–value stores, and event-driven backends.
+            MSCS student, Ex-Software Engineer at Enphase Energy, coffee,
+            badminton & anime enjoyer. I love building scalable backend systems
+            and intuitive web applications that solve real-world problems.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">
