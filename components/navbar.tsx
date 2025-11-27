@@ -14,6 +14,7 @@ export function Navbar() {
     { href: "#skills", label: "Skills" },
     { href: "#blog", label: "Blog" },
     { href: "#contact", label: "Contact" },
+    { label: "Resume", href: "/Pratyush_Kumar_Resume.pdf", external: true },
   ];
 
   return (
@@ -32,7 +33,7 @@ export function Navbar() {
           {/* Desktop Links */}
           <div className="hidden md:flex gap-6 text-slate-200/90">
             {links.map((l) => (
-              <a key={l.href} href={l.href} className="hover:text-sky-300">
+              <a key={l.href} href={l.href} target={l.external ? "_blank" : undefined} rel={l.external ? "noreferrer" : undefined} className="hover:text-sky-300">
                 {l.label}
               </a>
             ))}

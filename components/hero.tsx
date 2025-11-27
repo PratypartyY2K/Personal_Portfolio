@@ -27,8 +27,8 @@ export function Hero() {
 
       {/* GRADIENT GLOW BEHIND TEXT */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.16),_transparent_55%)]" />
-      {/* SOFT FADE INTO HIGHLIGHTS */}
-      <div className="pointer-events-none absolute inset-x-0 -bottom-32 h-48 bg-gradient-to-b from-slate-900/0 via-slate-950/75 to-slate-950" />
+      {/* Fade the network into the Highlights area */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-44 bg-gradient-to-b from-transparent via-slate-950/70 to-slate-950" />
 
       {/* FOREGROUND CONTENT */}
       <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-10 px-4 pb-24 pt-32 md:flex-row md:items-center">
