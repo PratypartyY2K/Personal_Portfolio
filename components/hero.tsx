@@ -8,7 +8,7 @@ import { Button } from "./ui/button";
 
 export function Hero() {
   return (
-    <section className="relative min-h-[85vh] overflow-hidden bg-gradient-to-b from-slate-950 via-slate-950 to-slate-950">
+    <section className="relative min-h-[85vh] overflow-visible bg-gradient-to-b from-slate-950 via-slate-950 to-transparent">
       {/* 3D BACKGROUND */}
       <div className="pointer-events-none absolute inset-0 opacity-80">
         <Canvas camera={{ position: [0, 0, 14], fov: 45 }}>
@@ -27,9 +27,11 @@ export function Hero() {
 
       {/* GRADIENT GLOW BEHIND TEXT */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.16),_transparent_55%)]" />
+      {/* SOFT FADE INTO HIGHLIGHTS */}
+      <div className="pointer-events-none absolute inset-x-0 -bottom-32 h-48 bg-gradient-to-b from-slate-900/0 via-slate-950/75 to-slate-950" />
 
       {/* FOREGROUND CONTENT */}
-      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-10 px-4 pb-20 pt-32 md:flex-row md:items-center">
+      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-10 px-4 pb-24 pt-32 md:flex-row md:items-center">
         {/* Left: Text */}
         <motion.div
           className="max-w-xl"
