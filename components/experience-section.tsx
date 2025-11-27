@@ -1,14 +1,29 @@
-import { SectionContainer } from "./section-container";
+import { ExperienceTimeline } from "./experience/ExperienceTimeline";
+import { ProfileCard } from "./experience/ProfileCard";
 
 export function ExperienceSection() {
   return (
-    <SectionContainer id="experience">
-      <h2 className="text-xl md:text-2xl font-semibold text-slate-50">
-        Experience
-      </h2>
-      <p className="mt-2 text-sm text-slate-300/90">
-        Work experience content coming soon.
-      </p>
-    </SectionContainer>
+    <section
+      id="experience"
+      className="relative py-28 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"
+    >
+      <div className="mx-auto max-w-6xl px-6">
+        <h2 className="text-3xl font-semibold text-white">
+          Experience
+        </h2>
+
+        <div className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-3">
+          {/* Timeline */}
+          <div className="md:col-span-2">
+            <ExperienceTimeline />
+          </div>
+
+          {/* Profile card */}
+          <div className="">
+            <ProfileCard />
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
