@@ -1,3 +1,5 @@
+import { ResumeDownloadLink } from "./resume-download-link";
+
 export function Footer() {
   return (
     <footer className="relative mt-28 border-t border-slate-800/60 bg-slate-950/60 
@@ -8,9 +10,9 @@ export function Footer() {
         blur-xl pointer-events-none" />
 
       <div className="flex justify-center gap-6 mb-4 text-slate-400">
-        <a href="/Pratyush_Kumar_Resume.pdf" target="_blank" className="hover:text-sky-300">
+        <ResumeDownloadLink className="hover:text-sky-300">
           Resume
-        </a>
+        </ResumeDownloadLink>
 
         <a href="https://github.com/PratypartyY2K" target="_blank" className="hover:text-sky-300">
           GitHub

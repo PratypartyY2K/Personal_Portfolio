@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { ResumeDownloadLink } from "./resume-download-link";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -14,7 +15,6 @@ export function Navbar() {
     { href: "#skills", label: "Skills" },
     { href: "#blog", label: "Blog" },
     { href: "#contact", label: "Contact" },
-    { label: "Resume", href: "/Pratyush_Kumar_Resume.pdf", external: true },
   ];
 
   return (
@@ -33,10 +33,13 @@ export function Navbar() {
           {/* Desktop Links */}
           <div className="hidden md:flex gap-6 text-slate-200/90">
             {links.map((l) => (
-              <a key={l.href} href={l.href} target={l.external ? "_blank" : undefined} rel={l.external ? "noreferrer" : undefined} className="hover:text-sky-300">
+              <a key={l.href} href={l.href} className="hover:text-sky-300">
                 {l.label}
               </a>
             ))}
+            <ResumeDownloadLink className="hover:text-sky-300">
+              Resume
+            </ResumeDownloadLink>
           </div>
 
           {/* Mobile Hamburger */}
@@ -70,6 +73,12 @@ export function Navbar() {
                   {l.label}
                 </a>
               ))}
+              <ResumeDownloadLink
+                className="text-base hover:text-sky-300"
+                onClick={() => setOpen(false)}
+              >
+                Resume
+              </ResumeDownloadLink>
             </div>
           </motion.div>
         )}
