@@ -19,7 +19,8 @@ export function ProfileCard() {
             src="/pratyush_profile_glow.webp"
             alt="Pratyush Kumar"
             fill
-            className="object-cover"
+            className="object-contain"
+            sizes="(max-width: 768px) 80vw, 400px"
           />
         </div>
 
