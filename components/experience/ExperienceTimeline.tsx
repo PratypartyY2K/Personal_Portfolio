@@ -43,23 +43,23 @@ export function ExperienceTimeline() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: idx * 0.1 }}
-          className="border-l border-slate-700 pl-6 relative"
+          className="border-l border-slate-200 pl-6 relative dark:border-slate-700"
         >
           {/* Blue dot */}
           <div className="absolute -left-[7px] top-2 h-3 w-3 rounded-full bg-sky-400 shadow-[0_0_12px_3px_rgba(56,189,248,0.5)]" />
 
-          <p className="text-xs font-medium text-slate-400">{item.date}</p>
-          <h3 className="mt-1 text-lg font-semibold text-slate-100">
+          <p className="text-xs font-medium text-slate-500 dark:text-slate-400">{item.date}</p>
+          <h3 className="mt-1 text-lg font-semibold text-slate-900 dark:text-slate-100">
             {item.title}
           </h3>
 
-          <p className="mt-2 text-sm text-slate-300/90">{item.description}</p>
+          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300/90">{item.description}</p>
 
           <div className="mt-3 flex flex-wrap gap-2">
             {item.tech.map((t) => (
               <span
                 key={t}
-                className="rounded-md bg-slate-800 px-2 py-1 text-xs text-sky-300"
+                className="rounded-md bg-slate-100 px-2 py-1 text-xs text-sky-600 dark:bg-slate-800 dark:text-sky-300"
               >
                 {t}
               </span>

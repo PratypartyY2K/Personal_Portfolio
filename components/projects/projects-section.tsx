@@ -39,14 +39,14 @@ export function ProjectsSection() {
 	return (
 		<section
 			id="projects"
-			className="relative py-28 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"
+			className="relative py-28 bg-gradient-to-b from-slate-100 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"
 		>
 			<div className="mx-auto max-w-6xl px-6">
-				<h2 className="text-3xl font-semibold text-white">Projects</h2>
+				<h2 className="text-3xl font-semibold text-slate-900 dark:text-white">Projects</h2>
 
 				<div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
 					{projects.map((project, idx) => (
-						<motion.div
+					<motion.div
 							key={idx}
 							initial={{ opacity: 0, y: 30, scale: 0.96 }}
 							whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -62,18 +62,18 @@ export function ProjectsSection() {
 								transition: { type: "spring", stiffness: 300, damping: 20 },
 							}}
 							whileTap={{ scale: 0.995 }}
-							className="relative group rounded-2xl border border-slate-800 bg-slate-900/70 backdrop-blur-md p-6 shadow-xl hover:border-sky-400/40 hover:bg-slate-900/80 transition-all"
+							className="relative group rounded-2xl border border-slate-200 bg-white/90 p-6 shadow-xl backdrop-blur-md transition-all hover:border-sky-400/40 hover:shadow-2xl dark:border-slate-800 dark:bg-slate-900/70"
 						>
 							<ProjectParticles />
 
 							<div className="relative z-10">
 								{/* title */}
-								<h3 className="text-xl font-semibold text-white">
+							<h3 className="text-xl font-semibold text-slate-900 dark:text-white">
 									{project.title}
 								</h3>
 
 								{/* description */}
-								<p className="mt-3 text-sm text-slate-300">
+							<p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
 									{project.description}
 								</p>
 
@@ -82,7 +82,7 @@ export function ProjectsSection() {
 									{project.tech.map((t) => (
 										<span
 											key={t}
-											className="rounded-md bg-slate-800 px-2 py-1 text-xs text-sky-300"
+									className="rounded-md bg-slate-100 px-2 py-1 text-xs text-sky-600 dark:bg-slate-800 dark:text-sky-300"
 										>
 											{t}
 										</span>
@@ -90,11 +90,11 @@ export function ProjectsSection() {
 								</div>
 
 								{/* link */}
-								<a
-									href={project.link}
-									target="_blank"
-									className="mt-6 inline-flex items-center gap-2 text-sm text-sky-300 hover:text-sky-200"
-								>
+							<a
+								href={project.link}
+								target="_blank"
+								className="mt-6 inline-flex items-center gap-2 text-sm text-sky-600 hover:text-sky-500 dark:text-sky-300 dark:hover:text-sky-200"
+							>
 									<Github size={16} />
 									View Project
 								</a>

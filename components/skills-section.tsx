@@ -57,7 +57,7 @@ const skills = {
 
 export function SkillsSection() {
   return (
-    <SectionContainer id="skills" className="relative py-28">
+    <SectionContainer id="skills" className="relative py-28 bg-white dark:bg-transparent">
       {/* Subtle top glow */}
       <div className="absolute -top-20 left-0 right-0 h-32
         bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.12),_transparent_75%)]
@@ -69,12 +69,12 @@ export function SkillsSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
         viewport={{ once: true }}
-        className="text-2xl font-semibold text-slate-50"
+        className="text-2xl font-semibold text-slate-900 dark:text-slate-50"
       >
         Skills
       </motion.h2>
 
-      <p className="mt-2 text-sm text-slate-300/90">
+      <p className="mt-2 text-sm text-slate-600 dark:text-slate-300/90">
         Technologies I use to build distributed systems, full-stack applications,
         and backend infrastructure.
       </p>
@@ -89,17 +89,16 @@ export function SkillsSection() {
             viewport={{ once: true }}
             className="relative"
           >
-            <h3 className="text-lg font-semibold text-slate-200">{category}</h3>
+            <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200">{category}</h3>
 
             <div className="mt-4 flex flex-wrap gap-2">
               {list.map((skill) => (
                 <div
                   key={skill}
-                  className="rounded-md border border-slate-700/70 bg-slate-900/60
-                             px-3 py-1 text-xs text-sky-300 backdrop-blur-sm
-                             shadow-[0_0_10px_rgba(56,189,248,0.05)]
-                             hover:shadow-[0_0_14px_rgba(56,189,248,0.25)]
-                             transition-all"
+                  className="rounded-md border border-slate-200 bg-slate-50
+                             px-3 py-1 text-xs text-sky-600 shadow-[0_0_10px_rgba(14,165,233,0.08)]
+                             transition-all hover:shadow-[0_0_14px_rgba(14,165,233,0.25)]
+                             dark:border-slate-700/70 dark:bg-slate-900/60 dark:text-sky-300"
                 >
                   {skill}
                 </div>

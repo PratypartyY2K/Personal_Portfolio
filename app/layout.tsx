@@ -1,6 +1,23 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
+
+const themeInitScript = `
+  (function() {
+    try {
+      var storageKey = 'pk-theme';
+      var stored = window.localStorage.getItem(storageKey);
+      var systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = stored === 'light' || stored === 'dark' ? stored : (systemPrefersDark ? 'dark' : 'light');
+      var root = document.documentElement;
+      root.classList.remove('light', 'dark');
+      root.classList.add(theme);
+    } catch (err) {
+      document.documentElement.classList.add('dark');
+    }
+  })();
+`;
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
@@ -16,9 +33,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
-      <body className="font-sans bg-slate-950 text-slate-50 antialiased">
-        {children}
+    <html lang="en" className={`${inter.variable} ${jetbrains.variable}`} suppressHydrationWarning>
+      <body className="font-sans antialiased bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-50">
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
