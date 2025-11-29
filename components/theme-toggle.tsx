@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "./theme-provider";
 
-const HINT_STORAGE_KEY = "pk-theme-toggle-hint";
 const HINT_TIMEOUT_MS = 6000;
 
 export function ThemeToggle() {
@@ -12,25 +11,14 @@ export function ThemeToggle() {
   const [showHint, setShowHint] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") {
-      return;
-    }
-    const hasSeenHint = window.localStorage.getItem(HINT_STORAGE_KEY);
-    if (hasSeenHint) {
-      return;
-    }
     setShowHint(true);
     const timer = window.setTimeout(() => {
-      window.localStorage.setItem(HINT_STORAGE_KEY, "1");
       setShowHint(false);
     }, HINT_TIMEOUT_MS);
     return () => window.clearTimeout(timer);
   }, []);
 
   const handleToggle = () => {
-    if (typeof window !== "undefined" && showHint) {
-      window.localStorage.setItem(HINT_STORAGE_KEY, "1");
-    }
     setShowHint(false);
     toggleTheme();
   };
@@ -50,7 +38,7 @@ export function ThemeToggle() {
         </span>
       </button>
       {showHint && (
-        <div className="pointer-events-none absolute -bottom-12 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-slate-900 px-3 py-1 text-xs font-medium text-white shadow-lg ring-1 ring-black/10 dark:bg-slate-100 dark:text-slate-900 dark:ring-white/30">
+        <div className="pointer-events-none absolute right-0 top-full mt-2 max-w-[240px] rounded-full bg-slate-900 px-3 py-1 text-left text-xs font-medium leading-snug text-white shadow-lg ring-1 ring-black/10 dark:bg-slate-100 dark:text-slate-900 dark:ring-white/30 xl:left-1/2 xl:right-auto xl:-translate-x-1/2 xl:text-center">
           {hintMessage}
         </div>
       )}
