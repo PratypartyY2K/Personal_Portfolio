@@ -36,21 +36,27 @@ function getPreferredTheme(): Theme {
   return prefersDark ? "dark" : "light";
 }
 
+function getInitialTheme(): Theme {
+  if (typeof document === "undefined") {
+    return "dark";
+  }
+
+  const datasetTheme = document.documentElement.dataset.theme;
+  if (datasetTheme === "light" || datasetTheme === "dark") {
+    return datasetTheme;
+  }
+
+  return getPreferredTheme();
+}
+
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("dark");
+  const [theme, setTheme] = useState<Theme>(() => getInitialTheme());
 
   const applyTheme = useCallback((value: Theme) => {
     const root = document.documentElement;
     root.classList.remove("light", "dark");
     root.classList.add(value);
     window.localStorage.setItem(STORAGE_KEY, value);
-  }, []);
-
-  useEffect(() => {
-    const preferred = getPreferredTheme();
-    setTheme(preferred);
-    const root = document.documentElement;
-    root.classList.add(preferred);
   }, []);
 
   useEffect(() => {

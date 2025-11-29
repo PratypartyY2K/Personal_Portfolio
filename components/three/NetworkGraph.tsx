@@ -11,40 +11,15 @@ type Node = {
 
 const NODE_COUNT = 26;
 const CONNECTION_CHANCE = 0.18;
+const NODE_SEED = 7331;
+const EDGE_SEED = 1123;
 
 export function NetworkGraph() {
   const groupRef = useRef<THREE.Group>(null);
 
-  // Generate node positions just once
-  const nodes = useMemo<Node[]>(() => {
-    const arr: Node[] = [];
-    for (let i = 0; i < NODE_COUNT; i++) {
-      arr.push({
-        position: [
-          (Math.random() - 0.5) * 10,
-          (Math.random() - 0.5) * 5,
-          (Math.random() - 0.5) * 4,
-        ],
-      });
-    }
-    return arr;
-  }, []);
+  const nodes = useMemo<Node[]>(() => generateNodes(NODE_SEED), []);
 
-  // Precompute simple edges between nearby nodes
-  const edges = useMemo(
-    () => {
-      const result: Array<[Node, Node]> = [];
-      for (let i = 0; i < nodes.length; i++) {
-        for (let j = i + 1; j < nodes.length; j++) {
-          if (Math.random() < CONNECTION_CHANCE) {
-            result.push([nodes[i], nodes[j]]);
-          }
-        }
-      }
-      return result;
-    },
-    [nodes]
-  );
+  const edges = useMemo(() => generateEdges(nodes, EDGE_SEED), [nodes]);
 
   // Slow breathing rotation
   useFrame((state) => {
@@ -83,4 +58,38 @@ export function NetworkGraph() {
       ))}
     </group>
   );
+}
+
+function mulberry32(seed: number) {
+  let t = seed;
+  return () => {
+    t += 0x6d2b79f5;
+    let r = Math.imul(t ^ (t >>> 15), 1 | t);
+    r ^= r + Math.imul(r ^ (r >>> 7), 61 | r);
+    return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function generateNodes(seed: number): Node[] {
+  const rand = mulberry32(seed);
+  return Array.from({ length: NODE_COUNT }, () => ({
+    position: [
+      (rand() - 0.5) * 10,
+      (rand() - 0.5) * 5,
+      (rand() - 0.5) * 4,
+    ] as [number, number, number],
+  }));
+}
+
+function generateEdges(nodes: Node[], seed: number): Array<[Node, Node]> {
+  const rand = mulberry32(seed);
+  const result: Array<[Node, Node]> = [];
+  for (let i = 0; i < nodes.length; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      if (rand() < CONNECTION_CHANCE) {
+        result.push([nodes[i], nodes[j]]);
+      }
+    }
+  }
+  return result;
 }

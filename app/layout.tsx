@@ -13,6 +13,7 @@ const themeInitScript = `
       var root = document.documentElement;
       root.classList.remove('light', 'dark');
       root.classList.add(theme);
+      root.dataset.theme = theme;
     } catch (err) {
       document.documentElement.classList.add('dark');
     }
