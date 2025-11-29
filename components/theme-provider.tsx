@@ -32,8 +32,7 @@ function getPreferredTheme(): Theme {
     return stored;
   }
 
-  const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)")?.matches ?? true;
-  return prefersDark ? "dark" : "light";
+  return "dark";
 }
 
 function getInitialTheme(): Theme {

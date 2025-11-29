@@ -19,7 +19,7 @@ export function ResumeDownloadLink({
   return (
     <a
       {...rest}
-      href="/Pratyush_Kumar_Resume.pdf"
+      href="/Pratyush Kumar Resume.pdf"
       target="_blank"
       rel="noreferrer"
       className={className}
