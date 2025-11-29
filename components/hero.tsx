@@ -25,8 +25,8 @@ export function Hero() {
       </div>
 
       {/* GRADIENT GLOW BEHIND TEXT */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.2),_transparent_55%)]" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-gradient-to-b from-transparent via-white/70 to-white dark:via-slate-950/85 dark:to-slate-950" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(56,189,248,0.12),_transparent_60%)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-gradient-to-b from-transparent via-white/10 to-white dark:via-slate-950/85 dark:to-slate-950" />
 
       {/* FOREGROUND CONTENT */}
       <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-10 px-4 pb-24 pt-32 text-slate-900 dark:text-slate-50 md:flex-row md:items-center">
@@ -87,7 +87,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <div className="rounded-2xl border border-slate-200 bg-white/85 p-4 text-xs text-slate-700 shadow-xl backdrop-blur dark:border-slate-800/80 dark:bg-slate-900/60 dark:text-slate-200">
+          <div className="rounded-2xl border border-slate-200 bg-white/20 p-4 text-xs text-slate-700 shadow-xl backdrop-blur dark:border-slate-800/80 dark:bg-slate-900/60 dark:text-slate-200">
             <p className="font-semibold text-slate-900 dark:text-slate-50">
               Recent highlights
             </p>
