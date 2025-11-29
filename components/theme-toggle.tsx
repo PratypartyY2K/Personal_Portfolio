@@ -9,8 +9,10 @@ const HINT_TIMEOUT_MS = 6000;
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
   const [showHint, setShowHint] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     setShowHint(true);
     const timer = window.setTimeout(() => {
       setShowHint(false);
@@ -23,7 +25,8 @@ export function ThemeToggle() {
     toggleTheme();
   };
 
-  const hintMessage = "Use this button to switch between light and dark themes.";
+  const resolvedTheme = mounted ? theme : "dark";
+  const hintMessage = resolvedTheme === "dark" ? "Change to light Mode" : "Change to dark Mode";
 
   return (
     <div className="relative inline-flex">
@@ -34,7 +37,7 @@ export function ThemeToggle() {
         className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300/70 bg-white/70 text-slate-700 shadow-sm transition-all hover:border-sky-300 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-100 dark:hover:border-sky-400"
       >
         <span suppressHydrationWarning>
-          {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          {resolvedTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
         </span>
       </button>
       {showHint && (

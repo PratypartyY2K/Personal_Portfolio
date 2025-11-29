@@ -13,7 +13,7 @@ export function HighlightsSection() {
   return (
     <SectionContainer
       id="highlights"
-      className="relative z-10 pt-16 pb-32 md:pt-20 md:pb-40 overflow-hidden bg-gradient-to-b from-slate-100 via-white to-slate-50 text-slate-900 transition-colors dark:bg-gradient-to-b dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 dark:text-slate-50"
+      className="py-0 md:py-0 relative z-10 -mt-12 pt-8 pb-20 md:-mt-24 md:pt-12 md:pb-28 lg:-mt-28 overflow-hidden bg-gradient-to-b from-slate-100 via-white to-slate-50 text-slate-900 transition-colors dark:bg-gradient-to-b dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 dark:text-slate-50"
     >
       {/* Seam between Hero + Highlights */}
       <div className="pointer-events-none absolute inset-x-0 -top-32 h-56 -z-10 bg-gradient-to-b from-slate-50 via-slate-200/60 to-transparent dark:from-[#0f172a] dark:via-[#0f172a]/70 dark:to-transparent" />
