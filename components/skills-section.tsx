@@ -96,7 +96,7 @@ export function SkillsSection() {
                 <div
                   key={skill}
                   className="rounded-md border border-slate-200 bg-slate-50
-                             px-3 py-1 text-xs text-sky-600 shadow-[0_0_10px_rgba(14,165,233,0.08)]
+                             px-3 py-1 text-xs sm:text-sm xl:text-base text-sky-600 shadow-[0_0_10px_rgba(14,165,233,0.08)]
                              transition-all hover:shadow-[0_0_14px_rgba(14,165,233,0.25)]
                              dark:border-slate-700/70 dark:bg-slate-900/60 dark:text-sky-300"
                 >
