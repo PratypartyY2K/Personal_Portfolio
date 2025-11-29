@@ -44,13 +44,17 @@ export function Navbar() {
             <ThemeToggle />
           </div>
 
-          {/* Mobile Hamburger */}
-          <button
-            className="md:hidden text-slate-700 dark:text-slate-200 focus:outline-none"
-            onClick={() => setOpen(!open)}
-          >
-            {open ? <X size={26} /> : <Menu size={26} />}
-          </button>
+          {/* Mobile Controls */}
+          <div className="md:hidden flex items-center gap-3">
+            <ThemeToggle />
+            <button
+              className="text-slate-700 dark:text-slate-200 focus:outline-none"
+              onClick={() => setOpen(!open)}
+              aria-label="Toggle menu"
+            >
+              {open ? <X size={26} /> : <Menu size={26} />}
+            </button>
+          </div>
         </nav>
       </header>
 
@@ -62,9 +66,9 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-14 inset-x-0 z-40 bg-slate-950/90 backdrop-blur-md border-b border-slate-800/70 md:hidden"
+            className="fixed top-14 inset-x-0 z-40 border-b border-slate-200 bg-white/95 text-slate-900 backdrop-blur-md dark:border-slate-800/70 dark:bg-slate-950/90 dark:text-slate-100 md:hidden"
           >
-            <div className="flex flex-col px-6 py-4 space-y-4 text-slate-900 dark:text-slate-100">
+            <div className="flex flex-col px-6 py-4 space-y-4">
               {links.map((l) => (
                 <a
                   key={l.href}
@@ -81,9 +85,6 @@ export function Navbar() {
               >
                 Resume
               </ResumeDownloadLink>
-              <div className="pt-2">
-                <ThemeToggle />
-              </div>
             </div>
           </motion.div>
         )}

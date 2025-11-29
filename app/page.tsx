@@ -13,7 +13,8 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main className="bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-50">
+      {/* <main className="bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-50"> */}
+      <main>
         <ScrollToTop />
         <section className="relative">
           <Hero />
