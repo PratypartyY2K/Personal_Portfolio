@@ -29,7 +29,7 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-gradient-to-b from-transparent via-white/10 to-white dark:via-slate-950/85 dark:to-slate-950" />
 
       {/* FOREGROUND CONTENT */}
-      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-10 px-4 pb-16 pt-28 text-slate-900 dark:text-slate-50 md:flex-row md:items-center md:pb-24 md:pt-32">
+      <div className="relative z-10 mx-auto flex w-full max-w-5xl flex-col gap-10 px-4 pb-24 pt-28 text-slate-900 dark:text-slate-50 md:flex-row md:items-center md:pb-32 md:pt-32 xl:pb-32">
         {/* Left: Text */}
         <motion.div
           className="max-w-xl"
