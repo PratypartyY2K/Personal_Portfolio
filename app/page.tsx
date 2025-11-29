@@ -1,5 +1,4 @@
 import { Hero } from "@/components/hero";
-import { HighlightsSection } from "@/components/highlights-section";
 import { ProjectsSection } from "@/components/projects/projects-section";
 import { ExperienceSection } from "@/components/experience-section";
 import { SkillsSection } from "@/components/skills-section";
@@ -8,6 +7,7 @@ import { ContactSection } from "@/components/contact-section";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { AboutSection } from "@/components/about-me-section";
 
 export default function HomePage() {
   return (
@@ -18,8 +18,8 @@ export default function HomePage() {
         <ScrollToTop />
         <section className="relative">
           <Hero />
-          <HighlightsSection />
         </section>
+        <AboutSection />
         <ProjectsSection />
         <ExperienceSection />
         <SkillsSection />
