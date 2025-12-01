@@ -50,7 +50,7 @@ export function ExperienceTimeline() {
             {item.tech.map((t) => (
               <span
                 key={t}
-                className="rounded-md bg-slate-100 px-2 py-1 text-xs text-sky-600 dark:bg-slate-800 dark:text-sky-300"
+                className="rounded-md bg-slate-100 px-2 py-1 text-xs text-sky-700 dark:bg-slate-800 dark:text-sky-200"
               >
                 {t}
               </span>

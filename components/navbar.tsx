@@ -24,18 +24,18 @@ export function Navbar() {
         <nav className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 text-sm">
           <Link
             href="/"
-            className="font-semibold tracking-tight text-slate-900 hover:text-sky-600 dark:text-sky-300 dark:hover:text-sky-200"
+            className="font-semibold tracking-tight text-slate-900 hover:text-sky-700 dark:text-sky-200 dark:hover:text-sky-100"
           >
             pratyush.dev
           </Link>
 
           <div className="hidden md:flex items-center gap-4 text-slate-700 dark:text-slate-200/90">
             {links.map((l) => (
-              <a key={l.href} href={l.href} className="hover:text-sky-500 dark:hover:text-sky-300">
+              <a key={l.href} href={l.href} className="hover:text-sky-700 dark:hover:text-sky-200">
                 {l.label}
               </a>
             ))}
-            <ResumeDownloadLink className="hover:text-sky-500 dark:hover:text-sky-300">
+            <ResumeDownloadLink className="hover:text-sky-700 dark:hover:text-sky-200">
               Resume
             </ResumeDownloadLink>
             <ThemeToggle />

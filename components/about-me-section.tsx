@@ -26,7 +26,7 @@ export function AboutSection() {
 
             <p>
               Outside engineering you’ll find me playing{" "}
-              <span className="text-sky-400 font-medium">competitive badminton</span>,
+              <span className="text-sky-500 font-medium dark:text-sky-300">competitive badminton</span>,
               nerding out over coffee gear, or unwinding with anime — the hobbies that keep me
               curious and disciplined.
             </p>

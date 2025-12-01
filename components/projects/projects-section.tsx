@@ -60,7 +60,7 @@ export function ProjectsSection() {
 								{project.tech.map((t) => (
 									<span
 										key={t}
-										className="rounded-md bg-slate-100 px-2 py-1 text-xs text-sky-600 dark:bg-slate-800 dark:text-sky-300"
+										className="rounded-md bg-slate-100 px-2 py-1 text-xs text-sky-700 dark:bg-slate-800 dark:text-sky-200"
 									>
 										{t}
 									</span>
@@ -70,7 +70,7 @@ export function ProjectsSection() {
 							<a
 								href={project.link}
 								target="_blank"
-								className="mt-6 inline-flex items-center gap-2 text-sm text-sky-600 hover:text-sky-500 dark:text-sky-300 dark:hover:text-sky-200"
+								className="mt-6 inline-flex items-center gap-2 text-sm text-sky-700 hover:text-sky-500 dark:text-sky-200 dark:hover:text-sky-100"
 								rel="noreferrer"
 							>
 								<Github size={16} />

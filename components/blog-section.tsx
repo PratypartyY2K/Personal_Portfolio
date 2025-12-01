@@ -54,7 +54,7 @@ export function BlogSection() {
                        backdrop-blur p-6 shadow-xl transition-all hover:border-sky-400/40 
                        hover:shadow-2xl dark:border-slate-800/70 dark:bg-slate-900/60"
           >
-            <span className="text-xs px-2 py-1 rounded-md bg-slate-100 text-sky-600 dark:bg-slate-800 dark:text-sky-300">
+            <span className="text-xs px-2 py-1 rounded-md bg-slate-100 text-sky-700 dark:bg-slate-800 dark:text-sky-200">
               {post.tag}
             </span>
 

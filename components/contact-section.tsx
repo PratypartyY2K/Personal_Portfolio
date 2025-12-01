@@ -29,7 +29,7 @@ export function ContactSection() {
       <div className="mt-8 flex justify-center gap-6">
         <a
           href="mailto:kinshuk048@gmail.com"
-          className="flex items-center gap-2 text-sky-600 hover:text-sky-500 text-sm dark:text-sky-300 dark:hover:text-sky-200"
+          className="flex items-center gap-2 text-sky-700 hover:text-sky-500 text-sm dark:text-sky-200 dark:hover:text-sky-100"
         >
           <Mail size={18} /> Email
         </a>
@@ -37,7 +37,7 @@ export function ContactSection() {
         <a
           href="https://linkedin.com/in/pratyushkumar123"
           target="_blank"
-          className="flex items-center gap-2 text-sky-600 hover:text-sky-500 text-sm dark:text-sky-300 dark:hover:text-sky-200"
+          className="flex items-center gap-2 text-sky-700 hover:text-sky-500 text-sm dark:text-sky-200 dark:hover:text-sky-100"
         >
           <Linkedin size={18} /> LinkedIn
         </a>
@@ -45,7 +45,7 @@ export function ContactSection() {
         <a
           href="https://github.com/PratypartyY2K"
           target="_blank"
-          className="flex items-center gap-2 text-sky-600 hover:text-sky-500 text-sm dark:text-sky-300 dark:hover:text-sky-200"
+          className="flex items-center gap-2 text-sky-700 hover:text-sky-500 text-sm dark:text-sky-200 dark:hover:text-sky-100"
         >
           <Github size={18} /> GitHub
         </a>

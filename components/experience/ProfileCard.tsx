@@ -28,13 +28,13 @@ export function ProfileCard() {
         <div className="mt-4 flex gap-4 text-sm">
           <a
             href="mailto:kinshuk048@gmail.com"
-            className="text-sky-600 hover:text-sky-500 dark:text-sky-300 dark:hover:text-sky-200"
+            className="text-sky-700 hover:text-sky-500 dark:text-sky-200 dark:hover:text-sky-100"
           >
             Email
           </a>
           <a
             href="https://linkedin.com/in/pratyushkumar123"
-            className="text-sky-600 hover:text-sky-500 dark:text-sky-300 dark:hover:text-sky-200"
+            className="text-sky-700 hover:text-sky-500 dark:text-sky-200 dark:hover:text-sky-100"
             rel="noreferrer"
           >
             LinkedIn

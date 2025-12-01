@@ -14,12 +14,27 @@ type ExtendedWindow = Window &
   typeof globalThis & {
     requestIdleCallback?: (callback: IdleCallback, options?: { timeout?: number }) => number;
     cancelIdleCallback?: (handle: number) => void;
+    requestAnimationFrame?: (callback: FrameRequestCallback) => number;
+    cancelAnimationFrame?: (handle: number) => void;
   };
 
 // Return the browser window when available, null on the server.
 const getClientWindow = (): ExtendedWindow | null => {
   if (typeof window === "undefined") return null;
   return window as ExtendedWindow;
+};
+
+const addMediaQueryListener = (mq: MediaQueryList, handler: () => void) => {
+  const listener = () => handler();
+  if (typeof mq.addEventListener === "function") {
+    mq.addEventListener("change", listener);
+    return () => mq.removeEventListener("change", listener);
+  }
+  if (typeof mq.addListener === "function") {
+    mq.addListener(listener);
+    return () => mq.removeListener(listener);
+  }
+  return () => {};
 };
 
 const HeroGraph = dynamic(
@@ -29,7 +44,11 @@ const HeroGraph = dynamic(
 
 export function HeroGraphTrigger() {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const [fontsReady, setFontsReady] = useState(false);
+  const [fontsReady, setFontsReady] = useState(() => {
+    if (typeof document === "undefined") return false;
+    if (!("fonts" in document)) return true;
+    return document.fonts.status === "loaded";
+  });
   const [isVisible, setIsVisible] = useState(false);
   const [idleReady, setIdleReady] = useState(false);
   const [canRender, setCanRender] = useState(false);
@@ -55,16 +74,16 @@ export function HeroGraphTrigger() {
     const node = containerRef.current;
     if (!node) {
       // If we don't have a node, just optimistically mark visible via RAF
-      rafId = w.requestAnimationFrame?.(() => setIsVisible(true)) ?? null;
+      rafId = (w as any).requestAnimationFrame?.(() => setIsVisible(true)) ?? null;
       return () => {
-        if (rafId !== null) w.cancelAnimationFrame?.(rafId);
+        if (rafId !== null) (w as any).cancelAnimationFrame?.(rafId);
       };
     }
 
     if (typeof (w as any).IntersectionObserver === "undefined") {
-      rafId = w.requestAnimationFrame?.(() => setIsVisible(true)) ?? null;
+      rafId = (w as any).requestAnimationFrame?.(() => setIsVisible(true)) ?? null;
       return () => {
-        if (rafId !== null) w.cancelAnimationFrame?.(rafId);
+        if (rafId !== null) (w as any).cancelAnimationFrame?.(rafId);
       };
     }
 
@@ -88,17 +107,8 @@ export function HeroGraphTrigger() {
   // Wait for fonts to be ready (with sensible fallbacks)
   useEffect(() => {
     if (typeof document === "undefined") return;
-    // If the FontFaceSet API is not available, assume fonts are ready
-    if (!document.fonts) {
-      setFontsReady(true);
-      return;
-    }
-
-    // If fonts are already loaded, mark ready immediately
-    if (document.fonts.status === "loaded") {
-      setFontsReady(true);
-      return;
-    }
+    if (!document.fonts) return;
+    if (document.fonts.status === "loaded") return;
 
     let active = true;
     document.fonts.ready.then(() => {
@@ -124,22 +134,12 @@ export function HeroGraphTrigger() {
 
     update();
 
-    // Prefer addEventListener, but fall back to addListener for older browsers
-    const add = (mq: MediaQueryList, cb: (this: MediaQueryList, ev: MediaQueryListEvent) => void) => {
-      if (typeof mq.addEventListener === "function") mq.addEventListener("change", cb as any);
-      else if (typeof (mq as any).addListener === "function") (mq as any).addListener(cb);
-    };
-    const remove = (mq: MediaQueryList, cb: (this: MediaQueryList, ev: MediaQueryListEvent) => void) => {
-      if (typeof mq.removeEventListener === "function") mq.removeEventListener("change", cb as any);
-      else if (typeof (mq as any).removeListener === "function") (mq as any).removeListener(cb);
-    };
-
-    add(desktopQuery, update);
-    add(motionQuery, update);
+    const cleanupDesktop = addMediaQueryListener(desktopQuery, update);
+    const cleanupMotion = addMediaQueryListener(motionQuery, update);
 
     return () => {
-      remove(desktopQuery, update);
-      remove(motionQuery, update);
+      cleanupDesktop();
+      cleanupMotion();
     };
   }, []);
 
