@@ -2,23 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-body {
-  @apply bg-slate-950 text-slate-100;
-}
-
-
-
 @layer base {
   :root {
     --background: 0 0% 100%;

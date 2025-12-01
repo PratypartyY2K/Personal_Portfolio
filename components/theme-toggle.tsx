@@ -8,17 +8,22 @@ const HINT_TIMEOUT_MS = 6000;
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
-  const [showHint, setShowHint] = useState(false);
+  const [showHint, setShowHint] = useState(true);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    setShowHint(true);
+    if (typeof window === "undefined") return;
+    const raf = window.requestAnimationFrame(() => setMounted(true));
+    return () => window.cancelAnimationFrame(raf);
+  }, []);
+
+  useEffect(() => {
+    if (!showHint || typeof window === "undefined") return;
     const timer = window.setTimeout(() => {
       setShowHint(false);
     }, HINT_TIMEOUT_MS);
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [showHint]);
 
   const handleToggle = () => {
     setShowHint(false);

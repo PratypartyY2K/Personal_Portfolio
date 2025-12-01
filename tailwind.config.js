@@ -9,12 +9,12 @@ module.exports = {
   	extend: {
   		fontFamily: {
   			sans: [
-  				'Inter',
+  				'var(--font-sans)',
   				'system-ui',
   				'sans-serif'
   			],
   			mono: [
-  				'JetBrains Mono',
+  				'var(--font-mono)',
   				'monospace'
   			]
   		},

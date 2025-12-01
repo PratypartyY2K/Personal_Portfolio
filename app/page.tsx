@@ -6,8 +6,9 @@ import { BlogSection } from "@/components/blog-section";
 import { ContactSection } from "@/components/contact-section";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { ScrollToTop } from "@/components/scroll-to-top";
 import { AboutSection } from "@/components/about-me-section";
+import { VisuallyHidden } from "@/components/visually-hidden";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 export default function HomePage() {
   return (
@@ -15,6 +16,9 @@ export default function HomePage() {
       <Navbar />
       {/* <main className="bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-50"> */}
       <main>
+        <VisuallyHidden as="h1">
+          Pratyush Kumar – Distributed systems engineer portfolio
+        </VisuallyHidden>
         <ScrollToTop />
         <section className="relative">
           <Hero />
