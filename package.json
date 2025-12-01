@@ -8,6 +8,13 @@
     "start": "next start",
     "lint": "eslint"
   },
+  "browserslist": [
+    "Chrome >= 110",
+    "Firefox >= 100",
+    "Safari >= 16",
+    "Edge >= 110",
+    "iOS >= 16"
+  ],
   "dependencies": {
     "@radix-ui/react-separator": "^1.1.8",
     "@radix-ui/react-slot": "^1.2.4",
@@ -29,7 +36,6 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.22",
-    "baseline-browser-mapping": "^2.8.32",
     "eslint": "^9",
     "eslint-config-next": "16.0.3",
     "postcss": "^8.5.6",
