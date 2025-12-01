@@ -1,92 +1,122 @@
 # Personal Portfolio (Pratyush Kumar)
 
-This repository contains the source for my personal portfolio website built with Next.js.
-
-The site showcases projects, experience, skills and contact information and uses modern frontend tooling for animation, styling and small 3D visuals.
+This repository contains the source for my portfolio site built with the Next.js App Router. The app highlights my work, experience, and writing, while experimenting with lightweight 3D visuals and theme-aware UI.
 
 ---
 
-## Key features
+## Features
 
-- Responsive, accessible portfolio layout
-- Hero section with 3D/animated background
-- Projects, Experience, Skills sections and contact form link
-- Smooth entrance and hover animations
-- Light/dark theme support
+- **Hero with deferred 3D graphic** – The hero text renders immediately while a WebGL background is lazily mounted using `@react-three/fiber` only when fonts load, the hero enters view, and the device can handle it.
+- **Server-first sections** – Projects, Skills, Blog, About, and Experience render as server components to minimize client JavaScript. Components switch to client mode only when interactivity is required (theme toggle, navbar menu, scroll-to-top).
+- **Dark/light theme support** – Theme is persisted in `localStorage`, applied before paint, and toggled through a11y-friendly controls.
+- **Performance-focused** – IntersectionObserver gating, idle callbacks, font preloads, and small responsive image sizes keep LCP/TBT low even with 3D assets.
+- **Accessible content** – Semantic headings, `aria-labelledby` links between sections and headings, keyboard-friendly navigation, and descriptive alt text.
+
+---
 
 ## Tech stack
 
-- Next.js (App Router)
-- React + TypeScript
-- Tailwind CSS for utility-first styling
-- Framer Motion for UI animations
-- @react-three/fiber & drei for small 3D/Canvas visuals
+| Area | Tools |
+| --- | --- |
+| Framework | [Next.js 16 (App Router)](https://nextjs.org/) + React 19 |
+| Language | TypeScript |
+| Styling | Tailwind CSS + CSS variables |
+| 3D / Graphics | `@react-three/fiber`, `@react-three/drei`, `three` |
+| Icons / UI | `lucide-react`, custom Tailwind components |
+| Tooling | ESLint 9, Turbopack dev server |
 
-(See `package.json` for full dependency list.)
+See `package.json` for exact versions.
+
+---
+
+## Project structure
+
+```
+app/                # App Router entrypoints
+components/         # React components (server + client)
+  experience/       # Timeline + profile card
+  projects/         # Project grid and utilities
+  three/            # Three.js scene helpers
+public/             # Static assets (images, icons, resume)
+tailwind.config.js  # Tailwind setup
+next.config.ts      # Next.js configuration
+```
+
+---
 
 ## Development
 
 Requirements:
-- Node.js (recommended 16+)
-- npm (or yarn / pnpm)
+
+- Node.js 18+ (recommended 20 LTS)
+- npm (bundled with Node; yarn/pnpm also work)
 
 Install dependencies:
 
 ```bash
 npm install
-# or
-# yarn
-# pnpm install
 ```
 
-Run the dev server:
+Start the dev server:
 
 ```bash
 npm run dev
 ```
 
-Open http://localhost:3000 in your browser.
+Then visit http://localhost:3000. Turbopack provides hot reloads.
 
-## Build & production
-
-Build for production:
+Lint the project:
 
 ```bash
-npm run build
+npm run lint
 ```
-
-Run the production build locally:
-
-```bash
-npm run start
-```
-
-## Environment & secrets
-
-This project does not require special environment variables to run locally by default. If you add any secret keys (API keys, etc.), add them to a `.env.local` file and do NOT commit the file. `.gitignore` already excludes `.env*`.
-
-## What to commit / ignore
-
-Commit:
-- `app/`, `components/`, `public/`, configuration files (`next.config.ts`, `tailwind.config.js`, `tsconfig.json`, etc.)
-- `package.json` and the lockfile (`package-lock.json`)
-
-Ignore (already in `.gitignore`):
-- `node_modules/`, `.next/`, build output, `.env*`, editor folders like `.vscode/`, and local caches.
-
-## Contributing
-
-Small fixes or improvements are welcome. Open a PR with a short description of changes. For style edits prefer small, focused commits.
-
-## Troubleshooting
-
-- If you see layout or color issues, try clearing `.next` and restarting the dev server.
-- If an asset (image) is missing, check `public/`.
-
-## License & contact
-
-This repo contains my personal website code. If you want to reach me, see the site or open an issue / PR in this repo.
 
 ---
 
-_Last updated: 2025-11-29_
+## Build & deployment
+
+```bash
+npm run build    # Creates the production bundle
+npm run start    # Serves the built app (uses Node.js server)
+```
+
+Deploy the `.next` build output to any Node host (Vercel, Netlify, etc.). No extra environment variables are required by default.
+
+---
+
+## Performance notes
+
+- Fonts preload via `next/font` and `<link rel="preconnect">` hints to reduce render-blocking time.
+- The Three.js hero background, scroll-to-top button, and theme toggle are gated behind user/device heuristics to avoid unnecessary JS on mobile.
+- `.browserslistrc` targets only modern browsers so polyfills aren’t shipped unnecessarily.
+- Tailwind utilities are tree-shaken by the Next.js compiler; keep class usage within the `content` globs to avoid bloat.
+
+Run Lighthouse on a production build (`npm run build && npm run start`) for accurate metrics.
+
+---
+
+## Environment & secrets
+
+No environment variables are required. If you add API keys or credentials, place them in `.env.local` (already ignored by Git).
+
+---
+
+## Contributing / extending
+
+1. Fork the repo and create a feature branch.
+2. Run `npm run lint` before opening a PR.
+3. Keep commits small and focused (docs, styling, feature, etc.).
+
+Suggestions welcome—file an issue or PR for improvements.
+
+---
+
+## Troubleshooting
+
+- **Styling not updating** – clear `.next/` and rerun `npm run dev`.
+- **Images missing** – confirm assets exist under `public/`.
+- **Build error referencing `requestAnimationFrame`** – ensure the latest hero trigger code is in sync; it guards all window usage.
+
+---
+
+_Last updated: 2025-12-01_
