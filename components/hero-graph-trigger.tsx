@@ -37,6 +37,15 @@ const addMediaQueryListener = (mq: MediaQueryList, handler: () => void) => {
   return () => {};
 };
 
+const scheduleFrame = (w: ExtendedWindow, cb: FrameRequestCallback) =>
+  typeof w.requestAnimationFrame === "function" ? w.requestAnimationFrame(cb) : w.setTimeout(cb, 0);
+
+const cancelFrame = (w: ExtendedWindow, id: number | null) => {
+  if (id === null) return;
+  if (typeof w.cancelAnimationFrame === "function") w.cancelAnimationFrame(id);
+  else w.clearTimeout(id);
+};
+
 const HeroGraph = dynamic(
   () => import("./hero-graph").then((mod) => mod.HeroGraph),
   { ssr: false, loading: () => null }
@@ -73,17 +82,16 @@ export function HeroGraphTrigger() {
     let rafId: number | null = null;
     const node = containerRef.current;
     if (!node) {
-      // If we don't have a node, just optimistically mark visible via RAF
-      rafId = (w as any).requestAnimationFrame?.(() => setIsVisible(true)) ?? null;
+      rafId = scheduleFrame(w, () => setIsVisible(true));
       return () => {
-        if (rafId !== null) (w as any).cancelAnimationFrame?.(rafId);
+        cancelFrame(w, rafId);
       };
     }
 
-    if (typeof (w as any).IntersectionObserver === "undefined") {
-      rafId = (w as any).requestAnimationFrame?.(() => setIsVisible(true)) ?? null;
+    if (!("IntersectionObserver" in w)) {
+      rafId = scheduleFrame(w, () => setIsVisible(true));
       return () => {
-        if (rafId !== null) (w as any).cancelAnimationFrame?.(rafId);
+        cancelFrame(w, rafId);
       };
     }
 
@@ -100,7 +108,7 @@ export function HeroGraphTrigger() {
     observer.observe(node);
     return () => {
       observer.disconnect();
-      if (rafId !== null) w.cancelAnimationFrame?.(rafId);
+      cancelFrame(w, rafId);
     };
   }, []);
 
