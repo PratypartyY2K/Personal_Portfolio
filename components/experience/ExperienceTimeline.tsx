@@ -1,7 +1,4 @@
-type TimelineKind = "education" | "experience";
-
 export interface TimelineItem {
-  type: TimelineKind;
   date: string;
   title: string;
   description: string;
@@ -9,9 +6,8 @@ export interface TimelineItem {
   coursework?: string[];
 }
 
-const timelineItems: TimelineItem[] = [
+export const educationTimelineItems: TimelineItem[] = [
   {
-    type: "education",
     date: "2025 — 2027",
     title: "MS in Computer Science · Penn State University, UP",
     description:
@@ -19,11 +15,29 @@ const timelineItems: TimelineItem[] = [
     coursework: [
       "Operating Systems and Design",
       "Computer Vision and Language",
-      "Fundamentals ofComputer Architecture",
+      "Fundamentals of Computer Architecture",
     ],
   },
   {
-    type: "experience",
+    date: "2019 - 2023",
+    title:
+      "B.Tech in Computer Science & Engineering · Vellore Institute of Technology, India",
+    description:
+      "Undergraduate coursework in algorithms, systems, networks, and cryptography. Completed a capstone project on partial face-image encryption using RSA, chaotic maps, and image processing.",
+    coursework: [
+      "Data Structures & Algorithms",
+      "Operating Systems",
+      "Computer Architecture & Organization",
+      "Database Management Systems",
+      "Computer Networks & Network Security",
+      "Java Programming",
+      "Object-Oriented Programming",
+    ],
+  },
+];
+
+export const experienceTimelineItems: TimelineItem[] = [
+  {
     date: "2023 — 2025",
     title:
       "Associate Software Engineer (previously Software Engineering Intern) · Enphase Energy",
@@ -41,34 +55,13 @@ const timelineItems: TimelineItem[] = [
     ],
   },
   {
-    type: "experience",
     date: "2021 — 2022",
     title: "Full Stack Developer Intern · Acies Consulting LLP",
     description:
       "Developed full-stack web applications for clients using JavaScript, Node.js, and relational databases. Implemented responsive UI components and optimized backend services for performance.",
     tech: ["JavaScript", "MySQL", "PostgreSQL", "jQuery", "Bootstrap"],
   },
-  {
-    type: "education",
-    date: "2019 - 2023",
-    title:
-      "B.Tech in Computer Science & Engineering · Vellore Institute of Technology, India",
-    description:
-      "Undergraduate coursework in algorithms, systems, networks, and cryptography. Completed a capstone project on partial face-image encryption using RSA, chaotic maps, and image processing.",
-   coursework: [
-      "Data Structures & Algorithms",
-      "Operating Systems",
-      "Computer Architecture & Organization",
-      "Database Management Systems",
-      "Computer Networks & Network Security",
-      "Java Programming",
-      "Object-Oriented Programming",
-    ],
-  },
 ];
-
-export const educationTimelineItems = timelineItems.filter((item) => item.type === "education");
-export const experienceTimelineItems = timelineItems.filter((item) => item.type === "experience");
 
 interface TimelineListProps {
   items: TimelineItem[];
@@ -91,9 +84,9 @@ export function TimelineList({ items }: TimelineListProps) {
 
           <p className="mt-2 text-sm text-slate-600 dark:text-slate-300/90">{item.description}</p>
 
-          <div className="mt-3 flex flex-wrap gap-2">
-            {item.tech && item.tech.length > 0 &&
-              item.tech.map((t) => (
+          {item.tech?.length ? (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {item.tech.map((t) => (
                 <span
                   key={t}
                   className="rounded-md bg-slate-100 px-2 py-1 text-xs text-sky-700 dark:bg-slate-800 dark:text-sky-200"
@@ -101,9 +94,10 @@ export function TimelineList({ items }: TimelineListProps) {
                   {t}
                 </span>
               ))}
-          </div>
+            </div>
+          ) : null}
 
-          {item.coursework && item.coursework.length > 0 && (
+          {item.coursework?.length ? (
             <div className="mt-4">
               <p className="text-xs font-medium text-slate-500 dark:text-slate-400">Coursework</p>
               <div className="mt-2 flex flex-wrap gap-2">
@@ -117,7 +111,7 @@ export function TimelineList({ items }: TimelineListProps) {
                 ))}
               </div>
             </div>
-          )}
+          ) : null}
         </article>
       ))}
     </div>

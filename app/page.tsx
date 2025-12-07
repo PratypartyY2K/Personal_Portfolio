@@ -14,7 +14,6 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      {/* <main className="bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-50"> */}
       <main>
         <VisuallyHidden as="h1">
           Pratyush Kumar – Distributed systems engineer portfolio
@@ -26,9 +25,9 @@ export default function HomePage() {
         <AboutSection />
         <ProjectsSection />
         <ExperienceSection />
-        <ContactSection />
         <SkillsSection />
         <BlogSection />
+        <ContactSection />
       </main>
       <Footer />
     </>

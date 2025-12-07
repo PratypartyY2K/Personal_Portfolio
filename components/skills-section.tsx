@@ -60,7 +60,6 @@ export function SkillsSection() {
       ariaLabelledby={headingId}
       className="relative py-28 bg-white dark:bg-transparent"
     >
-      {/* Subtle top glow */}
       <div className="absolute -top-20 left-0 right-0 h-32
         bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.12),_transparent_75%)]
         blur-xl pointer-events-none"
