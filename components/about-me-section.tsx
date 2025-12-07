@@ -44,11 +44,26 @@ export function AboutSection() {
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400">
               Recent highlights
             </p>
-            <ul className="mt-3 space-y-2 text-slate-700 dark:text-slate-200">
-              <li>• Built an ABD-based distributed key–value store.</li>
-              <li>• Designed a custom MapReduce engine in C++.</li>
-              <li>• Automated backend test suites and pipelines at Enphase.</li>
-              <li>• Published research on partial face image encryption.</li>
+            <ul className="mt-3 space-y-3">
+              <li className="flex items-start gap-3">
+                <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/90 ring-1 ring-sky-300/30" aria-hidden />
+                <span className="text-sm text-slate-700 dark:text-slate-200">Implemented a linearizable distributed key–value store using the ABD protocol.</span>
+              </li>
+
+              <li className="flex items-start gap-3">
+                <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/90 ring-1 ring-sky-300/30" aria-hidden />
+                <span className="text-sm text-slate-700 dark:text-slate-200">Engineered a multi-threaded MapReduce framework in C++ with major performance improvements.</span>
+              </li>
+
+              <li className="flex items-start gap-3">
+                <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/90 ring-1 ring-sky-300/30" aria-hidden />
+                <span className="text-sm text-slate-700 dark:text-slate-200">Automated backend test pipelines and CI workflows at Enphase.</span>
+              </li>
+
+              <li className="flex items-start gap-3">
+                <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/90 ring-1 ring-sky-300/30" aria-hidden />
+                <span className="text-sm text-slate-700 dark:text-slate-200">Published research on secure partial face-image encryption (Springer MTAP).</span>
+              </li>
             </ul>
           </div>
         </div>
