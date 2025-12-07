@@ -56,10 +56,9 @@ export const experienceTimelineItems: TimelineItem[] = [
       "Worked on backend services and QA automation for energy device cloud services. Focused on reliability, testing, and CI automation for distributed microservices.",
     tech: ["Rails", "MySQL", "MongoDB", "Selenium", "Python", "Jenkins", "REST APIs", "DataDog", "Postman"],
     highlights: [
-      "Developed and scaled RESTful Rails services for ~5,000 DAUs, improving data consistency and reducing integration failures by 25%.",
+      "Developed and optimized RESTful Rails services for ~5,000 DAUs, improving data consistency and reducing integration failures by 25%.",
       "Architected a Selenium-based UI regression suite, cutting manual QA effort by 50% and significantly accelerating release cycles.",
       "Automated TestRail reporting using Python & API integrations, slashing stakeholder reporting time by 90%+ (1 hour → <5 mins)",
-      "Engineered API contract and reliability tests for distributed microservices, reducing production failure incidents by 20%.",
       "Mentored 4 new engineers, creating labs that reduced onboarding ramp-up time from 4 weeks to ~10 days.",
     ],
   },
