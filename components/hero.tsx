@@ -49,7 +49,7 @@ export function Hero() {
               size="lg"
               className="border-slate-200 bg-white/85 text-slate-900 transition hover:bg-white dark:border-slate-600/80 dark:bg-slate-900/60 dark:text-slate-100 dark:hover:bg-slate-800/60"
             >
-              <a href="#about">About Me</a>
+              <a href="#contact">Contact Me</a>
             </Button>
           </div>
 
