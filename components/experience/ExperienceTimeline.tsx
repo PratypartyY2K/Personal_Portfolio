@@ -5,7 +5,8 @@ export interface TimelineItem {
   date: string;
   title: string;
   description: string;
-  tech: string[];
+  tech?: string[];
+  coursework?: string[];
 }
 
 const timelineItems: TimelineItem[] = [
@@ -14,32 +15,55 @@ const timelineItems: TimelineItem[] = [
     date: "2025 — 2027",
     title: "MS in Computer Science · Penn State University, UP",
     description:
-      "Graduate coursework in distributed systems, deep learning, and systems for large-scale compute. Building MapReduce engines, ABD-style key-value stores, and inference server research.",
-    tech: ["C++", "gRPC", "Protobuf", "AWS EC2", "LLMs", "HPC"],
+      "Graduate coursework in operating systems and design, computer vision and language, and computer architecture. Building MapReduce engines, ABD-style key-value stores, and inference server research.",
+    coursework: [
+      "Operating Systems and Design",
+      "Computer Vision and Language",
+      "Fundamentals ofComputer Architecture",
+    ],
   },
   {
     type: "experience",
     date: "2023 — 2025",
-    title: "Associate Software Engineer · Enphase Energy",
+    title:
+      "Associate Software Engineer (previously Software Engineering Intern) · Enphase Energy",
     description:
       "Built and maintained backend services in Ruby on Rails, improved QA automation coverage, enhanced CI/CD pipelines, contributed to microservices used by millions of devices globally.",
-    tech: ["Ruby", "Rails", "MongoDB", "Selenium", "TestNG", "CI/CD"],
+    tech: [
+      "Rails",
+      "MySQL",
+      "MongoDB",
+      "Selenium",
+      "TestNG",
+      "Java",
+      "Jenkins",
+      "REST APIs",
+    ],
   },
   {
     type: "experience",
-    date: "2021 — 2023",
-    title: "Software Engineering Intern · Enphase & Acies",
+    date: "2021 — 2022",
+    title: "Full Stack Developer Intern · Acies Consulting LLP",
     description:
-      "Contributed to frontend and backend tasks, improved testing infrastructure, helped develop internal dashboards and automation tools.",
-    tech: ["JavaScript", "React", "Jenkins", "Automation"],
+      "Developed full-stack web applications for clients using JavaScript, Node.js, and relational databases. Implemented responsive UI components and optimized backend services for performance.",
+    tech: ["JavaScript", "MySQL", "PostgreSQL", "jQuery", "Bootstrap"],
   },
   {
     type: "education",
-    date: "2022",
-    title: "Published Research · MTAP (Springer)",
+    date: "2019 - 2023",
+    title:
+      "B.Tech in Computer Science & Engineering · Vellore Institute of Technology, India",
     description:
-      "Designed a partial face-image encryption scheme combining RSA, chaotic maps, and image processing for faster privacy-preserving communication.",
-    tech: ["Python", "OpenCV", "Cryptography"],
+      "Undergraduate coursework in algorithms, systems, networks, and cryptography. Completed a capstone project on partial face-image encryption using RSA, chaotic maps, and image processing.",
+   coursework: [
+      "Data Structures & Algorithms",
+      "Operating Systems",
+      "Computer Architecture & Organization",
+      "Database Management Systems",
+      "Computer Networks & Network Security",
+      "Java Programming",
+      "Object-Oriented Programming",
+    ],
   },
 ];
 
@@ -68,15 +92,32 @@ export function TimelineList({ items }: TimelineListProps) {
           <p className="mt-2 text-sm text-slate-600 dark:text-slate-300/90">{item.description}</p>
 
           <div className="mt-3 flex flex-wrap gap-2">
-            {item.tech.map((t) => (
-              <span
-                key={t}
-                className="rounded-md bg-slate-100 px-2 py-1 text-xs text-sky-700 dark:bg-slate-800 dark:text-sky-200"
-              >
-                {t}
-              </span>
-            ))}
+            {item.tech && item.tech.length > 0 &&
+              item.tech.map((t) => (
+                <span
+                  key={t}
+                  className="rounded-md bg-slate-100 px-2 py-1 text-xs text-sky-700 dark:bg-slate-800 dark:text-sky-200"
+                >
+                  {t}
+                </span>
+              ))}
           </div>
+
+          {item.coursework && item.coursework.length > 0 && (
+            <div className="mt-4">
+              <p className="text-xs font-medium text-slate-500 dark:text-slate-400">Coursework</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {item.coursework.map((c) => (
+                  <span
+                    key={c}
+                    className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-700 dark:bg-slate-800 dark:text-slate-200"
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </article>
       ))}
     </div>
