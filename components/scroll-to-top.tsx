@@ -1,11 +1,7 @@
 "use client";
 
+import { ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
-import dynamic from "next/dynamic";
-
-const ArrowUp = dynamic(() => import("lucide-react").then((mod) => mod.ArrowUp), {
-  ssr: false,
-});
 
 export function ScrollToTop() {
   const [show, setShow] = useState(false);
