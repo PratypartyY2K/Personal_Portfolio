@@ -8,7 +8,8 @@ const HINT_TIMEOUT_MS = 6000;
 
 export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
-  const [showHint, setShowHint] = useState(true);
+  // tooltip hidden by default to avoid unexpected overlays; it can be enabled programmatically
+  const [showHint, setShowHint] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
