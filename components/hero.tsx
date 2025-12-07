@@ -27,14 +27,11 @@ export function Hero() {
             Hi, I&apos;m{" "}
             <span className="text-sky-300">Pratyush Kumar</span>.
             <br />
-            I build reliable distributed systems and thoughtful user
-            experiences.
+            I build modern backend systems and meaningful full-stack experiences.
           </h1>
 
           <p className="mt-4 text-sm text-slate-600 dark:text-slate-200/90 md:text-base">
-            Distributed systems engineer shaping resilient backend platforms and
-            thoughtful UX. MSCS @ Penn State & formerly scaling energy software
-            at Enphase.
+            MSCS @ Penn State · Previously worked on cloud systems at Enphase.
           </p>
 
           <div className="mt-6 flex flex-wrap justify-center gap-3 md:justify-start">
@@ -57,8 +54,7 @@ export function Hero() {
           </div>
 
           <p className="mt-4 text-xs text-slate-500 dark:text-slate-400/90">
-            Currently looking for Summer 2026 Software Engineering internships
-            (backend / distributed systems / full-stack).
+            Actively seeking Summer 2026 SWE internships (backend · full-stack · distributed systems).
           </p>
         </div>
       </div>
