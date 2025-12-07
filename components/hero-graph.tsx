@@ -14,7 +14,11 @@ const NetworkGraph = dynamic(
 
 export function HeroGraph() {
   return (
-    <Canvas camera={{ position: [0, 0, 14], fov: 45 }} dpr={[1, 1.5]}>
+    <Canvas
+      className="pointer-events-none"
+      camera={{ position: [0, 0, 14], fov: 45 }}
+      dpr={[1, 1.5]}
+    >
       <ambientLight intensity={0.6} />
       <directionalLight position={[4, 6, 8]} intensity={1.2} />
       <NetworkGraph />
