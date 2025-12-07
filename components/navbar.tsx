@@ -35,7 +35,7 @@ export function Navbar() {
                 {l.label}
               </a>
             ))}
-            <ResumeDownloadLink className="hover:text-sky-700 dark:hover:text-sky-200">
+            <ResumeDownloadLink className="rounded-full border border-sky-200/70 px-3 py-1 text-sky-700 transition hover:border-sky-400 hover:bg-sky-50 hover:text-slate-900 dark:border-sky-500/40 dark:text-sky-300 dark:hover:border-sky-400 dark:hover:bg-sky-500/10">
               Resume
             </ResumeDownloadLink>
             <ThemeToggle />
@@ -73,7 +73,7 @@ export function Navbar() {
               </a>
             ))}
             <ResumeDownloadLink
-              className="text-base hover:text-sky-500 dark:hover:text-sky-300"
+              className="rounded-full border border-sky-200/70 px-3 py-1 text-base font-semibold tracking-wide text-sky-700 transition hover:border-sky-400 hover:bg-sky-50 hover:text-slate-900 dark:border-sky-500/40 dark:text-sky-300 dark:hover:border-sky-400 dark:hover:bg-sky-500/10"
               onClick={() => setOpen(false)}
             >
               Resume
