@@ -18,10 +18,10 @@ export function AboutSection() {
         <div className="grid gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
           <div className="space-y-4 text-sm md:text-base leading-relaxed text-slate-700 dark:text-slate-300">
             <p>
-              I’m Pratyush — a backend & distributed systems engineer passionate about
-              reliability, clean design, and performance. I enjoy breaking down complex
-              systems into elegant solutions, whether I’m building distributed storage, tuning
-              C++ performance, or designing intuitive web experiences.
+              I’m Pratyush — a software engineer who enjoys building reliable backend systems, 
+              exploring distributed systems concepts, and crafting clean, intuitive user experiences. 
+              I love taking complex problems and shaping them into simple, well-designed solutions, 
+              whether I’m implementing storage logic, tuning performance, or working across the full stack.
             </p>
 
             <p>
