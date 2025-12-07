@@ -1,5 +1,16 @@
-const items = [
+type TimelineKind = "education" | "experience";
+
+export interface TimelineItem {
+  type: TimelineKind;
+  date: string;
+  title: string;
+  description: string;
+  tech: string[];
+}
+
+const timelineItems: TimelineItem[] = [
   {
+    type: "education",
     date: "2025 — 2027",
     title: "MS in Computer Science · Penn State University, UP",
     description:
@@ -7,6 +18,7 @@ const items = [
     tech: ["C++", "gRPC", "Protobuf", "AWS EC2", "LLMs", "HPC"],
   },
   {
+    type: "experience",
     date: "2023 — 2025",
     title: "Associate Software Engineer · Enphase Energy",
     description:
@@ -14,6 +26,7 @@ const items = [
     tech: ["Ruby", "Rails", "MongoDB", "Selenium", "TestNG", "CI/CD"],
   },
   {
+    type: "experience",
     date: "2021 — 2023",
     title: "Software Engineering Intern · Enphase & Acies",
     description:
@@ -21,6 +34,7 @@ const items = [
     tech: ["JavaScript", "React", "Jenkins", "Automation"],
   },
   {
+    type: "education",
     date: "2022",
     title: "Published Research · MTAP (Springer)",
     description:
@@ -29,7 +43,14 @@ const items = [
   },
 ];
 
-export function ExperienceTimeline() {
+export const educationTimelineItems = timelineItems.filter((item) => item.type === "education");
+export const experienceTimelineItems = timelineItems.filter((item) => item.type === "experience");
+
+interface TimelineListProps {
+  items: TimelineItem[];
+}
+
+export function TimelineList({ items }: TimelineListProps) {
   return (
     <div className="space-y-10">
       {items.map((item) => (

@@ -1,5 +1,8 @@
-import { ExperienceTimeline } from "./experience/ExperienceTimeline";
-import { ProfileCard } from "./experience/ProfileCard";
+import {
+  TimelineList,
+  educationTimelineItems,
+  experienceTimelineItems,
+} from "./experience/ExperienceTimeline";
 
 export function ExperienceSection() {
   const headingId = "experience-heading";
@@ -11,18 +14,25 @@ export function ExperienceSection() {
     >
       <div className="mx-auto max-w-6xl px-6">
         <h2 id={headingId} className="text-3xl font-semibold text-slate-900 dark:text-white">
-          Experience
+          Education & Experience
         </h2>
 
-        <div className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-3">
-          {/* Timeline */}
-          <div className="md:col-span-2">
-            <ExperienceTimeline />
+        <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+              Education
+            </p>
+            <div className="mt-6">
+              <TimelineList items={educationTimelineItems} />
+            </div>
           </div>
-
-          {/* Profile card */}
-          <div className="">
-            <ProfileCard />
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500 dark:text-slate-400">
+              Experience
+            </p>
+            <div className="mt-6">
+              <TimelineList items={experienceTimelineItems} />
+            </div>
           </div>
         </div>
       </div>

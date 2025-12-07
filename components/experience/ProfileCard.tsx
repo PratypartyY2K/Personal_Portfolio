@@ -25,9 +25,9 @@ export function ProfileCard() {
           Backend • Distributed Systems • Full Stack
         </p>
 
-        <div className="mt-4 flex gap-4 text-sm">
+        {/* <div className="mt-4 flex gap-4 text-sm">
           <a
-            href="mailto:kinshuk048@gmail.com"
+            href="mailto:pratyushkum4@gmail.com"
             className="text-sky-700 hover:text-sky-500 dark:text-sky-200 dark:hover:text-sky-100"
           >
             Email
@@ -39,7 +39,7 @@ export function ProfileCard() {
           >
             LinkedIn
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );

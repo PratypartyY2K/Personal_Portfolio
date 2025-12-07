@@ -34,6 +34,7 @@ export function BlogSection() {
       <div className="absolute -top-24 left-0 right-0 h-32 
         bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.12),_transparent_70%)]
         blur-xl pointer-events-none" />
+      <div className="pointer-events-none absolute inset-x-0 -bottom-10 h-32 bg-gradient-to-b from-transparent to-white dark:from-transparent dark:to-slate-950" />
 
       <h2
         id={headingId}

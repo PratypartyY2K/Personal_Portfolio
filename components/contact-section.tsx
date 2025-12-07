@@ -1,5 +1,6 @@
 import { SectionContainer } from "./section-container";
 import { Mail, Linkedin, Github } from "lucide-react";
+import { ProfileCard } from "./experience/ProfileCard";
 
 export function ContactSection() {
   const headingId = "contact-heading";
@@ -13,7 +14,6 @@ export function ContactSection() {
       <div className="absolute -top-24 left-0 right-0 h-32 
         bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.12),_transparent_70%)]
         blur-xl pointer-events-none" />
-      <div className="pointer-events-none absolute inset-x-0 -bottom-10 h-32 bg-gradient-to-b from-transparent to-white dark:from-transparent dark:to-slate-950" />
 
       <h2
         id={headingId}
@@ -26,29 +26,68 @@ export function ContactSection() {
         Feel free to reach out for collaboration, opportunities, or just to say hi.
       </p>
 
-      <div className="mt-8 flex justify-center gap-6">
-        <a
-          href="mailto:kinshuk048@gmail.com"
-          className="flex items-center gap-2 text-sky-700 hover:text-sky-500 text-sm dark:text-sky-200 dark:hover:text-sky-100"
-        >
-          <Mail size={18} /> Email
-        </a>
+      <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,320px)_1fr] lg:items-start">
+        <div className="mx-auto max-w-sm lg:mx-0">
+          <ProfileCard />
+        </div>
 
-        <a
-          href="https://linkedin.com/in/pratyushkumar123"
-          target="_blank"
-          className="flex items-center gap-2 text-sky-700 hover:text-sky-500 text-sm dark:text-sky-200 dark:hover:text-sky-100"
-        >
-          <Linkedin size={18} /> LinkedIn
-        </a>
+        <div className="rounded-2xl border border-slate-200 bg-white/90 p-8 text-left shadow-xl backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/60">
+          <p className="text-base text-slate-600 dark:text-slate-300/90">
+            I&apos;m always excited to connect with folks working on resilient backend systems, research,
+            or thoughtful UX. Send a note and I&apos;ll get back quickly.
+          </p>
 
-        <a
-          href="https://github.com/PratypartyY2K"
-          target="_blank"
-          className="flex items-center gap-2 text-sky-700 hover:text-sky-500 text-sm dark:text-sky-200 dark:hover:text-sky-100"
-        >
-          <Github size={18} /> GitHub
-        </a>
+          <div className="mt-8 flex flex-col gap-4">
+            <a
+              href="mailto:pratyushkum4@gmail.com"
+              className="flex items-center gap-3 text-slate-900 transition hover:text-sky-600 dark:text-slate-100 dark:hover:text-sky-200"
+            >
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-sky-600 dark:bg-slate-800 dark:text-sky-300">
+                <Mail size={18} />
+              </span>
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                  Email
+                </p>
+                <p className="text-base">pratyushkum4@gmail.com</p>
+              </div>
+            </a>
+
+            <a
+              href="https://linkedin.com/in/pratyushkumar123"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-3 text-slate-900 transition hover:text-sky-600 dark:text-slate-100 dark:hover:text-sky-200"
+            >
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-sky-600 dark:bg-slate-800 dark:text-sky-300">
+                <Linkedin size={18} />
+              </span>
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                  LinkedIn
+                </p>
+                <p className="text-base">/in/pratyushkumar123</p>
+              </div>
+            </a>
+
+            <a
+              href="https://github.com/PratypartyY2K"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-3 text-slate-900 transition hover:text-sky-600 dark:text-slate-100 dark:hover:text-sky-200"
+            >
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-sky-600 dark:bg-slate-800 dark:text-sky-300">
+                <Github size={18} />
+              </span>
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+                  GitHub
+                </p>
+                <p className="text-base">github.com/PratypartyY2K</p>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </SectionContainer>
   );
