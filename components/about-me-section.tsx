@@ -62,7 +62,7 @@ export function AboutSection() {
               size="lg"
               className="mt-4 bg-slate-900 text-slate-50 hover:bg-slate-800 dark:bg-slate-50 dark:text-slate-900"
             >
-              <a href="#contact">Let&apos;s build Something Together</a>
+              <a href="#contact">Start a Conversation</a>
             </Button>
           </div>
 
