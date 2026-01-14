@@ -27,11 +27,11 @@ export function ContactSection() {
       </p>
 
       <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,320px)_1fr] lg:items-start">
-        <div className="mx-auto max-w-sm lg:mx-0">
+        <div className="order-2 mx-auto max-w-sm lg:order-1 lg:mx-0">
           <ProfileCard />
         </div>
 
-        <div className="rounded-2xl border border-slate-200 bg-white/90 p-8 text-left shadow-xl backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/60">
+        <div className="order-1 rounded-2xl border border-slate-200 bg-white/90 p-8 text-left shadow-xl backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/60 lg:order-2">
           <p className="text-base text-slate-600 dark:text-slate-300/90">
             If you&apos;re building something real and need a steady engineering partner, I&apos;d love to hear about it.
           </p>
