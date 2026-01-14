@@ -1,5 +1,3 @@
-import { ResumeDownloadLink } from "./resume-download-link";
-
 export function Footer() {
   return (
     <footer className="relative mt-24 border-t border-slate-200 bg-slate-100 
@@ -12,22 +10,11 @@ export function Footer() {
         }}
       />
 
-      <div className="relative z-10 flex justify-center gap-6 mb-4 text-slate-700 dark:text-slate-300">
-        <ResumeDownloadLink className="hover:text-sky-500 dark:hover:text-sky-300">
-          Resume
-        </ResumeDownloadLink>
-
-        <a href="https://github.com/PratypartyY2K" target="_blank" className="hover:text-sky-500 dark:hover:text-sky-300">
-          GitHub
-        </a>
-
-        <a href="https://linkedin.com/in/pratyushkumar123" target="_blank" className="hover:text-sky-500 dark:hover:text-sky-300">
-          LinkedIn
-        </a>
-      </div>
-
-      <p className="relative z-10 text-slate-700 dark:text-slate-300">
-        © {new Date().getFullYear()} Pratyush Kumar. All rights reserved.
+      <p className="relative z-10 text-[11px] text-slate-700 dark:text-slate-300">
+        © 2026 Pratyush Kumar · Built with intent, not templates.
+      </p>
+      <p className="relative z-10 mt-2 font-mono text-[10px] text-slate-500 dark:text-slate-400">
+        &gt; status: system online
       </p>
     </footer>
   );
