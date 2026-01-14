@@ -1,54 +1,39 @@
 import { SectionContainer } from "./section-container";
 
 const skills = {
-  "Languages": ["C/C++", "Python", "Java", "JavaScript", "Ruby", "TypeScript"],
-  "Backend & Distributed Systems": [
+  "Languages": ["C++", "Python", "Java", "TypeScript", "JavaScript", "Ruby"],
+  "Backend & Systems": [
     "gRPC",
     "Protobuf",
-    "RESTful APIs",
+    "REST APIs",
     "AWS (EC2)",
+    "Redis",
+    "PostgreSQL",
+    "MongoDB",
+    "MySQL",
   ],
-  "Frameworks": [
+  "Frameworks & Platforms": [
     "Ruby on Rails",
     "Node.js",
     "Express",
     "Django",
+    "Next.js",
     "PyQt6",
   ],
-  "Dev Tools": [
+  "DevOps, Testing & Reliability": [
     "Git",
     "Linux",
     "Jenkins",
     "Selenium",
+    "Unit & Integration Testing",
+    "Performance Optimization",
   ],
-  "Database Systems": [
-    "PostgreSQL",
-    "MongoDB",
-    "Redis",
-    "MySQL",
-  ],
-  "Soft Skills": [
-    "Effective Communication",
-    "Team Collaboration",
-    "Problem-Solving",
-    "Adaptability",
-    "Time Management",
-  ],
-  "Frontend": [
-    "Next.js",
-    "HTML5",
-    "CSS3",
-    "Tailwind CSS",
+  "UI & Frontend": [
+    "Tailwind",
+    "HTML",
+    "CSS",
     "Bootstrap",
     "jQuery",
-    "Vanilla JavaScript",
-  ],
-  "Testing & Debugging": [
-    "Unit Testing",
-    "Integration Testing",
-    "Debugging Tools",
-    "Performance Optimization",
-    "Selenium",
   ],
 };
 
@@ -69,12 +54,12 @@ export function SkillsSection() {
         id={headingId}
         className="text-2xl font-semibold text-slate-900 dark:text-slate-50"
       >
-        Skills
+        Engineering Toolkit
       </h2>
 
       <p className="mt-2 text-sm text-slate-600 dark:text-slate-300/90">
-        Technologies I use to build distributed systems, full-stack applications,
-        and backend infrastructure.
+        The technologies and systems I use to build production software — from backend services to
+        full-stack platforms and modern data pipelines.
       </p>
 
       <div className="mt-10 grid gap-12 md:grid-cols-2">
@@ -98,6 +83,10 @@ export function SkillsSection() {
           </div>
         ))}
       </div>
+
+      <p className="mt-10 text-sm text-slate-600 dark:text-slate-300/90 italic">
+        Focused on building reliable, scalable systems that hold up in real production environments.
+      </p>
     </SectionContainer>
   );
 }
