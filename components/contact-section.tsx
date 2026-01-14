@@ -1,5 +1,4 @@
 import { SectionContainer } from "./section-container";
-import { Mail, Linkedin, Github } from "lucide-react";
 import { ProfileCard } from "./experience/ProfileCard";
 
 export function ContactSection() {
@@ -19,11 +18,12 @@ export function ContactSection() {
         id={headingId}
         className="text-2xl font-semibold text-slate-900 dark:text-slate-50"
       >
-        Get in Touch
+        Let&apos;s Build Something Real
       </h2>
 
-      <p className="mt-2 text-sm text-slate-600 dark:text-slate-300/90 max-w-lg mx-auto">
-        Feel free to reach out for collaboration, opportunities, or just to say hi.
+      <p className="mt-3 max-w-2xl text-sm text-slate-600 dark:text-slate-300/90 mx-auto">
+        Have an interesting system to design, a product to ship, or a hard backend problem to solve?
+        I&apos;m always open to meaningful engineering conversations.
       </p>
 
       <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,320px)_1fr] lg:items-start">
@@ -33,60 +33,37 @@ export function ContactSection() {
 
         <div className="rounded-2xl border border-slate-200 bg-white/90 p-8 text-left shadow-xl backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/60">
           <p className="text-base text-slate-600 dark:text-slate-300/90">
-            I&apos;m always excited to connect with folks working on resilient backend systems, research,
-            or thoughtful UX. Send a note and I&apos;ll get back quickly.
+            If you&apos;re building something real and need a steady engineering partner, I&apos;d love to hear about it.
           </p>
 
-          <div className="mt-8 flex flex-col gap-4">
+          <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="mailto:pratyushkum4@gmail.com"
-              className="flex items-center gap-3 text-slate-900 transition hover:text-sky-600 dark:text-slate-100 dark:hover:text-sky-200"
+              className="inline-flex items-center justify-center rounded-full bg-sky-600 px-5 py-2 text-sm font-semibold text-white shadow-[0_0_18px_rgba(56,189,248,0.45)] transition hover:bg-sky-500 hover:shadow-[0_0_26px_rgba(56,189,248,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-sky-600 dark:bg-slate-800 dark:text-sky-300">
-                <Mail size={18} />
-              </span>
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
-                  Email
-                </p>
-                <p className="text-base">pratyushkum4@gmail.com</p>
-              </div>
+              Start a Conversation
             </a>
-
             <a
               href="https://linkedin.com/in/pratyushkumar123"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-3 text-slate-900 transition hover:text-sky-600 dark:text-slate-100 dark:hover:text-sky-200"
+              className="inline-flex items-center justify-center rounded-full border border-slate-200 px-5 py-2 text-sm font-semibold text-slate-700 transition hover:border-sky-300 hover:text-sky-700 dark:border-slate-700 dark:text-slate-200 dark:hover:border-sky-400 dark:hover:text-sky-200"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-sky-600 dark:bg-slate-800 dark:text-sky-300">
-                <Linkedin size={18} />
-              </span>
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
-                  LinkedIn
-                </p>
-                <p className="text-base">/in/pratyushkumar123</p>
-              </div>
+              LinkedIn
             </a>
-
             <a
               href="https://github.com/PratypartyY2K"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-3 text-slate-900 transition hover:text-sky-600 dark:text-slate-100 dark:hover:text-sky-200"
+              className="inline-flex items-center justify-center rounded-full border border-slate-200 px-5 py-2 text-sm font-semibold text-slate-700 transition hover:border-sky-300 hover:text-sky-700 dark:border-slate-700 dark:text-slate-200 dark:hover:border-sky-400 dark:hover:text-sky-200"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-sky-600 dark:bg-slate-800 dark:text-sky-300">
-                <Github size={18} />
-              </span>
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
-                  GitHub
-                </p>
-                <p className="text-base">github.com/PratypartyY2K</p>
-              </div>
+              GitHub
             </a>
           </div>
+
+          <p className="mt-6 text-xs font-mono uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">
+            Open to Summer 2026 SWE internships · Backend · Full-Stack · Platform
+          </p>
         </div>
       </div>
     </SectionContainer>
