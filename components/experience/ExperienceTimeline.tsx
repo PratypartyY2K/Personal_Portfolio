@@ -1,38 +1,37 @@
 export interface TimelineItem {
   date: string;
   title: string;
-  description: string;
+  location?: string;
+  impactLine?: string;
+  impactLines?: string[];
+  description?: string;
   tech?: string[];
-  coursework?: string[];
   highlights?: string[];
 }
 
 export const educationTimelineItems: TimelineItem[] = [
   {
     date: "2025 — 2027",
-    title: "MS in Computer Science · Penn State University, UP",
-    description:
-      "Graduate coursework in operating systems and design, computer vision and language, and computer architecture. Building MapReduce engines, ABD-style key-value stores, and inference server research.",
-    coursework: [
-      "Operating Systems and Design",
-      "Computer Vision and Language",
-      "Fundamentals of Computer Architecture",
+    title: "Penn State University — MS in Computer Science",
+    location: "University Park",
+    impactLines: [
+      "Focus: Distributed Systems, Backend Engineering & Systems Architecture",
+      "GPA: 3.6 / 4.0",
+    ],
+    highlights: [
+      "MapReduce engines",
+      "KV-store & inference server research",
+      "Systems & architecture coursework",
     ],
   },
   {
-    date: "2019 - 2023",
-    title:
-      "B.Tech in Computer Science & Engineering · Vellore Institute of Technology, India",
-    description:
-      "Undergraduate coursework in algorithms, systems, networks, and cryptography. Completed a capstone project on partial face-image encryption using RSA, chaotic maps, and image processing.",
-    coursework: [
-      "Data Structures & Algorithms",
-      "Operating Systems",
-      "Computer Architecture & Organization",
-      "Database Management Systems",
-      "Computer Networks & Network Security",
-      "Java Programming",
-      "Object-Oriented Programming",
+    date: "2019 — 2023",
+    title: "Vellore Institute of Technology — B.Tech CSE",
+    location: "India",
+    impactLines: ["Focus: Systems, Networks, Cryptography & Data Structures"],
+    highlights: [
+      "Partial face-image encryption capstone",
+      "Algorithms, OS, DBMS, Networks",
     ],
   },
 ];
@@ -40,37 +39,38 @@ export const educationTimelineItems: TimelineItem[] = [
 export const experienceTimelineItems: TimelineItem[] = [
   {
     date: "Aug 2025 — Dec 2025",
-    title: "Graduate Learning Assistant · Penn State University",
-    description:
-      "Provided lab instruction, debugging help, and formative feedback for undergraduate C++ coursework.",
+    title: "Penn State — Graduate Learning Assistant",
+    impactLine:
+      "Mentored 38 students in C++ and systems coursework, raising class averages by 25%.",
     highlights: [
-      "Mentored 38 students in C++ problem solving and debugging, improving assignment clarity and code structure and increasing the average score by 25%.",
-      "Conducted lab sessions and provided descriptive grading feedback that increased understanding of evaluation criteria.",
+      "Improved debugging outcomes by leading lab sessions and guided problem solving.",
+      "Clarified grading expectations with structured, actionable feedback.",
     ],
   },
   {
     date: "Jan 2023 — Jul 2025",
-    title:
-      "Software Engineer (previously Software Engineering Intern) · Enphase Energy — Bangalore, India",
-    description:
-      "Worked on backend services and QA automation for energy device cloud services. Focused on reliability, testing, and CI automation for distributed microservices.",
-    tech: ["Rails", "MySQL", "MongoDB", "Selenium", "Python", "Jenkins", "REST APIs", "DataDog", "Postman"],
+    title: "Enphase Energy — Software Engineer",
+    location: "Bangalore, India",
+    impactLine:
+      "Built backend services serving 5,000+ daily users and improved data consistency by 25%.",
+    tech: ["Rails", "PostgreSQL", "Jenkins", "Selenium", "Python", "REST APIs"],
     highlights: [
-      "Developed and optimized RESTful Rails services for ~5,000 DAUs, improving data consistency and reducing integration failures by 25%.",
-      "Architected a Selenium-based UI regression suite, cutting manual QA effort by 50% and significantly accelerating release cycles.",
-      "Automated TestRail reporting using Python & API integrations, slashing stakeholder reporting time by 90%+ (1 hour → <5 mins)",
-      "Mentored 4 new engineers, creating labs that reduced onboarding ramp-up time from 4 weeks to ~10 days.",
+      "Increased release velocity by cutting manual QA 50% with Selenium regression pipelines.",
+      "Shrank TestRail reporting from 1 hr → <5 mins via Python + API automation.",
+      "Cut onboarding ramp-up from 4 weeks → 10 days by mentoring 4 engineers.",
+      "Improved service reliability by designing RESTful Rails microservices for cloud systems.",
     ],
   },
   {
     date: "Aug 2021 — Jan 2022",
-    title: "Full Stack Developer Intern · Acies Consulting LLP — Mumbai, India",
-    description:
-      "Built client-facing full-stack applications and data ingestion tools focused on reliability and performance.",
-    tech: ["JavaScript", "Django", "MySQL", "PostgreSQL", "Redis"],
+    title: "Acies Consulting — Full-Stack Developer Intern",
+    location: "Mumbai, India",
+    impactLine:
+      "Built production data ingestion pipelines and performance-critical web apps.",
+    tech: ["Django", "MySQL", "PostgreSQL", "Redis", "Parquet"],
     highlights: [
-      "Optimized a stateless Django backend with dynamic connection routing for MySQL, PostgreSQL, Redis, and Parquet, enabling flexible storage configurations for diverse client needs.",
-      "Built an automated financial data ingestion pipeline using the Yahoo Finance API, accelerating reporting cycles and cutting manual data preparation by ~20%.",
+      "Reduced manual data prep 20%+ with automated financial ingestion pipelines.",
+      "Enabled flexible storage routing by designing stateless Django backends across MySQL/Postgres/Redis/Parquet.",
     ],
   },
 ];
@@ -81,7 +81,7 @@ interface TimelineListProps {
 
 export function TimelineList({ items }: TimelineListProps) {
   return (
-    <div className="space-y-10">
+    <div className="space-y-12">
       {items.map((item) => (
         <article
           key={item.title}
@@ -93,22 +93,45 @@ export function TimelineList({ items }: TimelineListProps) {
           <h3 className="mt-1 text-lg font-semibold text-slate-900 dark:text-slate-100">
             {item.title}
           </h3>
+          {item.location ? (
+            <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{item.location}</p>
+          ) : null}
 
-          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300/90">{item.description}</p>
+          {item.impactLine ? (
+            <p className="mt-3 text-[13px] font-semibold leading-6 text-slate-700 dark:text-slate-200">
+              {item.impactLine}
+            </p>
+          ) : null}
+
+          {item.impactLines && item.impactLines.length ? (
+            <p className="mt-3 text-[13px] font-semibold leading-6 text-slate-700 dark:text-slate-200">
+              {item.impactLines.map((line) => (
+                <span key={line} className="block">
+                  {line}
+                </span>
+              ))}
+            </p>
+          ) : null}
+
+          {item.description ? (
+            <p className="mt-3 text-[13px] leading-6 text-slate-600 dark:text-slate-300/90">
+              {item.description}
+            </p>
+          ) : null}
 
           {item.highlights && item.highlights.length > 0 ? (
-            <ul className="mt-3 space-y-2 ml-3 list-none">
+            <ul className="mt-4 space-y-2 ml-3 list-none">
               {item.highlights.map((h, i) => (
-                <li key={i} className="flex gap-3">
-                  <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/90 ring-1 ring-sky-300/30" aria-hidden />
-                  <p className="text-sm text-slate-700 dark:text-slate-200">{h}</p>
+                <li key={i} className="flex items-start gap-3">
+                  <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/90 ring-1 ring-sky-300/30" aria-hidden />
+                  <p className="text-[13px] leading-6 text-slate-700 dark:text-slate-200">{h}</p>
                 </li>
               ))}
             </ul>
           ) : null}
 
           {item.tech && item.tech.length ? (
-            <div className="mt-3 flex flex-wrap gap-2">
+            <div className="mt-4 flex flex-wrap gap-2">
               {item.tech.map((t) => (
                 <span
                   key={t}
@@ -117,22 +140,6 @@ export function TimelineList({ items }: TimelineListProps) {
                   {t}
                 </span>
               ))}
-            </div>
-          ) : null}
-
-          {item.coursework && item.coursework.length > 0 ? (
-            <div className="mt-4">
-              <p className="text-xs font-medium text-slate-500 dark:text-slate-400">Coursework</p>
-              <div className="mt-2 flex flex-wrap gap-2">
-                {item.coursework.map((c) => (
-                  <span
-                    key={c}
-                    className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-700 dark:bg-slate-800 dark:text-slate-200"
-                  >
-                    {c}
-                  </span>
-                ))}
-              </div>
             </div>
           ) : null}
         </article>
