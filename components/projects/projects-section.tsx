@@ -69,11 +69,11 @@ export function ProjectsSection() {
 			<div className="mx-auto max-w-6xl px-6">
 				<h2 id={headingId} className="text-3xl font-semibold text-slate-900 dark:text-white">Projects</h2>
 
-				<div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
+				<div className="mt-12 grid grid-cols-1 gap-10 sm:gap-8 md:grid-cols-2 xl:grid-cols-3">
 					{projects.map((project) => (
 						<article
 							key={project.title}
-							className="relative flex h-full flex-col rounded-2xl border border-slate-200 bg-white/90 p-7 shadow-xl backdrop-blur-md transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:border-sky-400/40 hover:shadow-2xl dark:border-slate-800 dark:bg-slate-900/70 md:p-8"
+							className="relative flex h-full flex-col rounded-2xl border border-slate-200 bg-white/90 p-8 shadow-xl backdrop-blur-md transition-transform transition-shadow duration-300 hover:-translate-y-2 hover:border-sky-400/40 hover:shadow-2xl dark:border-slate-800 dark:bg-slate-900/70 md:p-8"
 						>
 							<div className="space-y-4">
 								<h3 className="text-xl font-semibold text-slate-900 dark:text-white">
@@ -97,7 +97,7 @@ export function ProjectsSection() {
 							<a
 								href={project.link}
 								target="_blank"
-								className="mt-6 inline-flex w-fit items-center gap-2 rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-[0_0_20px_rgba(56,189,248,0.45)] transition hover:bg-sky-500 hover:shadow-[0_0_28px_rgba(56,189,248,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:bg-sky-500 dark:hover:bg-sky-400"
+								className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-[0_0_20px_rgba(56,189,248,0.45)] transition hover:bg-sky-500 hover:shadow-[0_0_28px_rgba(56,189,248,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:bg-sky-500 dark:hover:bg-sky-400 sm:w-fit sm:justify-start"
 								rel="noreferrer"
 							>
 								<Github size={16} />
