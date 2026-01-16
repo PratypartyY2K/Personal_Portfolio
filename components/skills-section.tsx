@@ -58,8 +58,7 @@ export function SkillsSection() {
       </h2>
 
       <p className="mt-2 text-sm text-slate-600 dark:text-slate-300/90">
-        The technologies and systems I use to build production software — from backend services to
-        full-stack platforms and modern data pipelines.
+        My production-ready stack for backend, infra, and UI.
       </p>
 
       <div className="mt-10 grid gap-12 md:grid-cols-2">

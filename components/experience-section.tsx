@@ -10,12 +10,15 @@ export function ExperienceSection() {
     <section
       id="experience"
       aria-labelledby={headingId}
-      className="relative py-28 bg-gradient-to-b from-slate-100 via-white to-slate-50 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"
+      className="relative border-t border-slate-200/70 py-28 bg-gradient-to-b from-slate-100 via-white to-slate-50 dark:border-slate-800/70 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"
     >
       <div className="mx-auto max-w-6xl px-6">
         <h2 id={headingId} className="text-3xl font-semibold text-slate-900 dark:text-white">
           Education & Experience
         </h2>
+        <p className="mt-2 text-sm text-slate-600 dark:text-slate-300/90">
+          Where I've worked, studied, and what I shipped.
+        </p>
 
         <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
           <div>

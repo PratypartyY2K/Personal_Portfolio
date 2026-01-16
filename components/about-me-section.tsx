@@ -14,6 +14,9 @@ export function AboutSection() {
         >
           About Me
         </h2>
+        <p className="text-sm text-slate-600 dark:text-slate-300/90">
+          The kind of engineer I am and how I build.
+        </p>
 
         <div className="grid gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
           <div className="space-y-7 md:space-y-6 text-sm md:text-base leading-relaxed text-slate-700 dark:text-slate-300">

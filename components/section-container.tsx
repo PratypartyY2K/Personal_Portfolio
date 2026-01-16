@@ -17,7 +17,7 @@ export function SectionContainer({
     <section
       id={id}
       aria-labelledby={ariaLabelledby}
-      className={`py-20 md:py-24 px-4 transition-colors duration-300 ${className}`}
+      className={`border-t border-slate-200/70 py-20 md:py-24 px-4 transition-colors duration-300 dark:border-slate-800/70 ${className}`}
     >
       <div className="mx-auto w-full max-w-5xl">{children}</div>
     </section>

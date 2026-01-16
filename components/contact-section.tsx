@@ -23,8 +23,7 @@ export function ContactSection() {
       </h2>
 
       <p className="mt-4 hidden md:block max-w-2xl text-sm text-slate-600 dark:text-slate-300/90 mx-auto leading-6 md:leading-5">
-        Have an interesting system to design, a product to ship, or a hard backend problem to solve?
-        I&apos;m always open to meaningful engineering conversations.
+        A direct line for systems, products, and hard backend problems.
       </p>
 
       <ul className="mt-4 md:hidden max-w-2xl space-y-2 text-sm text-slate-600 dark:text-slate-300/90 mx-auto leading-6">
@@ -34,7 +33,7 @@ export function ContactSection() {
         </li>
         <li className="flex items-start gap-3">
           <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/80 ring-1 ring-sky-300/30" aria-hidden />
-          <span>Always open to meaningful engineering conversations.</span>
+          <span>Direct line for meaningful engineering conversations.</span>
         </li>
       </ul>
 

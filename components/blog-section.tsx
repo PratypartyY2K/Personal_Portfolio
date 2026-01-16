@@ -44,7 +44,7 @@ export function BlogSection() {
       </h2>
 
       <p className="mt-2 text-sm text-slate-600 dark:text-slate-300/90">
-        Technical writeups, project notes, and engineering thoughts.
+        Technical notes, project writeups, and engineering reflections.
       </p>
 
       <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
