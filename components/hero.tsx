@@ -34,26 +34,26 @@ export function Hero() {
               I build software that holds up in the real world, from backend services to full-stack products.
             </h1>
 
-            <p className="mt-5 text-sm text-slate-600 dark:text-slate-200/90 md:text-base">
+            <p className="mt-5 text-sm text-slate-600 dark:text-slate-200/90 md:text-base leading-7 md:leading-6">
               Previously at Enphase Energy — building cloud dashboards and backend services used by thousands daily. Currently working on backend systems, distributed services, and full-stack platforms.
             </p>
 
-            <div className="mt-7 flex flex-wrap justify-center gap-3 md:justify-start">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center md:justify-start">
               <Button
                 asChild
                 size="lg"
-                className="bg-sky-500 text-slate-950 transition hover:bg-sky-400"
+                className="w-full sm:w-auto bg-sky-500 text-slate-950 transition hover:bg-sky-400"
               >
-                <a href="#projects">See My Work</a>
+                <a href="#contact">Start a Conversation</a>
               </Button>
 
               <Button
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-slate-200 bg-white/85 text-slate-900 transition hover:bg-white dark:border-slate-600/80 dark:bg-slate-900/60 dark:text-slate-100 dark:hover:bg-slate-800/60"
+                className="w-full sm:w-auto border-slate-200 bg-white/85 text-slate-900 transition hover:bg-white dark:border-slate-600/80 dark:bg-slate-900/60 dark:text-slate-100 dark:hover:bg-slate-800/60"
               >
-                <a href="#contact">Let’s Build Something</a>
+                <a href="#projects">Explore My Work</a>
               </Button>
             </div>
 

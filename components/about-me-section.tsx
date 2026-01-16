@@ -7,7 +7,7 @@ export function AboutSection() {
     <SectionContainer id="about" ariaLabelledby={headingId}>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.10),_transparent_70%)]" />
 
-      <div className="relative z-10 space-y-6">
+      <div className="relative z-10 space-y-8 md:space-y-6">
         <h2
           id={headingId}
           className="text-xl md:text-2xl font-semibold text-slate-900 dark:text-slate-50"
@@ -16,51 +16,37 @@ export function AboutSection() {
         </h2>
 
         <div className="grid gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
-          <div className="space-y-6 text-sm md:text-base leading-relaxed text-slate-700 dark:text-slate-300">
-            <ul className="space-y-3">
+          <div className="space-y-7 md:space-y-6 text-sm md:text-base leading-relaxed text-slate-700 dark:text-slate-300">
+            <p className="hidden md:block leading-6 md:leading-5">
+              I&apos;m Pratyush, a software engineer focused on resilient backend and distributed systems, with a full-stack edge for
+              turning complex infrastructure into clean, maintainable products. I build for real usage, optimizing for performance,
+              correctness, and long-term reliability while completing my MS in Computer Science at Penn State (distributed systems and
+              cloud computing).
+            </p>
+
+            <ul className="space-y-3 md:hidden text-sm leading-6 text-slate-700 dark:text-slate-300">
               <li className="flex items-start gap-3">
                 <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/80 ring-1 ring-sky-300/30" aria-hidden />
-                <span>
-                  I&apos;m Pratyush — a software engineer who builds software that&apos;s meant to{" "}
-                  <span className="font-semibold text-slate-900 dark:text-slate-50">survive real usage</span>, not just demos.
-                </span>
+                <span>Resilient backend + distributed systems, with a full-stack edge.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/80 ring-1 ring-sky-300/30" aria-hidden />
-                <span>
-                  I enjoy turning{" "}
-                  <span className="font-semibold text-slate-900 dark:text-slate-50">complex backend and distributed-systems problems</span>{" "}
-                  into clean, maintainable products — whether that means designing storage logic, tuning performance, or crafting{" "}
-                  <span className="font-semibold text-slate-900 dark:text-slate-50">intuitive full-stack experiences</span>.
-                </span>
+                <span>Build for real usage: performance, correctness, long-term reliability.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/80 ring-1 ring-sky-300/30" aria-hidden />
-                <span>
-                  My work focuses on building systems that stay{" "}
-                  <span className="font-semibold text-slate-900 dark:text-slate-50">fast, correct, and reliable</span> as they grow.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/80 ring-1 ring-sky-300/30" aria-hidden />
-                <span>
-                  Currently, I&apos;m pursuing my Master&apos;s in Computer Science at Penn State, specializing in{" "}
-                  <span className="font-semibold text-slate-900 dark:text-slate-50">distributed systems and cloud computing</span>.
-                </span>
+                <span>MS CS at Penn State (distributed systems + cloud computing).</span>
               </li>
             </ul>
 
-            <p>
-              Outside engineering you&apos;ll find me playing{" "}
-              <span className="text-sky-600 font-medium dark:text-sky-200">competitive badminton</span>,
-              nerding out over coffee gear, or unwinding with anime — the hobbies that keep me
-              curious and disciplined.
+            <p className="text-slate-600 dark:text-slate-300/90 leading-6 md:leading-5">
+              Off-hours: competitive badminton, coffee gear tinkering, and anime marathons.
             </p>
 
             <Button
               asChild
               size="lg"
-              className="mt-4 bg-slate-900 text-slate-50 hover:bg-slate-800 dark:bg-slate-50 dark:text-slate-900"
+              className="mt-4 w-full sm:w-auto bg-slate-900 text-slate-50 hover:bg-slate-800 dark:bg-slate-50 dark:text-slate-900"
             >
               <a href="#contact">Start a Conversation</a>
             </Button>

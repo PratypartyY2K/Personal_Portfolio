@@ -3,51 +3,51 @@ import { Github } from "lucide-react";
 const projects = [
 	{
 		title: "Custom MapReduce Framework",
-		punchline: "High-performance data processing engine for parallel workloads.",
+		punchline: "High-throughput MapReduce engine for large, parallel workloads.",
 		bullets: [
-			"Multi-threaded execution with dynamic task scheduling",
-			"Worker pools, synchronization barriers, and throughput benchmarking",
-			"Built to handle large datasets efficiently on EC2 clusters",
+			"Dynamic scheduling with multi-threaded execution",
+			"Worker pools, barriers, and throughput benchmarks",
+			"Scaled across large datasets on EC2 clusters",
 		],
 		tech: ["C++", "Concurrency", "MultiThreading", "Protobuf", "AWS EC2", "gRPC"],
 		link: "https://github.com/PratypartyY2K/cpp-mapreduce-framework",
 	},
 	{
 		title: "Distributed Key-Value Store (ABD)",
-		punchline: "Linearizable, fault-tolerant storage system built to survive node failures.",
+		punchline: "Linearizable KV store engineered for node failures.",
 		bullets: [
-			"Quorum-based replicated KV store with strong consistency",
-			"gRPC microservices, Protobuf APIs, C++ core engine",
-			"Designed for correctness under failures and concurrent workloads",
+			"Quorum replication with strong consistency",
+			"gRPC services, Protobuf APIs, C++ core",
+			"Correctness under failures and concurrent workloads",
 		],
 		tech: ["C++", "gRPC", "Protobuf", "ABD Algorithm", "Distributed Systems"],
 		link: "https://github.com/PratypartyY2K/distributed-key-value-store",
 	},
 	{
 		title: "InstructBLIP / Vicuna System Pipeline",
-		punchline: "Large-model fine-tuning and evaluation pipeline for multimodal LLM workloads.",
+		punchline: "Multimodal LLM training and evaluation pipeline.",
 		bullets: [
-			"Built and evaluated InstructBLIP/Vicuna pipelines for vision-language reasoning",
-			"Implemented dataset preprocessing, training orchestration, and metric evaluation",
-			"Explored performance, memory behavior, and model response quality",
+			"InstructBLIP/Vicuna workflows for vision-language reasoning",
+			"Data prep, training orchestration, and metrics",
+			"Benchmarked performance, memory, and response quality",
 		],
 		tech: ["PyTorch", "Transformers", "Vicuna", "InstructBLIP"],
 		link: "https://github.com/PratypartyY2K",
 	},
 	{
 		title: "Clipboard Manager · Productivity Tool",
-		punchline: "Desktop productivity tool to speed up real workflows.",
+		punchline: "Desktop clipboard manager built for speed.",
 		bullets: [
-			"Multi-app clipboard tracking with fast search",
+			"Multi-app tracking with fast search",
 			"Clean, responsive UI for power users",
-			"Designed for daily personal productivity",
+			"Tuned for daily productivity",
 		],
 		tech: ["Python", "PyQt6"],
 		link: "https://github.com/PratypartyY2K/copy-paste-tool",
 	},
 	{
 		title: "Vaccine Slot Monitoring App",
-		punchline: "Real-time slot tracking system used during live public demand.",
+		punchline: "Real-time vaccine slot tracking during peak demand.",
 		bullets: [
 			"Periodic API polling with instant alerts",
 			"ML-driven availability prediction",
@@ -64,7 +64,7 @@ export function ProjectsSection() {
 		<section
 			id="projects"
 			aria-labelledby={headingId}
-			className="relative py-28 bg-gradient-to-b from-slate-100 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"
+			className="relative py-32 sm:py-28 bg-gradient-to-b from-slate-100 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"
 		>
 			<div className="mx-auto max-w-6xl px-6">
 				<h2 id={headingId} className="text-3xl font-semibold text-slate-900 dark:text-white">Projects</h2>
@@ -80,11 +80,11 @@ export function ProjectsSection() {
 									{project.title}
 								</h3>
 
-								<p className="text-[13px] leading-6 text-slate-600 dark:text-slate-300">
+								<p className="text-[13px] leading-6 md:leading-5 text-slate-600 dark:text-slate-300">
 									{project.punchline}
 								</p>
 
-								<ul className="space-y-2 text-[13px] leading-6 text-slate-600 dark:text-slate-300">
+								<ul className="space-y-2 text-[13px] leading-6 md:leading-5 text-slate-600 dark:text-slate-300">
 									{project.bullets.map((bullet) => (
 										<li key={bullet} className="flex gap-2">
 											<span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-sky-500/80" aria-hidden />
@@ -101,14 +101,14 @@ export function ProjectsSection() {
 								rel="noreferrer"
 							>
 								<Github size={16} />
-								View Project
+								See How It Works
 							</a>
 
-							<div className="mt-5 flex flex-wrap gap-2">
+							<div className="mt-4 flex flex-wrap gap-1.5 sm:gap-2">
 								{project.tech.map((t) => (
 									<span
 										key={t}
-										className="rounded-md bg-slate-100 px-2 py-1 text-xs text-sky-700 dark:bg-slate-800 dark:text-sky-200"
+										className="rounded-md bg-slate-100 px-2 py-0.5 text-[11px] text-sky-700 dark:bg-slate-800 dark:text-sky-200 sm:py-1 sm:text-xs"
 									>
 										{t}
 									</span>
