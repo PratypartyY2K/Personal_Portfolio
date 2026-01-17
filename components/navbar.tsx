@@ -20,16 +20,16 @@ export function Navbar() {
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-50 border-b border-slate-200 bg-white/95 dark:border-slate-800/70 dark:bg-slate-950/90">
-        <nav className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 text-sm">
+        <nav className="mx-auto grid h-14 max-w-6xl grid-cols-[auto,1fr,auto] items-center px-4 text-sm">
           <Link
-            href="/"
+            href="#top"
             className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-sm font-semibold text-white shadow-md transition hover:shadow-lg dark:bg-slate-100 dark:text-slate-900"
             aria-label="Pratyush Kumar home"
           >
             PK
           </Link>
 
-          <div className="hidden md:flex items-center gap-2">
+          <div className="hidden md:flex items-center justify-center gap-2">
             {links.map((l) => (
               <a
                 key={l.href}
@@ -39,13 +39,16 @@ export function Navbar() {
                 {l.label}
               </a>
             ))}
+          </div>
+
+          <div className="hidden md:flex items-center justify-end gap-2">
             <ResumeDownloadLink className="rounded-full border border-sky-200/70 px-3 py-1 text-sky-700 transition hover:border-sky-400 hover:bg-sky-50 hover:text-slate-900 dark:border-sky-500/40 dark:text-sky-300 dark:hover:border-sky-400 dark:hover:bg-sky-500/10">
               Resume
             </ResumeDownloadLink>
             <ThemeToggle />
           </div>
 
-          <div className="md:hidden flex items-center gap-3">
+          <div className="md:hidden flex items-center justify-end gap-3">
             <ThemeToggle />
             <button
               className="text-slate-700 dark:text-slate-200 focus:outline-none"
