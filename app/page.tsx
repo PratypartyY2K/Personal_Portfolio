@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main id="top">
         <VisuallyHidden as="h1">
           Pratyush Kumar – Distributed systems engineer portfolio
         </VisuallyHidden>
