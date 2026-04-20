@@ -2,58 +2,58 @@ import { Github } from "lucide-react";
 
 const projects = [
 	{
-		title: "Custom MapReduce Framework",
-		punchline: "High-throughput MapReduce engine for large, parallel workloads.",
+		title: "Distributed MapReduce Framework",
+		punchline: "C++ MapReduce engine deployed on EC2 with custom shuffle and performance tuning.",
 		bullets: [
-			"Built dynamic scheduling with multi-threaded execution",
-			"Designed worker pools, barriers, and throughput benchmarks",
-			"Scaled across large datasets on EC2 clusters",
+			"Built a distributed execution pipeline with mapper coordination, reducer services, and HDFS-backed output handling",
+			"Implemented custom TCP shuffle with Protobuf serialization, bounded buffers, and optional barrier-based backpressure",
+			"Ran AWS experiments across mapper counts, thread counts, and buffer sizes to isolate a reducer lock bottleneck",
 		],
-		tech: ["C++", "Concurrency", "MultiThreading", "Protobuf", "AWS EC2", "gRPC"],
+		tech: ["C++", "gRPC", "Protobuf", "Concurrency", "AWS EC2", "HDFS"],
 		link: "https://github.com/PratypartyY2K/cpp-mapreduce-framework",
 	},
 	{
 		title: "Distributed Key-Value Store (ABD)",
-		punchline: "Linearizable KV store engineered for node failures.",
+		punchline: "Quorum-based key-value store comparing linearizable ABD against a blocking baseline.",
 		bullets: [
-			"Designed quorum replication with strong consistency",
-			"Built gRPC services, Protobuf APIs, and a C++ core",
-			"Shipped correctness under failures and concurrent workloads",
+			"Implemented ABD read and write flows with timestamped values, majority quorums, and write-back for linearizable reads",
+			"Built replica and client services in C++ with gRPC and Protobuf plus a threaded load generator for mixed workloads",
+			"Automated crash experiments across 1, 3, and 5 replicas on EC2 and recorded p50, p95, and p99 latency under failure",
 		],
 		tech: ["C++", "gRPC", "Protobuf", "ABD Algorithm", "Distributed Systems"],
 		link: "https://github.com/PratypartyY2K/distributed-key-value-store",
 	},
 	{
-		title: "InstructBLIP / Vicuna System Pipeline",
-		punchline: "Multimodal LLM training and evaluation pipeline.",
+		title: "App-Aware Clipboard Manager",
+		punchline: "Privacy-first macOS clipboard manager designed around correctness instead of feature bloat.",
 		bullets: [
-			"Built InstructBLIP/Vicuna workflows for vision-language reasoning",
-			"Designed data prep, training orchestration, and metrics",
-			"Improved performance, memory use, and response quality",
+			"Built event-driven clipboard capture in PyQt6 with source-app attribution, dedupe logic, and protections against feedback loops",
+			"Added secret-safe defaults, token heuristics, per-app history, and optional SQLite persistence with WAL mode",
+			"Structured the app for testing with CI, coverage reporting, and deterministic UI actions while history updates in real time",
 		],
-		tech: ["PyTorch", "Transformers", "Vicuna", "InstructBLIP"],
-		link: "https://github.com/PratypartyY2K",
+		tech: ["Python", "PyQt6", "SQLite", "pytest", "GitHub Actions"],
+		link: "https://github.com/PratypartyY2K/app-aware-clipboard",
 	},
 	{
-		title: "Clipboard Manager · Productivity Tool",
-		punchline: "Desktop clipboard manager built for speed.",
+		title: "Waste Management Route Optimizer",
+		punchline: "Team-built waste operations platform with a FastAPI backend and a React + Vite frontend.",
 		bullets: [
-			"Built multi-app tracking with fast search",
-			"Designed a clean, responsive UI for power users",
-			"Improved daily productivity workflows",
+			"Contributed to a shared full-stack codebase that separates operational APIs in FastAPI from the TypeScript UI built with React and Vite",
+			"Implemented Supabase authentication and authorization integration with FastAPI, including bearer-token verification, user role upserts, and protected backend routes",
+			"Built frontend auth flow pieces for login, signup, session hydration, and role-aware routing so Supabase sessions worked cleanly across the app",
 		],
-		tech: ["Python", "PyQt6"],
-		link: "https://github.com/PratypartyY2K/copy-paste-tool",
+		tech: ["FastAPI", "React", "Vite", "Supabase", "TypeScript", "Python"],
+		link: "https://github.com/Demonico/dsd-feb-26-cohort",
 	},
 	{
-		title: "Vaccine Slot Monitoring App",
-		punchline: "Real-time vaccine slot tracking during peak demand.",
+		title: "Risk-Based Vaccination Prioritization",
+		punchline: "ML-assisted triage system aimed at improving fairness and consistency in vaccine allocation.",
 		bullets: [
-			"Built periodic API polling with instant alerts",
-			"Designed ML-driven availability prediction",
-			"Shipped a Django backend with a clean UI",
+			"Built a prioritization workflow around a Random Forest model to rank vaccine eligibility with more consistency than manual review",
+			"Focused on transparent decision support and reduced subjective bias in high-demand allocation scenarios",
+			"Shipped the project as a working web application backed by Python-based data and application logic",
 		],
-		tech: ["Django", "Scikit-Learn", "Random Forest", "APIs"],
+		tech: ["Python", "Machine Learning", "Random Forest", "Web App"],
 		link: "https://github.com/PratypartyY2K/Vaccine",
 	},
 ];
@@ -69,7 +69,7 @@ export function ProjectsSection() {
 			<div className="mx-auto max-w-6xl px-6">
 				<h2 id={headingId} className="text-3xl font-semibold text-slate-900 dark:text-white">Projects</h2>
 				<p className="mt-2 text-sm text-slate-600 dark:text-slate-300/90">
-					Systems and products I’ve built end-to-end.
+					Selected systems, products, and team collaborations I’ve built or contributed to.
 				</p>
 
 				<div className="mt-12 grid grid-cols-1 gap-10 sm:gap-8 md:grid-cols-2 xl:grid-cols-3">
