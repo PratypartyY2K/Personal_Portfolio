@@ -1,39 +1,54 @@
 import { SectionContainer } from "./section-container";
 
 const skills = {
-  "Languages": ["C++", "Python", "Java", "TypeScript", "JavaScript", "Ruby"],
-  "Backend & Systems": [
+  "Systems & Core Languages": ["C++", "Python", "Java", "TypeScript", "JavaScript", "SQL"],
+  "Backend & Distributed Systems": [
     "gRPC",
     "Protobuf",
     "REST APIs",
     "AWS (EC2)",
+    "Concurrency",
+    "Distributed Systems",
     "Redis",
     "PostgreSQL",
-    "MongoDB",
     "MySQL",
   ],
-  "Frameworks & Platforms": [
+  "Frameworks & Product Engineering": [
     "Ruby on Rails",
-    "Node.js",
-    "Express",
+    "FastAPI",
     "Django",
+    "React",
     "Next.js",
+    "Vite",
     "PyQt6",
+    "Supabase",
   ],
-  "DevOps, Testing & Reliability": [
+  "Frontend & UI": [
+    "React",
+    "Next.js",
+    "Vite",
+    "Tailwind CSS",
+    "HTML",
+    "CSS",
+    "JavaScript",
+  ],
+  "Delivery, Testing & Observability": [
     "Git",
     "Linux",
     "Jenkins",
+    "RSpec",
     "Selenium",
+    "DataDog",
+    "SonarQube",
     "Unit & Integration Testing",
     "Performance Optimization",
   ],
-  "UI & Frontend": [
-    "Tailwind",
-    "HTML",
-    "CSS",
-    "Bootstrap",
-    "jQuery",
+  "Data & Persistence": [
+    "PostgreSQL",
+    "MySQL",
+    "Redis",
+    "MongoDB",
+    "BeautifulSoup",
   ],
 };
 
@@ -58,7 +73,7 @@ export function SkillsSection() {
       </h2>
 
       <p className="mt-2 text-sm text-slate-600 dark:text-slate-300/90">
-        My production-ready stack for backend, infra, and UI.
+        The languages, frameworks, and delivery tools I use to build backend-heavy systems and full-stack products.
       </p>
 
       <div className="mt-10 grid gap-12 md:grid-cols-2">
@@ -84,7 +99,7 @@ export function SkillsSection() {
       </div>
 
       <p className="mt-10 text-sm text-slate-600 dark:text-slate-300/90 italic">
-        Focused on building reliable, scalable systems that hold up in real production environments.
+        Strongest in backend engineering, distributed systems, and production-focused full-stack development.
       </p>
     </SectionContainer>
   );
