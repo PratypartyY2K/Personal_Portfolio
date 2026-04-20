@@ -21,7 +21,7 @@ export function Hero() {
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:gap-16">
           <div className="text-center md:text-left">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-600 dark:text-sky-300/80">
-              MSCS @ Penn State · Software Engineer · Full Stack & Backend
+              Backend Engineer · Distributed Systems · MSCS @ Penn State
             </p>
 
             <h1
@@ -31,11 +31,11 @@ export function Hero() {
               Hi, I&apos;m{" "}
               <span className="text-sky-300">Pratyush Kumar</span>.
               <br />
-              I build software that holds up in the real world, from backend services to full-stack products.
+              I build reliable backend systems and full-stack products that hold up under real-world use.
             </h1>
 
             <p className="mt-5 text-sm text-slate-600 dark:text-slate-200/90 md:text-base leading-7 md:leading-6">
-              Previously at Enphase Energy — building cloud dashboards and backend services used by thousands daily. Currently working on backend systems, distributed services, and full-stack platforms.
+              Formerly at Enphase Energy, where I worked on production cloud systems used by 5,500+ daily users. My recent work spans distributed systems, FastAPI services, role-based auth flows, and systems projects built for performance and correctness.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center md:justify-start">
