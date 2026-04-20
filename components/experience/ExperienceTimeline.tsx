@@ -11,40 +11,43 @@ export interface TimelineItem {
 
 export const educationTimelineItems: TimelineItem[] = [
   {
-    date: "2025 — 2027",
-    title: "Penn State University — MS in Computer Science",
-    location: "University Park",
+    date: "Aug 2025 — May 2027",
+    title: "The Pennsylvania State University — MS in Computer Science",
+    location: "State College, PA",
     impactLines: [
-      "Focus: Distributed Systems, Backend Engineering & Systems Architecture",
       "GPA: 3.6 / 4.0",
+      "Focus: Distributed systems, backend engineering, and systems architecture",
     ],
     highlights: [
-      "MapReduce engines",
-      "KV-store & inference server research",
-      "Systems & architecture coursework",
+      "Graduate coursework and project work centered on distributed systems, cloud computing, and scalable backend design.",
+      "Built systems-heavy projects including a distributed MapReduce framework and a quorum-based key-value store.",
     ],
   },
   {
-    date: "2019 — 2023",
-    title: "Vellore Institute of Technology — B.Tech CSE",
-    location: "India",
-    impactLines: ["Focus: Systems, Networks, Cryptography & Data Structures"],
+    date: "Jul 2019 — May 2023",
+    title: "Vellore Institute of Technology — BTech in Computer Science and Engineering",
+    location: "Vellore, India",
+    impactLines: [
+      "GPA: 3.5 / 4.0",
+      "Focus: systems, networks, cryptography, and core computer science fundamentals",
+    ],
     highlights: [
-      "Partial face-image encryption capstone",
-      "Algorithms, OS, DBMS, Networks",
+      "Built a capstone around selective region and partial face-image encryption.",
+      "Coursework included algorithms, operating systems, database systems, computer networks, and data structures.",
     ],
   },
 ];
 
 export const experienceTimelineItems: TimelineItem[] = [
   {
-    date: "Aug 2025 — Dec 2025",
+    date: "Aug 2025 — Present",
     title: "Penn State — Graduate Learning Assistant",
+    location: "State College, PA",
     impactLine:
-      "Mentored 38 students in C++ and systems coursework, raising class averages by 25%.",
+      "Improved algorithmic proficiency for 60+ students by facilitating weekly lab sessions and real-time debugging support in C++ and MATLAB.",
     highlights: [
-      "Improved debugging outcomes by leading lab sessions and guided problem solving.",
-      "Clarified grading expectations with structured, actionable feedback.",
+      "Led guided problem-solving sessions that helped students debug faster and build stronger systems-programming intuition.",
+      "Provided structured feedback during labs and office hours to improve student confidence and assignment quality.",
     ],
   },
   {
@@ -52,13 +55,13 @@ export const experienceTimelineItems: TimelineItem[] = [
     title: "Enphase Energy — Software Engineer",
     location: "Bangalore, India",
     impactLine:
-      "Built backend services serving 5,000+ daily users and improved data consistency by 25%.",
-    tech: ["Rails", "PostgreSQL", "Jenkins", "Selenium", "Python", "REST APIs"],
+      "Reduced production integration failures by 25% by improving microservice reliability and applying TDD for systems serving 5,500+ daily users.",
+    tech: ["Java", "Ruby on Rails", "PostgreSQL", "Jenkins", "SonarQube", "DataDog", "RSpec"],
     highlights: [
-      "Increased release velocity by cutting manual QA 50% with Selenium regression pipelines.",
-      "Shrank TestRail reporting from 1 hr → <5 mins via Python + API automation.",
-      "Cut onboarding ramp-up from 4 weeks → 10 days by mentoring 4 engineers.",
-      "Improved service reliability by designing RESTful Rails microservices for cloud systems.",
+      "Optimized API performance and SQL query efficiency by fixing bottlenecks surfaced through DataDog monitoring, reducing database load.",
+      "Decreased manual regression testing by 50% by integrating quality gates into Jenkins CI/CD and tightening engineering standards.",
+      "Reduced onboarding ramp-up time by 65% by automating legacy workflows and mentoring new engineers on production systems.",
+      "Contributed to global compliance features that helped support product expansion into European markets.",
     ],
   },
   {
@@ -66,11 +69,12 @@ export const experienceTimelineItems: TimelineItem[] = [
     title: "Acies Consulting — Full-Stack Developer Intern",
     location: "Mumbai, India",
     impactLine:
-      "Built production data ingestion pipelines and performance-critical web apps.",
-    tech: ["Django", "MySQL", "PostgreSQL", "Redis", "Parquet"],
+      "Built workflow automation and data tooling that accelerated financial operations and improved backend interoperability.",
+    tech: ["Django", "JavaScript", "AJAX", "Python", "MySQL", "PostgreSQL", "Redis", "BeautifulSoup"],
     highlights: [
-      "Reduced manual data prep 20%+ with automated financial ingestion pipelines.",
-      "Enabled flexible storage routing by designing stateless Django backends across MySQL/Postgres/Redis/Parquet.",
+      "Accelerated financial workflow setup from 3 days to 30 minutes by building interactive JavaScript and AJAX components for data operations.",
+      "Architected pluggable backend connectors so users could route workloads across MySQL, PostgreSQL, and Redis targets.",
+      "Automated stock-metric documentation with a Python and BeautifulSoup scraping pipeline for Yahoo Finance data.",
     ],
   },
 ];
