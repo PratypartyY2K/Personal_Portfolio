@@ -17,7 +17,7 @@ export function ExperienceSection() {
           Education & Experience
         </h2>
         <p className="mt-2 text-sm text-slate-600 dark:text-slate-300/90">
-          Where I've worked, studied, and what I shipped.
+          Where I&apos;ve worked, studied, and what I shipped.
         </p>
 
         <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
