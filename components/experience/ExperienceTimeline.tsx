@@ -15,17 +15,19 @@ export const educationTimelineItems: TimelineItem[] = [
     title: "The Pennsylvania State University — MS in Computer Science",
     location: "State College, PA",
     impactLines: [
-      "GPA: 3.6 / 4.0",
-      "Focus: Distributed systems, backend engineering, and systems architecture",
+      "GPA: 3.7 / 4.0",
+      "Focus: Distributed systems, Computer Vision, Deep Learning, and High-Performance Computing",
     ],
     highlights: [
-      "Graduate coursework and project work centered on distributed systems, cloud computing, and scalable backend design.",
-      "Built systems-heavy projects including a distributed MapReduce framework and a quorum-based key-value store.",
+      "Built depth across operating systems, computer architecture, and concurrent matrix computation with an emphasis on performance and hardware-aware systems design.",
+      "Expanded into computer vision and NLP through graduate coursework spanning vision-language models, deep learning for language, and advanced computer vision.",
+      "Applied that coursework in systems-heavy projects including a distributed MapReduce framework and a quorum-based key-value store.",
     ],
   },
   {
     date: "Jul 2019 — May 2023",
-    title: "Vellore Institute of Technology — BTech in Computer Science and Engineering",
+    title:
+      "Vellore Institute of Technology — BTech in Computer Science and Engineering",
     location: "Vellore, India",
     impactLines: [
       "GPA: 3.5 / 4.0",
@@ -56,7 +58,15 @@ export const experienceTimelineItems: TimelineItem[] = [
     location: "Bangalore, India",
     impactLine:
       "Reduced production integration failures by 25% by improving microservice reliability and applying TDD for systems serving 5,500+ daily users.",
-    tech: ["Java", "Ruby on Rails", "PostgreSQL", "Jenkins", "SonarQube", "DataDog", "RSpec"],
+    tech: [
+      "Java",
+      "Ruby on Rails",
+      "PostgreSQL",
+      "Jenkins",
+      "SonarQube",
+      "DataDog",
+      "RSpec",
+    ],
     highlights: [
       "Optimized API performance and SQL query efficiency by fixing bottlenecks surfaced through DataDog monitoring, reducing database load.",
       "Decreased manual regression testing by 50% by integrating quality gates into Jenkins CI/CD and tightening engineering standards.",
@@ -70,7 +80,16 @@ export const experienceTimelineItems: TimelineItem[] = [
     location: "Mumbai, India",
     impactLine:
       "Built workflow automation and data tooling that accelerated financial operations and improved backend interoperability.",
-    tech: ["Django", "JavaScript", "AJAX", "Python", "MySQL", "PostgreSQL", "Redis", "BeautifulSoup"],
+    tech: [
+      "Django",
+      "JavaScript",
+      "AJAX",
+      "Python",
+      "MySQL",
+      "PostgreSQL",
+      "Redis",
+      "BeautifulSoup",
+    ],
     highlights: [
       "Accelerated financial workflow setup from 3 days to 30 minutes by building interactive JavaScript and AJAX components for data operations.",
       "Architected pluggable backend connectors so users could route workloads across MySQL, PostgreSQL, and Redis targets.",
@@ -93,12 +112,16 @@ export function TimelineList({ items }: TimelineListProps) {
         >
           <div className="absolute -left-[7px] top-2 h-3 w-3 rounded-full bg-sky-400 shadow-[0_0_12px_3px_rgba(56,189,248,0.5)]" />
 
-          <p className="text-xs font-medium text-slate-500 dark:text-slate-400">{item.date}</p>
+          <p className="text-xs font-medium text-slate-500 dark:text-slate-400">
+            {item.date}
+          </p>
           <h3 className="mt-1 text-lg font-semibold text-slate-900 dark:text-slate-100">
             {item.title}
           </h3>
           {item.location ? (
-            <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{item.location}</p>
+            <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+              {item.location}
+            </p>
           ) : null}
 
           {item.impactLine ? (
@@ -127,8 +150,13 @@ export function TimelineList({ items }: TimelineListProps) {
             <ul className="mt-4 space-y-2 ml-3 list-none">
               {item.highlights.map((h, i) => (
                 <li key={i} className="flex items-start gap-3">
-                  <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/90 ring-1 ring-sky-300/30" aria-hidden />
-                  <p className="text-[13px] leading-6 text-slate-700 dark:text-slate-200">{h}</p>
+                  <span
+                    className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/90 ring-1 ring-sky-300/30"
+                    aria-hidden
+                  />
+                  <p className="text-[13px] leading-6 text-slate-700 dark:text-slate-200">
+                    {h}
+                  </p>
                 </li>
               ))}
             </ul>
