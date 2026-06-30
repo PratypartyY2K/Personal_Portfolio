@@ -78,7 +78,7 @@ export function ProjectsSection() {
 			aria-labelledby={headingId}
 			className="relative border-t border-slate-200/70 py-20 sm:py-24 md:py-28 bg-gradient-to-b from-slate-100 via-white to-slate-100 dark:border-slate-800/70 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"
 		>
-			<div className="mx-auto max-w-6xl px-4 sm:px-6">
+			<div className="mx-auto max-w-[90rem] px-4 sm:px-6 xl:px-8 2xl:px-10">
 				<h2 id={headingId} className="text-3xl font-semibold text-slate-900 dark:text-white">Projects</h2>
 				<p className="mt-2 text-sm text-slate-600 dark:text-slate-300/90">
 					Selected systems, products, and team collaborations I’ve built or contributed to.

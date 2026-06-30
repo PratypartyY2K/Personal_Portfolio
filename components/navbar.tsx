@@ -18,7 +18,7 @@ export function Navbar() {
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 md:px-6">
-        <nav className="mx-auto grid h-16 max-w-6xl grid-cols-[auto,1fr,auto] items-center rounded-2xl border border-slate-200/80 bg-white/82 px-4 text-sm shadow-[0_16px_50px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-950/72">
+        <nav className="mx-auto grid h-16 max-w-[90rem] grid-cols-[auto,1fr,auto] items-center rounded-2xl border border-slate-200/80 bg-white/82 px-4 text-sm shadow-[0_16px_50px_rgba(15,23,42,0.08)] backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-950/72 xl:px-6">
           <Link
             href="#top"
             className="inline-flex items-center gap-3 rounded-full pr-3 transition hover:bg-slate-100/80 dark:hover:bg-slate-900/70"
