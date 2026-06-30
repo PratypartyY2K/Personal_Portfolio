@@ -34,7 +34,7 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Pratyush Kumar | Portfolio",
-  description: "MSCS @ Penn State · Distributed Systems · Backend Engineering",
+  description: "MSCS @ Penn State · Backend Systems · Performance Engineering · Distributed Systems",
 };
 
 export default function RootLayout({

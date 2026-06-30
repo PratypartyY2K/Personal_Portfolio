@@ -17,30 +17,30 @@ export function AboutSection() {
             id={headingId}
             className="mt-3 text-[1.95rem] font-semibold tracking-tight text-slate-900 dark:text-slate-50 sm:mt-4 sm:text-3xl md:text-4xl"
           >
-            I build backend-heavy software that stays reliable when complexity increases.
+            I build backend systems that stay fast, reliable, and correct under load.
           </h2>
 
           <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 dark:text-slate-300/90 sm:mt-5 md:text-[15px] md:leading-7">
-            I&apos;m Pratyush, a software engineer focused on resilient backend systems, distributed services, and production-minded full-stack products. I like turning complex infrastructure into software that is easier to operate, easier to trust, and easier to extend.
+            I&apos;m Pratyush, a software engineer focused on backend systems, distributed services, and performance engineering. I care about building software that is not just functional, but efficient, robust, and correct.
           </p>
 
           <p className="mt-3 hidden max-w-3xl text-sm leading-6 text-slate-600 dark:text-slate-300/90 sm:block md:text-[15px] md:leading-7">
-            My work spans cloud systems at Enphase, systems projects in C++, and full-stack product development with FastAPI, React, and modern tooling. I&apos;m currently completing my MS in Computer Science at Penn State, where my work is centered around distributed systems and scalable backend design.
+            At Enphase Energy, I built and scaled backend services for IoT dashboards used by 5,500+ users, improving reliability and reducing integration failures. My recent work includes optimizing a C++ MapReduce framework for 7x higher throughput, building ledger-backed product systems, and benchmarking GEMM workloads across CPU and GPU architectures.
           </p>
 
           <div className="mt-5 grid gap-3 sm:mt-8 sm:gap-4 sm:grid-cols-3">
             {[
               {
-                label: "Build for reliability",
-                text: "I optimize for correctness, operability, and clean system boundaries.",
+                label: "Backend systems",
+                text: "I design services and infrastructure that hold up under scale, failure, and operational complexity.",
               },
               {
-                label: "Work across the stack",
-                text: "Strongest in backend systems, with enough frontend depth to ship complete products.",
+                label: "Performance engineering",
+                text: "I like profiling, benchmarking, and pushing systems closer to their hardware and concurrency limits.",
               },
               {
-                label: "Like hard problems",
-                text: "Most energized by distributed systems, auth flows, performance, and real production constraints.",
+                label: "Product systems",
+                text: "I like products with non-trivial backend logic, state management, and correctness constraints.",
               },
             ].map((item) => (
               <div
@@ -54,7 +54,7 @@ export function AboutSection() {
           </div>
 
           <p className="mt-5 text-sm leading-6 text-slate-500 dark:text-slate-400">
-            Off-hours: competitive badminton, coffee gear tinkering, and anime marathons.
+            I&apos;m currently pursuing an MS in Computer Science at Penn State, with a focus on backend systems and distributed systems.
           </p>
 
           <Button
@@ -74,10 +74,10 @@ export function AboutSection() {
 
             <div className="mt-4 grid grid-cols-2 gap-3 sm:mt-5 sm:gap-4">
               {[
-                { value: "5,500+", label: "daily users supported in production systems" },
+                { value: "5,500+", label: "users supported through production IoT systems" },
                 { value: "25%", label: "fewer integration failures at Enphase" },
-                { value: "7x", label: "throughput improvement in systems work" },
-                { value: "MSCS", label: "current focus on distributed systems at Penn State" },
+                { value: "7x", label: "throughput improvement in C++ systems work" },
+                { value: "MSCS", label: "focus on backend systems and distributed systems" },
               ].map((item) => (
                 <div
                   key={item.label}
@@ -102,35 +102,36 @@ export function AboutSection() {
               <li className="flex items-start gap-3">
                 <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/90 ring-1 ring-sky-300/30" aria-hidden />
                 <span className="text-sm text-slate-700 dark:text-slate-200">
-                  Built a{" "}
-                  <span className="font-semibold text-slate-900 dark:text-slate-50">high-performance multi-threaded MapReduce framework</span>{" "}
-                  in C++.
+                  Built{" "}
+                  <span className="font-semibold text-slate-900 dark:text-slate-50">Holocron Timeline Engine</span>{" "}
+                  with FastAPI, Next.js, and Neo4j for causal traversal and world-state reconstruction.
                 </span>
               </li>
 
               <li className="flex items-start gap-3">
                 <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/90 ring-1 ring-sky-300/30" aria-hidden />
                 <span className="text-sm text-slate-700 dark:text-slate-200">
-                  Integrated{" "}
-                  <span className="font-semibold text-slate-900 dark:text-slate-50">Supabase auth with FastAPI and React</span>{" "}
-                  in a collaborative waste operations product.
+                  Built{" "}
+                  <span className="font-semibold text-slate-900 dark:text-slate-50">FairShare</span>{" "}
+                  as a ledger-first expense tracker with deterministic money handling and explainable balances.
                 </span>
               </li>
 
               <li className="flex items-start gap-3">
                 <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/90 ring-1 ring-sky-300/30" aria-hidden />
                 <span className="text-sm text-slate-700 dark:text-slate-200">
-                  Started MS in Computer Science at{" "}
-                  <span className="font-semibold text-slate-900 dark:text-slate-50">Penn State (University Park)</span>{" "}
-                  — Fall 2025, GPA: 3.6/4.0
+                  Benchmarking and optimizing{" "}
+                  <span className="font-semibold text-slate-900 dark:text-slate-50">GEMM workloads across CPU and GPU architectures</span>{" "}
+                  for systems performance analysis.
                 </span>
               </li>
 
               <li className="flex items-start gap-3">
                 <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/90 ring-1 ring-sky-300/30" aria-hidden />
                 <span className="text-sm text-slate-700 dark:text-slate-200">
-                  Completed 2.5+ years as a Software Engineer at{" "}
-                  <span className="font-semibold text-slate-900 dark:text-slate-50">Enphase Energy</span>, working on production cloud systems.
+                  Pursuing an MS in Computer Science at{" "}
+                  <span className="font-semibold text-slate-900 dark:text-slate-50">Penn State University</span>{" "}
+                  with a focus on backend systems and distributed systems.
                 </span>
               </li>
             </ul>

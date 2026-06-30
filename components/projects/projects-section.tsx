@@ -16,6 +16,32 @@ const projects = [
 		link: "https://github.com/PratypartyY2K/cpp-mapreduce-framework",
 	},
 	{
+		featured: true,
+		label: "Featured Product",
+		title: "FairShare",
+		punchline: "Ledger-first expense tracker built for explainable balances, deterministic money handling, and safe retries.",
+		proof: "Designed the system around persisted ledger effects, event history, and idempotent settlement confirmation instead of opaque balance calculators.",
+		bullets: [
+			"Built a Spring Boot backend and Next.js frontend for groups, expenses, ledgers, settlements, and history views",
+			"Implemented equal, exact, percentage, and share-based splits with stable leftover-cent assignment and scale-2 money rules",
+			"Added idempotent expense creation and settlement confirmation so retries cannot double-apply financially sensitive writes",
+		],
+		tech: ["Java", "Spring Boot", "PostgreSQL", "Next.js", "TypeScript", "Ledger Design"],
+		link: "https://github.com/PratypartyY2K/faireshare-mono-repo",
+	},
+	{
+		title: "Holocron Timeline Engine",
+		punchline: "Graph-backed timeline system for causal traversal, break simulation, and world-state reconstruction.",
+		proof: "Structured the backend around Neo4j traversals, chronology normalization, and request-scoped simulation logic instead of a shared in-memory graph.",
+		bullets: [
+			"Built a FastAPI backend, Next.js frontend, and Neo4j graph store to model events, entities, and causal dependencies",
+			"Implemented what-if break simulation that propagates invalidation through downstream dependencies in topological order",
+			"Reconstructed pre-event world state by replaying curated mutation history with checkpoints to reduce repeated replay cost",
+		],
+		tech: ["FastAPI", "Next.js", "Neo4j", "Python", "TypeScript", "Graph Traversal"],
+		link: "https://github.com/PratypartyY2K/Holocron-Timeline-Engine",
+	},
+	{
 		title: "Distributed Key-Value Store (ABD)",
 		punchline: "Quorum-based key-value store comparing linearizable ABD against a blocking baseline.",
 		proof: "Benchmarked crash scenarios across 1, 3, and 5 replicas with latency instrumentation for concurrent workloads.",
@@ -38,32 +64,6 @@ const projects = [
 		],
 		tech: ["Python", "PyQt6", "SQLite", "pytest", "GitHub Actions"],
 		link: "https://github.com/PratypartyY2K/app-aware-clipboard",
-	},
-	{
-		featured: true,
-		label: "Featured Product",
-		title: "Waste Management Route Optimizer",
-		punchline: "Team-built waste operations platform with a FastAPI backend and a React + Vite frontend.",
-		proof: "Owned the initial Supabase auth integration across frontend token flow, FastAPI verification, role upserts, and protected routes.",
-		bullets: [
-			"Contributed to a shared full-stack codebase that separates operational APIs in FastAPI from the TypeScript UI built with React and Vite",
-			"Implemented Supabase authentication and authorization integration with FastAPI, including bearer-token verification, user role upserts, and protected backend routes",
-			"Built frontend auth flow pieces for login, signup, session hydration, and role-aware routing so Supabase sessions worked cleanly across the app",
-		],
-		tech: ["FastAPI", "React", "Vite", "Supabase", "TypeScript", "Python"],
-		link: "https://github.com/Demonico/dsd-feb-26-cohort",
-	},
-	{
-		title: "Risk-Based Vaccination Prioritization",
-		punchline: "ML-assisted triage system aimed at improving fairness and consistency in vaccine allocation.",
-		proof: "Positioned machine learning as decision support for prioritization, fairness, and more consistent triage outcomes.",
-		bullets: [
-			"Built a prioritization workflow around a Random Forest model to rank vaccine eligibility with more consistency than manual review",
-			"Focused on transparent decision support and reduced subjective bias in high-demand allocation scenarios",
-			"Shipped the project as a working web application backed by Python-based data and application logic",
-		],
-		tech: ["Python", "Machine Learning", "Random Forest", "Web App"],
-		link: "https://github.com/PratypartyY2K/Vaccine",
 	},
 ];
 

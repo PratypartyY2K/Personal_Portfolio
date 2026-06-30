@@ -22,11 +22,11 @@ export function ProfileCard() {
 
         <p className="mt-1 text-sm text-center text-slate-600 dark:text-slate-300">
           MSCS @ Penn State
-          <span className="mt-1 block">Backend • Distributed Systems • Full Stack</span>
+          <span className="mt-1 block">Backend • Performance • Distributed Systems</span>
         </p>
 
         <div className="mt-5 flex flex-wrap justify-center gap-2">
-          {["Production Systems", "FastAPI", "C++", "React"].map((item) => (
+          {["Production Systems", "C++", "Neo4j", "GPU Performance"].map((item) => (
             <span
               key={item}
               className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[11px] font-medium text-sky-700 dark:border-slate-700 dark:bg-slate-900/60 dark:text-sky-200"

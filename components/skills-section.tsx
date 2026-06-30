@@ -48,7 +48,7 @@ export function SkillsSection() {
       </h2>
 
       <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600 dark:text-slate-300/90">
-        The languages, frameworks, and delivery tools I use to build backend-heavy systems and full-stack products.
+        The languages, frameworks, and delivery tools I use to build backend systems, performance-sensitive software, and infrastructure-heavy products.
       </p>
 
       <div className="mt-6 flex flex-wrap gap-3">
@@ -94,7 +94,7 @@ export function SkillsSection() {
       </div>
 
       <p className="mt-10 text-sm text-slate-600 dark:text-slate-300/90 italic">
-        Strongest in backend engineering, distributed systems, and production-focused full-stack development.
+        Strongest in backend engineering, systems performance, and infrastructure-minded product development.
       </p>
     </SectionContainer>
   );

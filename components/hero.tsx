@@ -21,7 +21,7 @@ export function Hero() {
         <div className="grid items-center gap-7 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:gap-16">
           <div className="text-center md:text-left">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-600 dark:text-sky-300/80 sm:text-xs sm:tracking-[0.25em]">
-              Backend Engineer · Distributed Systems · MSCS @ Penn State
+              Software Engineer · Backend Systems · Performance Engineering · MSCS @ Penn State
             </p>
 
             <h1
@@ -31,11 +31,11 @@ export function Hero() {
               Hi, I&apos;m{" "}
               <span className="text-sky-300">Pratyush Kumar</span>.
               <br />
-              I build reliable backend systems and full-stack products that hold up under real-world use.
+              I build high-performance backend systems and product infrastructure that hold up in production.
             </h1>
 
             <p className="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-200/90 sm:mt-5 md:text-base md:leading-6">
-              Formerly at Enphase Energy, where I worked on production cloud systems used by 5,500+ daily users. My recent work spans distributed systems, FastAPI services, role-based auth flows, and systems projects built for performance and correctness.
+              At Enphase Energy, I built and scaled backend services for IoT dashboards used by 5,500+ users. My recent work spans C++ systems optimization, graph-backed applications, and CPU/GPU performance benchmarking.
             </p>
 
             <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:justify-center md:justify-start">
@@ -95,9 +95,9 @@ export function Hero() {
               </div>
 
               <p className="text-center text-[11px] text-slate-500 dark:text-slate-400/90 sm:text-xs">
-                Open to Summer 2026 SWE and research internships
+                Focused on backend systems and performance engineering
                 <span className="block text-[10px] text-slate-500 dark:text-slate-400/90 sm:text-[11px]">
-                  (backend · full-stack · platforms · distributed systems)
+                  (full-time software engineering roles in 2027)
                 </span>
               </p>
             </div>

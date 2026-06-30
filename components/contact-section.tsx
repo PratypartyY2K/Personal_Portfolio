@@ -34,14 +34,14 @@ export function ContactSection() {
           </h2>
 
           <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 dark:text-slate-300/90 sm:mt-5 md:text-[15px] md:leading-7">
-            If you&apos;re building something real and need a steady engineering partner, I&apos;d like to hear about it. I&apos;m most interested in backend, distributed systems, infrastructure-heavy product work, and Summer 2026 SWE internship opportunities.
+            If you&apos;re building something real and need a steady engineering partner, I&apos;d like to hear about it. I&apos;m most interested in backend systems, infrastructure-heavy product work, distributed systems, and performance engineering.
           </p>
 
           <div className="mt-5 grid gap-3 sm:mt-8 sm:gap-4 sm:grid-cols-3">
             {[
               "Backend and platform engineering",
-              "Distributed systems and systems projects",
-              "Production-focused full-stack products",
+              "Performance-critical systems work",
+              "Stateful product systems with correctness constraints",
             ].map((item) => (
               <div
                 key={item}
@@ -84,7 +84,7 @@ export function ContactSection() {
 
           <div className="mt-6 rounded-2xl border border-slate-200/80 bg-slate-50/80 px-4 py-3 dark:border-slate-800/80 dark:bg-slate-950/30 sm:mt-8 sm:px-5 sm:py-4">
             <p className="text-xs font-mono uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">
-              Open to Summer 2026 SWE internships · Backend · Full-Stack · Platform
+              Full-time software engineering roles in 2027 · Backend · Systems · Performance
             </p>
           </div>
         </div>
