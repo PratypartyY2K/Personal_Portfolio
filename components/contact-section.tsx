@@ -1,6 +1,5 @@
 import { SectionContainer } from "./section-container";
 import { ProfileCard } from "./experience/ProfileCard";
-import { ResumeDownloadLink } from "./resume-download-link";
 
 export function ContactSection() {
   const headingId = "contact-heading";
@@ -59,11 +58,6 @@ export function ContactSection() {
             >
               Start a Conversation
             </a>
-            <ResumeDownloadLink
-              className="inline-flex w-full items-center justify-center rounded-full border border-slate-200 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-sky-300 hover:text-sky-700 dark:border-slate-700 dark:bg-slate-950/30 dark:text-slate-200 dark:hover:border-sky-400 dark:hover:text-sky-200 sm:w-auto"
-            >
-              Download Resume
-            </ResumeDownloadLink>
             <a
               href="https://linkedin.com/in/pratyushkumar123"
               target="_blank"
@@ -85,6 +79,9 @@ export function ContactSection() {
           <div className="mt-6 rounded-2xl border border-slate-200/80 bg-slate-50/80 px-4 py-3 dark:border-slate-800/80 dark:bg-slate-950/30 sm:mt-8 sm:px-5 sm:py-4">
             <p className="text-xs font-mono uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">
               Full-time software engineering roles in 2027 · Backend · Systems · Performance
+            </p>
+            <p className="mt-2 text-sm text-slate-600 dark:text-slate-300/90">
+              Resume available on request.
             </p>
           </div>
         </div>

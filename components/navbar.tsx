@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
-import { ResumeDownloadLink } from "./resume-download-link";
 import { ThemeToggle } from "./theme-toggle";
 
 const links = [
@@ -50,9 +49,6 @@ export function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center justify-end gap-2">
-            <ResumeDownloadLink className="rounded-full border border-sky-200/80 bg-sky-50/70 px-3.5 py-1.5 text-sky-700 transition hover:border-sky-400 hover:bg-sky-100 hover:text-slate-900 dark:border-sky-500/40 dark:bg-sky-500/10 dark:text-sky-300 dark:hover:border-sky-400 dark:hover:bg-sky-500/15">
-              Resume
-            </ResumeDownloadLink>
             <ThemeToggle />
           </div>
 
@@ -87,12 +83,6 @@ export function Navbar() {
                 {l.label}
               </a>
             ))}
-            <ResumeDownloadLink
-              className="rounded-full border border-sky-200/70 px-3 py-1 text-base font-semibold tracking-wide text-sky-700 transition hover:border-sky-400 hover:bg-sky-50 hover:text-slate-900 dark:border-sky-500/40 dark:text-sky-300 dark:hover:border-sky-400 dark:hover:bg-sky-500/10"
-              onClick={() => setOpen(false)}
-            >
-              Resume
-            </ResumeDownloadLink>
           </div>
         </div>
       )}
