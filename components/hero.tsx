@@ -21,21 +21,21 @@ export function Hero() {
         <div className="grid items-center gap-7 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:gap-16">
           <div className="text-center md:text-left">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-600 dark:text-sky-300/80 sm:text-xs sm:tracking-[0.25em]">
-              Software Engineer · Backend Systems · Performance Engineering · MSCS @ Penn State
+              Backend Systems · Distributed Systems · Performance Engineering
             </p>
 
             <h1
               id={headingId}
-              className="mt-3 text-[2.15rem] font-semibold leading-[1.04] sm:mt-4 sm:text-4xl md:text-5xl lg:text-6xl"
+              className="mt-3 max-w-5xl text-[2.15rem] font-semibold leading-[1.04] sm:mt-4 sm:text-4xl md:text-5xl lg:text-[4.25rem]"
             >
-              Hi, I&apos;m{" "}
-              <span className="text-sky-300">Pratyush Kumar</span>.
-              <br />
-              I build high-performance backend systems and product infrastructure that hold up in production.
+              I build backend systems where{" "}
+              <span className="text-sky-300">correctness</span>,{" "}
+              <span className="text-sky-300">latency</span>, and{" "}
+              <span className="text-sky-300">failure handling</span> matter.
             </h1>
 
-            <p className="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-200/90 sm:mt-5 md:text-base md:leading-6">
-              At Enphase Energy, I built and scaled backend services for IoT dashboards used by 5,500+ users. My recent work spans C++ systems optimization, graph-backed applications, and CPU/GPU performance benchmarking.
+            <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 dark:text-slate-200/90 sm:mt-5 md:text-base md:leading-7">
+              I&apos;m Pratyush Kumar, a software engineer and MSCS student at Penn State. At Enphase Energy, I worked on backend services used by 5,500+ users. My strongest work includes a C++ MapReduce framework I optimized for 7x throughput, a ledger-first expense tracker built around correctness and idempotency, and graph-backed systems for traversal-heavy workloads.
             </p>
 
             <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:justify-center md:justify-start">
@@ -44,7 +44,7 @@ export function Hero() {
                 size="lg"
                 className="w-full sm:w-auto bg-sky-500 text-slate-950 transition hover:bg-sky-400"
               >
-                <a href="#contact">Start a Conversation</a>
+                <a href="#projects">See My Best Work</a>
               </Button>
 
               <Button
@@ -53,15 +53,16 @@ export function Hero() {
                 size="lg"
                 className="w-full sm:w-auto border-slate-200 bg-white/85 text-slate-900 transition hover:bg-white dark:border-slate-600/80 dark:bg-slate-900/60 dark:text-slate-100 dark:hover:bg-slate-800/60"
               >
-                <a href="#projects">Explore My Work</a>
+                <a href="#contact">Get in Touch</a>
               </Button>
             </div>
 
-            <div className="mt-5 grid grid-cols-3 gap-2 text-left sm:hidden">
+            <div className="mt-6 grid grid-cols-2 gap-2 text-left sm:mt-8 sm:grid-cols-4">
               {[
-                { value: "5,500+", label: "DAU" },
-                { value: "25%", label: "fewer failures" },
-                { value: "7x", label: "throughput" },
+                { value: "5,500+", label: "users in production" },
+                { value: "25%", label: "fewer integration failures" },
+                { value: "7x", label: "MapReduce throughput gain" },
+                { value: "2.5 yrs", label: "production engineering" },
               ].map((item) => (
                 <div
                   key={item.label}
@@ -74,7 +75,6 @@ export function Hero() {
                 </div>
               ))}
             </div>
-
           </div>
 
           <div className="flex justify-center lg:justify-end">
@@ -95,9 +95,9 @@ export function Hero() {
               </div>
 
               <p className="text-center text-[11px] text-slate-500 dark:text-slate-400/90 sm:text-xs">
-                Focused on backend systems and performance engineering
+                Formerly at Enphase Energy
                 <span className="block text-[10px] text-slate-500 dark:text-slate-400/90 sm:text-[11px]">
-                  (full-time software engineering roles in 2027)
+                  MSCS @ Penn State · full-time roles in 2027
                 </span>
               </p>
             </div>

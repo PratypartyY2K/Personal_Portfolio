@@ -25,9 +25,9 @@ export default function HomePage() {
         <section className="relative">
           <Hero />
         </section>
-        <AboutSection />
         <ProjectsSection />
         <ExperienceSection />
+        <AboutSection />
         <SkillsSection />
         <ContactSection />
       </main>
