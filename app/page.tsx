@@ -9,6 +9,7 @@ import { Footer } from "@/components/footer";
 import { AboutSection } from "@/components/about-me-section";
 import { VisuallyHidden } from "@/components/visually-hidden";
 import { ScrollToTop } from "@/components/scroll-to-top";
+import { StickyContactButton } from "@/components/sticky-contact-button";
 
 export default function HomePage() {
   return (
@@ -21,6 +22,7 @@ export default function HomePage() {
         <div className="pointer-events-none absolute inset-x-0 top-0 h-[36rem] bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.12),_transparent_52%)] dark:bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.14),_transparent_52%)]" />
         <div className="pointer-events-none absolute inset-x-0 top-[38rem] h-72 bg-[linear-gradient(to_bottom,transparent,rgba(248,250,252,0.72),transparent)] dark:bg-[linear-gradient(to_bottom,transparent,rgba(15,23,42,0.42),transparent)]" />
         <ScrollToTop />
+        <StickyContactButton />
         <section className="relative">
           <Hero />
         </section>
