@@ -43,7 +43,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrains.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${inter.variable} ${jetbrains.variable}`}
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
       <body className="font-sans antialiased bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-50">
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <ThemeProvider>{children}</ThemeProvider>
