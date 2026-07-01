@@ -1,74 +1,10 @@
-import { Github } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight, Github } from "lucide-react";
 
-const projects = [
-	{
-		featured: true,
-		label: "Featured System",
-		title: "Distributed MapReduce Framework",
-		punchline: "C++ MapReduce engine deployed on EC2 with custom shuffle and performance tuning.",
-		proof: "Identified and explained the reducer lock bottleneck behind major non-barrier slowdowns during AWS performance sweeps.",
-		bullets: [
-			"Built a distributed execution pipeline with mapper coordination, reducer services, and HDFS-backed output handling",
-			"Implemented custom TCP shuffle with Protobuf serialization, bounded buffers, and optional barrier-based backpressure",
-			"Ran AWS experiments across mapper counts, thread counts, and buffer sizes to isolate a reducer lock bottleneck",
-		],
-		tech: ["C++", "gRPC", "Protobuf", "Concurrency", "AWS EC2", "HDFS"],
-		link: "https://github.com/PratypartyY2K/cpp-mapreduce-framework",
-	},
-	{
-		featured: true,
-		label: "Featured Product",
-		title: "FairShare",
-		punchline: "Ledger-first expense tracker built for explainable balances, deterministic money handling, and safe retries.",
-		proof: "Designed the system around persisted ledger effects, event history, and idempotent settlement confirmation instead of opaque balance calculators.",
-		bullets: [
-			"Built a Spring Boot backend and Next.js frontend for groups, expenses, ledgers, settlements, and history views",
-			"Implemented equal, exact, percentage, and share-based splits with stable leftover-cent assignment and scale-2 money rules",
-			"Added idempotent expense creation and settlement confirmation so retries cannot double-apply financially sensitive writes",
-		],
-		tech: ["Java", "Spring Boot", "PostgreSQL", "Next.js", "TypeScript", "Ledger Design"],
-		link: "https://github.com/PratypartyY2K/faireshare-mono-repo",
-	},
-	{
-		title: "Holocron Timeline Engine",
-		punchline: "Graph-backed timeline system for causal traversal, break simulation, and world-state reconstruction.",
-		proof: "Structured the backend around Neo4j traversals, chronology normalization, and request-scoped simulation logic instead of a shared in-memory graph.",
-		bullets: [
-			"Built a FastAPI backend, Next.js frontend, and Neo4j graph store to model events, entities, and causal dependencies",
-			"Implemented what-if break simulation that propagates invalidation through downstream dependencies in topological order",
-			"Reconstructed pre-event world state by replaying curated mutation history with checkpoints to reduce repeated replay cost",
-		],
-		tech: ["FastAPI", "Next.js", "Neo4j", "Python", "TypeScript", "Graph Traversal"],
-		link: "https://github.com/PratypartyY2K/Holocron-Timeline-Engine",
-	},
-	{
-		title: "Distributed Key-Value Store (ABD)",
-		punchline: "Quorum-based key-value store comparing linearizable ABD against a blocking baseline.",
-		proof: "Benchmarked crash scenarios across 1, 3, and 5 replicas with latency instrumentation for concurrent workloads.",
-		bullets: [
-			"Implemented ABD read and write flows with timestamped values, majority quorums, and write-back for linearizable reads",
-			"Built replica and client services in C++ with gRPC and Protobuf plus a threaded load generator for mixed workloads",
-			"Automated crash experiments across 1, 3, and 5 replicas on EC2 and recorded p50, p95, and p99 latency under failure",
-		],
-		tech: ["C++", "gRPC", "Protobuf", "ABD Algorithm", "Distributed Systems"],
-		link: "https://github.com/PratypartyY2K/distributed-key-value-store",
-	},
-	{
-		title: "App-Aware Clipboard Manager",
-		punchline: "Privacy-first macOS clipboard manager designed around correctness instead of feature bloat.",
-		proof: "Focused on deterministic clipboard capture, app attribution, and privacy controls rather than superficial UI features.",
-		bullets: [
-			"Built event-driven clipboard capture in PyQt6 with source-app attribution, dedupe logic, and protections against feedback loops",
-			"Added secret-safe defaults, token heuristics, per-app history, and optional SQLite persistence with WAL mode",
-			"Structured the app for testing with CI, coverage reporting, and deterministic UI actions while history updates in real time",
-		],
-		tech: ["Python", "PyQt6", "SQLite", "pytest", "GitHub Actions"],
-		link: "https://github.com/PratypartyY2K/app-aware-clipboard",
-	},
-];
+import { projectCards } from "@/lib/projects";
 
-const featuredProjects = projects.filter((project) => project.featured);
-const supportingProjects = projects.filter((project) => !project.featured);
+const featuredProjects = projectCards.filter((project) => project.featured);
+const supportingProjects = projectCards.filter((project) => !project.featured);
 
 export function ProjectsSection() {
 	const headingId = "projects-heading";
@@ -132,15 +68,27 @@ export function ProjectsSection() {
 								</div>
 							</div>
 
-							<a
-								href={project.link}
-								target="_blank"
-								className="relative mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-[0_0_20px_rgba(56,189,248,0.35)] transition hover:bg-sky-500 hover:shadow-[0_0_30px_rgba(56,189,248,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:bg-sky-500 dark:hover:bg-sky-400 sm:mt-8 sm:w-fit sm:justify-start"
-								rel="noreferrer"
-							>
-								<Github size={16} />
-								View Featured Project
-							</a>
+							<div className="relative mt-5 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
+								{project.caseStudySlug ? (
+									<Link
+										href={`/projects/${project.caseStudySlug}`}
+										className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-[0_0_20px_rgba(56,189,248,0.35)] transition hover:bg-sky-500 hover:shadow-[0_0_30px_rgba(56,189,248,0.45)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:bg-sky-500 dark:hover:bg-sky-400 sm:w-fit sm:justify-start"
+									>
+										Read Case Study
+										<ArrowUpRight size={16} />
+									</Link>
+								) : null}
+
+								<a
+									href={project.githubUrl}
+									target="_blank"
+									className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-200 bg-white/85 px-5 py-3 text-sm font-semibold text-slate-900 transition hover:border-sky-300 hover:bg-white dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-100 dark:hover:border-sky-400 dark:hover:bg-slate-800 sm:w-fit sm:justify-start"
+									rel="noreferrer"
+								>
+									<Github size={16} />
+									View Repository
+								</a>
+							</div>
 						</article>
 					))}
 				</div>
@@ -182,15 +130,27 @@ export function ProjectsSection() {
 								</ul>
 							</div>
 
-							<a
-								href={project.link}
-								target="_blank"
-								className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-[0_0_20px_rgba(56,189,248,0.45)] transition hover:bg-sky-500 hover:shadow-[0_0_28px_rgba(56,189,248,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:bg-sky-500 dark:hover:bg-sky-400 sm:mt-6 sm:w-fit sm:justify-start"
-								rel="noreferrer"
-							>
-								<Github size={16} />
-								See How It Works
-							</a>
+							<div className="mt-5 flex flex-col gap-3 sm:mt-6 sm:flex-row sm:flex-wrap">
+								{project.caseStudySlug ? (
+									<Link
+										href={`/projects/${project.caseStudySlug}`}
+										className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-[0_0_20px_rgba(56,189,248,0.45)] transition hover:bg-sky-500 hover:shadow-[0_0_28px_rgba(56,189,248,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:bg-sky-500 dark:hover:bg-sky-400 sm:w-fit sm:justify-start"
+									>
+										Read Case Study
+										<ArrowUpRight size={16} />
+									</Link>
+								) : null}
+
+								<a
+									href={project.githubUrl}
+									target="_blank"
+									className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-200 bg-white/85 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:border-sky-300 hover:bg-white dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-100 dark:hover:border-sky-400 dark:hover:bg-slate-800 sm:w-fit sm:justify-start"
+									rel="noreferrer"
+								>
+									<Github size={16} />
+									View Repository
+								</a>
+							</div>
 
 							<div className="mt-4 flex flex-wrap gap-1.5 sm:gap-2">
 								{project.tech.map((t) => (

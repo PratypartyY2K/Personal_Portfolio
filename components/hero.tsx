@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { HeroGraphTrigger } from "./hero-graph-trigger";
 import { Button } from "./ui/button";
 
@@ -44,7 +45,7 @@ export function Hero() {
                 size="lg"
                 className="w-full sm:w-auto bg-sky-500 text-slate-950 transition hover:bg-sky-400"
               >
-                <a href="#projects">Read Case Study</a>
+                <Link href="/projects/mapreduce-framework">Read Case Study</Link>
               </Button>
 
               <Button
