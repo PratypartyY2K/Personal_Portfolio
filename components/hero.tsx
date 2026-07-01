@@ -44,7 +44,7 @@ export function Hero() {
                 size="lg"
                 className="w-full sm:w-auto bg-sky-500 text-slate-950 transition hover:bg-sky-400"
               >
-                <a href="#projects">See My Best Work</a>
+                <a href="#projects">Read Case Study</a>
               </Button>
 
               <Button
