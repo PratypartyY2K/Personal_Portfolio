@@ -57,6 +57,28 @@ export function Hero() {
               </Button>
             </div>
 
+            <div className="mt-4 flex items-center justify-center gap-4 text-sm text-slate-600 dark:text-slate-300 md:justify-start">
+              <a
+                href="https://github.com/PratypartyY2K"
+                target="_blank"
+                rel="noreferrer"
+                className="transition hover:text-sky-700 dark:hover:text-sky-200"
+              >
+                GitHub
+              </a>
+              <span className="text-slate-300 dark:text-slate-700" aria-hidden>
+                /
+              </span>
+              <a
+                href="https://linkedin.com/in/pratyushkumar123"
+                target="_blank"
+                rel="noreferrer"
+                className="transition hover:text-sky-700 dark:hover:text-sky-200"
+              >
+                LinkedIn
+              </a>
+            </div>
+
             <div className="mt-6 grid grid-cols-2 gap-2 text-left sm:mt-8 sm:grid-cols-4">
               {[
                 { value: "5,500+", label: "users in production" },
