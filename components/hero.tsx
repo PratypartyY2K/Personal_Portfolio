@@ -10,16 +10,16 @@ const roles = ["Backend Engineer", "Performance Engineer", "Distributed Systems"
 export function Hero() {
   const headingId = "hero-heading";
   const [roleIndex, setRoleIndex] = useState(0);
-  const [roleVisible, setRoleVisible] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     const interval = window.setInterval(() => {
-      setRoleVisible(false);
+      setIsTransitioning(true);
 
       window.setTimeout(() => {
         setRoleIndex((current) => (current + 1) % roles.length);
-        setRoleVisible(true);
-      }, 180);
+        setIsTransitioning(false);
+      }, 320);
     }, 2400);
 
     return () => window.clearInterval(interval);
@@ -61,14 +61,19 @@ export function Hero() {
           Pratyush Kumar
         </h1>
 
-        <div className="mt-5 min-h-[3.5rem] sm:min-h-[4rem]">
-          <p
-            className={`text-xl font-medium text-sky-600 transition-opacity duration-200 dark:text-sky-300 sm:text-2xl md:text-3xl ${
-              roleVisible ? "opacity-100" : "opacity-0"
+        <div className="mt-5 h-[2rem] overflow-hidden sm:h-[2.4rem] md:h-[2.8rem]">
+          <div
+            className={`transition-transform duration-300 ease-out ${
+              isTransitioning ? "-translate-y-full" : "translate-y-0"
             }`}
           >
-            {roles[roleIndex]}
-          </p>
+            <p className="h-[2rem] text-xl font-medium text-sky-600 dark:text-sky-300 sm:h-[2.4rem] sm:text-2xl md:h-[2.8rem] md:text-3xl">
+              {roles[roleIndex]}
+            </p>
+            <p className="h-[2rem] text-xl font-medium text-sky-600 dark:text-sky-300 sm:h-[2.4rem] sm:text-2xl md:h-[2.8rem] md:text-3xl">
+              {roles[(roleIndex + 1) % roles.length]}
+            </p>
+          </div>
         </div>
 
         <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-600 dark:text-slate-300/90 sm:text-base">
