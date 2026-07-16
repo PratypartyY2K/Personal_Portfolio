@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { HeroGraphTrigger } from "./hero-graph-trigger";
 import { Button } from "./ui/button";
 
@@ -19,24 +18,24 @@ export function Hero() {
       <div className="pointer-events-none absolute right-6 top-24 h-72 w-72 rounded-full bg-sky-200/30 blur-3xl dark:bg-sky-500/10" />
 
       <div className="relative z-10 mx-auto w-full max-w-[90rem] px-4 pb-12 pt-24 text-slate-900 dark:text-slate-50 sm:pb-14 md:pb-20 md:pt-24 lg:pb-28 lg:pt-28 xl:px-8 xl:pb-32 2xl:px-10">
-        <div className="grid items-center gap-7 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16 2xl:gap-24">
-          <div className="text-center md:text-left">
+        <div className="mx-auto grid max-w-[78rem] items-center gap-7 lg:grid-cols-[minmax(0,1fr)_minmax(19rem,21rem)] lg:gap-10 xl:max-w-[84rem] xl:grid-cols-[minmax(0,1.05fr)_minmax(22rem,24rem)] xl:gap-14 2xl:max-w-[88rem] 2xl:grid-cols-[minmax(0,1.08fr)_minmax(24rem,26rem)] 2xl:gap-20">
+          <div className="text-center md:text-left lg:justify-self-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-600 dark:text-sky-300/80 sm:text-xs sm:tracking-[0.25em]">
-              Backend Systems · Distributed Systems · Performance Engineering
+              Formerly at Enphase Energy · MSCS @ Penn State
             </p>
 
             <h1
               id={headingId}
-              className="mt-3 max-w-6xl text-[2.15rem] font-semibold leading-[1.04] sm:mt-4 sm:text-4xl md:text-5xl lg:text-[4.25rem] 2xl:text-[4.9rem]"
+              className="mt-3 max-w-5xl text-[2.15rem] font-semibold leading-[1.04] sm:mt-4 sm:text-4xl md:text-5xl lg:max-w-4xl lg:text-[3.75rem] xl:max-w-5xl xl:text-[4.25rem] 2xl:max-w-6xl 2xl:text-[4.9rem]"
             >
-              I build backend systems where{" "}
-              <span className="text-sky-300">correctness</span>,{" "}
-              <span className="text-sky-300">latency</span>, and{" "}
-              <span className="text-sky-300">failure handling</span> matter.
+              Backend engineer focused on{" "}
+              <span className="text-sky-300">performance</span>,{" "}
+              <span className="text-sky-300">reliability</span>, and{" "}
+              <span className="text-sky-300">distributed systems</span>.
             </h1>
 
-            <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 dark:text-slate-200/90 sm:mt-5 md:text-base md:leading-7">
-              I&apos;m Pratyush Kumar, a software engineer and MSCS student at Penn State. At Enphase Energy, I worked on backend services used by 5,500+ users. My strongest work includes a C++ MapReduce framework I optimized for 7x throughput, a ledger-first expense tracker built around correctness and idempotency, and graph-backed systems for traversal-heavy workloads.
+            <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 dark:text-slate-200/90 sm:mt-5 md:text-base md:leading-7 lg:max-w-2xl xl:max-w-3xl">
+              I&apos;ve worked on backend services used by 5,500+ users, reduced integration failures in production systems, and built projects in distributed systems and performance engineering.
             </p>
 
             <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:justify-center md:justify-start">
@@ -45,7 +44,7 @@ export function Hero() {
                 size="lg"
                 className="w-full sm:w-auto bg-sky-500 text-slate-950 transition hover:bg-sky-400"
               >
-                <Link href="/projects/mapreduce-framework">Read Case Study</Link>
+                <a href="#projects">Read Case Study</a>
               </Button>
 
               <Button
@@ -100,9 +99,9 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="flex justify-center lg:justify-end">
+          <div className="flex justify-center lg:justify-self-end lg:justify-end xl:translate-x-4 2xl:translate-x-6">
             <div className="flex flex-col items-center gap-3 sm:gap-4">
-              <div className="relative w-full max-w-[13rem] overflow-hidden rounded-full border border-slate-200 bg-white/80 shadow-2xl backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/60 sm:max-w-[16rem] lg:max-w-[20rem] xl:max-w-[23rem] 2xl:max-w-[26rem]">
+              <div className="relative w-full max-w-[13rem] overflow-hidden rounded-full border border-slate-200 bg-white/80 shadow-2xl backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/60 sm:max-w-[16rem] lg:max-w-[18.5rem] xl:max-w-[23rem] 2xl:max-w-[26rem]">
                 <div className="pointer-events-none absolute -inset-6 rounded-full bg-sky-300/30 blur-3xl dark:bg-sky-500/15" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.18),_transparent_70%)]" />
                 <div className="relative aspect-square w-full">

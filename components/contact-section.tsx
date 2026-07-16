@@ -36,21 +36,6 @@ export function ContactSection() {
             If you&apos;re building something real and need a steady engineering partner, I&apos;d like to hear about it. I&apos;m most interested in backend systems, infrastructure-heavy product work, distributed systems, and performance engineering.
           </p>
 
-          <div className="mt-5 grid gap-3 sm:mt-8 sm:gap-4 sm:grid-cols-3">
-            {[
-              "Backend and platform engineering",
-              "Performance-critical systems work",
-              "Stateful product systems with correctness constraints",
-            ].map((item) => (
-              <div
-                key={item}
-                className="rounded-2xl border border-slate-200/80 bg-slate-50/80 px-4 py-3 text-sm leading-6 text-slate-700 dark:border-slate-800/80 dark:bg-slate-950/30 dark:text-slate-200 sm:py-4"
-              >
-                {item}
-              </div>
-            ))}
-          </div>
-
           <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
             <a
               href="mailto:pratyushkum4@gmail.com"

@@ -1,5 +1,4 @@
 import { SectionContainer } from "./section-container";
-import { Button } from "./ui/button";
 
 export function AboutSection() {
   const headingId = "about-heading";
@@ -57,13 +56,6 @@ export function AboutSection() {
             I&apos;m currently pursuing an MS in Computer Science at Penn State, with a focus on backend systems and distributed systems.
           </p>
 
-          <Button
-            asChild
-            size="lg"
-            className="mt-6 w-full rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800 dark:bg-slate-50 dark:text-slate-900 sm:mt-8 sm:w-auto"
-          >
-            <a href="#contact">Start a Conversation</a>
-          </Button>
         </div>
 
         <div className="grid gap-4 sm:gap-6">

@@ -29,9 +29,6 @@ export function Navbar() {
             </span>
             <span className="hidden sm:block">
               <span className="block text-sm font-semibold text-slate-900 dark:text-slate-100">Pratyush Kumar</span>
-              <span className="block text-[11px] uppercase tracking-[0.16em] text-slate-500 dark:text-slate-400">
-                Backend · Distributed Systems
-              </span>
             </span>
           </Link>
 
