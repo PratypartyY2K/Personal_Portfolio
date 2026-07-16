@@ -4,7 +4,7 @@ const skills = {
   "Systems & Core Languages": {
     description:
       "The foundation I use for performance-sensitive systems, APIs, and application logic.",
-    items: ["C++", "Python", "Java", "TypeScript", "JavaScript", "SQL"],
+    items: ["C++", "Python", "Java", "TypeScript", "JavaScript", "SQL", "Multithreading"],
   },
   "Backend & Distributed Systems": {
     description:
@@ -16,6 +16,7 @@ const skills = {
       "AWS (EC2)",
       "Concurrency",
       "Distributed Systems",
+      "Quorum Protocols",
       "Redis",
       "PostgreSQL",
       "MySQL",
@@ -26,12 +27,15 @@ const skills = {
       "The frameworks I reach for when shipping end-to-end products with real users and operational constraints.",
     items: [
       "Ruby on Rails",
+      "Spring Boot",
       "FastAPI",
       "Django",
       "React",
       "Next.js",
       "Vite",
       "PyQt6",
+      "Docker",
+      "Flyway",
       "Supabase",
     ],
   },
@@ -55,18 +59,20 @@ const skills = {
       "Git",
       "Linux",
       "Jenkins",
+      "pytest",
       "RSpec",
       "Selenium",
       "DataDog",
       "SonarQube",
       "Unit & Integration Testing",
-      "Performance Optimization",
+      "Performance Benchmarking",
+      "Profiling",
     ],
   },
   "Data & Persistence": {
     description:
       "Storage and data tools used across product platforms, automation, and internal workflows.",
-    items: ["PostgreSQL", "MySQL", "Redis", "MongoDB", "BeautifulSoup"],
+    items: ["PostgreSQL", "MySQL", "Redis", "MongoDB", "Neo4j"],
   },
 };
 
