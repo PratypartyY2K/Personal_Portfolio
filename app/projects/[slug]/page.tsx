@@ -72,8 +72,9 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Button
               asChild
+              variant="accent"
               size="lg"
-              className="accent-solid w-full rounded-full sm:w-auto"
+              className="w-full rounded-full sm:w-auto"
             >
               <a href={project.githubUrl} target="_blank" rel="noreferrer">
                 <Github size={16} />

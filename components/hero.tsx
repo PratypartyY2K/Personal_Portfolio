@@ -91,8 +91,9 @@ export function Hero() {
 
         <Button
           asChild
+          variant="accent"
           size="lg"
-          className="accent-solid mt-8 w-full rounded-full transition sm:w-auto"
+          className="mt-8 w-full rounded-full sm:w-auto"
         >
           <a href="#contact">Get in Touch</a>
         </Button>
