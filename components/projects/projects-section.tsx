@@ -24,7 +24,7 @@ export function ProjectsSection() {
 					{featuredProjects.map((project) => (
 						<article
 							key={project.title}
-							className="group accent-card-hover relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-slate-200/80 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition-transform transition-shadow duration-300 hover:-translate-y-2 dark:border-slate-800 sm:p-8 md:p-9"
+							className="group accent-card-hover relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-slate-200/80 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.08)] transition-transform transition-shadow duration-300 hover:-translate-y-2 dark:border-slate-800 sm:p-7 md:p-8"
 							style={{
 								backgroundImage: "var(--accent-panel-bg)",
 							}}
@@ -34,7 +34,7 @@ export function ProjectsSection() {
 								style={{ backgroundImage: "var(--accent-panel-overlay)" }}
 							/>
 
-							<div className="relative space-y-4 sm:space-y-5">
+							<div className="relative space-y-4">
 								<div className="flex flex-wrap items-center gap-3">
 									<span className="accent-chip rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em]">
 										{project.label}
@@ -49,21 +49,8 @@ export function ProjectsSection() {
 									{project.punchline}
 								</p>
 
-								<p className="rounded-2xl border border-slate-200/80 bg-white/75 px-4 py-3 text-[13px] font-medium leading-6 text-slate-700 shadow-sm dark:border-slate-800/80 dark:bg-slate-950/40 dark:text-slate-200">
-									{project.proof}
-								</p>
-
-								<ul className="hidden space-y-2 text-[13px] leading-6 text-slate-600 dark:text-slate-300 md:block md:text-[14px]">
-									{project.bullets.map((bullet) => (
-										<li key={bullet} className="flex gap-2">
-											<span className="accent-dot mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full" aria-hidden />
-											<span>{bullet}</span>
-										</li>
-									))}
-								</ul>
-
 								<div className="flex flex-wrap gap-1.5 sm:gap-2">
-									{project.tech.map((t) => (
+									{project.tech.slice(0, 4).map((t) => (
 										<span
 											key={t}
 											className="accent-chip rounded-md border px-2 py-1 text-[11px] sm:text-xs"
@@ -71,10 +58,15 @@ export function ProjectsSection() {
 											{t}
 										</span>
 									))}
+									{project.tech.length > 4 ? (
+										<span className="rounded-md border border-slate-200/80 px-2 py-1 text-[11px] text-slate-500 dark:border-slate-700 dark:text-slate-400 sm:text-xs">
+											+{project.tech.length - 4}
+										</span>
+									) : null}
 								</div>
 							</div>
 
-							<div className="relative mt-5 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
+							<div className="relative mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
 								{project.caseStudySlug ? (
 									<Link
 										href={`/projects/${project.caseStudySlug}`}
@@ -113,7 +105,7 @@ export function ProjectsSection() {
 							key={project.title}
 							className="accent-card-hover relative flex h-full flex-col rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-xl backdrop-blur-md transition-transform transition-shadow duration-300 hover:-translate-y-2 dark:border-slate-800 dark:bg-slate-900/70 sm:p-7"
 						>
-							<div className="space-y-4">
+							<div className="space-y-3">
 								<h3 className="text-xl font-semibold text-slate-900 dark:text-white">
 									{project.title}
 								</h3>
@@ -122,18 +114,21 @@ export function ProjectsSection() {
 									{project.punchline}
 								</p>
 
-								<p className="rounded-xl bg-slate-100/80 px-3 py-3 text-[12px] leading-6 text-slate-700 dark:bg-slate-800/70 dark:text-slate-200">
-									{project.proof}
-								</p>
-
-								<ul className="hidden space-y-2 text-[13px] leading-6 text-slate-600 dark:text-slate-300 sm:block">
-									{project.bullets.map((bullet) => (
-										<li key={bullet} className="flex gap-2">
-											<span className="accent-dot mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full" aria-hidden />
-											<span>{bullet}</span>
-										</li>
+								<div className="flex flex-wrap gap-1.5 sm:gap-2">
+									{project.tech.slice(0, 3).map((t) => (
+										<span
+											key={t}
+											className="accent-chip rounded-md border px-2 py-0.5 text-[11px] sm:py-1 sm:text-xs"
+										>
+											{t}
+										</span>
 									))}
-								</ul>
+									{project.tech.length > 3 ? (
+										<span className="rounded-md border border-slate-200/80 px-2 py-0.5 text-[11px] text-slate-500 dark:border-slate-700 dark:text-slate-400 sm:py-1 sm:text-xs">
+											+{project.tech.length - 3}
+										</span>
+									) : null}
+								</div>
 							</div>
 
 							<div className="mt-5 flex flex-col gap-3 sm:mt-6 sm:flex-row sm:flex-wrap">
@@ -156,17 +151,6 @@ export function ProjectsSection() {
 									<Github size={16} />
 									View Repository
 								</a>
-							</div>
-
-							<div className="mt-4 flex flex-wrap gap-1.5 sm:gap-2">
-								{project.tech.map((t) => (
-									<span
-										key={t}
-										className="accent-chip rounded-md border px-2 py-0.5 text-[11px] sm:py-1 sm:text-xs"
-									>
-										{t}
-									</span>
-								))}
 							</div>
 						</article>
 					))}
