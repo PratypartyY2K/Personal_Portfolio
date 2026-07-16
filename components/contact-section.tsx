@@ -44,7 +44,7 @@ export function ContactSection() {
             partner, I&apos;d like to hear about it.
           </p>
 
-          <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
+          <div className="mt-6 flex flex-row flex-wrap gap-3 sm:mt-8">
             <a
               href="mailto:pratyushkum4@gmail.com"
               className="accent-solid inline-flex w-fit items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition"
