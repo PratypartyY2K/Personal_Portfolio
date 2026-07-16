@@ -9,17 +9,21 @@ export function ContactSection() {
       ariaLabelledby={headingId}
       className="relative overflow-hidden bg-white py-20 text-center dark:bg-slate-950 sm:py-24 md:py-28"
     >
-
-      <div className="absolute -top-24 left-0 right-0 h-32 
+      <div
+        className="absolute -top-24 left-0 right-0 h-32 
         [background-image:radial-gradient(circle_at_top,var(--accent-wash),transparent_70%)]
-        blur-xl pointer-events-none" />
+        blur-xl pointer-events-none"
+      />
       <div
         className="pointer-events-none absolute inset-0"
-        style={{ backgroundImage: "radial-gradient(circle at bottom right, var(--accent-soft), transparent 35%)" }}
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at bottom right, var(--accent-soft), transparent 35%)",
+        }}
       />
 
       <div className="relative z-10 grid gap-5 sm:gap-8 lg:grid-cols-[minmax(0,320px)_1fr] lg:items-start">
-        <div className="order-2 mx-auto hidden max-w-sm lg:order-1 lg:mx-0 lg:block lg:pt-24">
+        <div className="order-2 mx-auto hidden max-w-sm lg:order-1 lg:block lg:justify-self-center lg:self-center">
           <ProfileCard />
         </div>
 
@@ -36,7 +40,8 @@ export function ContactSection() {
           </h2>
 
           <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 dark:text-slate-300/90 sm:mt-5 md:text-[15px] md:leading-7">
-            If you&apos;re building something real and need a steady engineering partner, I&apos;d like to hear about it. I&apos;m most interested in backend systems, infrastructure-heavy product work, distributed systems, and performance engineering.
+            If you&apos;re building something real and need a steady engineering
+            partner, I&apos;d like to hear about it.
           </p>
 
           <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
@@ -65,12 +70,7 @@ export function ContactSection() {
           </div>
 
           <div className="mt-6 rounded-2xl border border-slate-200/80 bg-slate-50/80 px-4 py-3 dark:border-slate-800/80 dark:bg-slate-950/30 sm:mt-8 sm:px-5 sm:py-4">
-            <p className="text-xs font-mono uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">
-              Full-time software engineering roles in 2027 · Backend · Systems · Performance
-            </p>
-            <p className="mt-2 text-sm text-slate-600 dark:text-slate-300/90">
-              Resume available on request.
-            </p>
+            Resume available on request.
           </div>
         </div>
       </div>
