@@ -93,7 +93,7 @@ export function Hero() {
           asChild
           variant="accent"
           size="lg"
-          className="mt-8 w-full rounded-full sm:w-auto"
+          className="mt-8 rounded-full px-8 sm:px-10"
         >
           <a href="#contact">Get in Touch</a>
         </Button>

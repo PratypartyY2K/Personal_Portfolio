@@ -74,7 +74,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
               asChild
               variant="accent"
               size="lg"
-              className="w-full rounded-full sm:w-auto"
+              className="rounded-full"
             >
               <a href={project.githubUrl} target="_blank" rel="noreferrer">
                 <Github size={16} />
@@ -86,7 +86,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
               asChild
               variant="outline"
               size="lg"
-              className="w-full rounded-full border-slate-200 bg-white/85 text-slate-900 hover:bg-white dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-100 dark:hover:bg-slate-800 sm:w-auto"
+              className="rounded-full border-slate-200 bg-white/85 text-slate-900 hover:bg-white dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-100 dark:hover:bg-slate-800"
             >
               <Link href="/#contact">
                 Get in touch

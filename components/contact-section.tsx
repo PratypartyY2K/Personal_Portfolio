@@ -42,7 +42,7 @@ export function ContactSection() {
           <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
             <a
               href="mailto:pratyushkum4@gmail.com"
-              className="accent-solid inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition sm:w-auto"
+              className="accent-solid inline-flex w-fit items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition"
             >
               Start a Conversation
             </a>
@@ -50,7 +50,7 @@ export function ContactSection() {
               href="https://linkedin.com/in/pratyushkumar123"
               target="_blank"
               rel="noreferrer"
-              className="accent-outline inline-flex w-full items-center justify-center rounded-full border border-slate-200 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-950/30 dark:text-slate-200 sm:w-auto"
+              className="accent-outline inline-flex w-fit items-center justify-center rounded-full border border-slate-200 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-950/30 dark:text-slate-200"
             >
               LinkedIn
             </a>
@@ -58,7 +58,7 @@ export function ContactSection() {
               href="https://github.com/PratypartyY2K"
               target="_blank"
               rel="noreferrer"
-              className="accent-outline inline-flex w-full items-center justify-center rounded-full border border-slate-200 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-950/30 dark:text-slate-200 sm:w-auto"
+              className="accent-outline inline-flex w-fit items-center justify-center rounded-full border border-slate-200 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-950/30 dark:text-slate-200"
             >
               GitHub
             </a>

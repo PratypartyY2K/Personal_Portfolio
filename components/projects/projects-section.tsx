@@ -70,7 +70,7 @@ export function ProjectsSection() {
 								{project.caseStudySlug ? (
 									<Link
 										href={`/projects/${project.caseStudySlug}`}
-										className="accent-solid inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition sm:w-fit sm:justify-start"
+										className="accent-solid inline-flex w-fit items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition"
 									>
 										Read Case Study
 										<ArrowUpRight size={16} />
@@ -80,7 +80,7 @@ export function ProjectsSection() {
 								<a
 									href={project.githubUrl}
 									target="_blank"
-									className="accent-outline inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-200 bg-white/85 px-5 py-3 text-sm font-semibold text-slate-900 dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-100 dark:hover:bg-slate-800 sm:w-fit sm:justify-start"
+									className="accent-outline inline-flex w-fit items-center justify-center gap-2 rounded-full border border-slate-200 bg-white/85 px-5 py-3 text-sm font-semibold text-slate-900 dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-100 dark:hover:bg-slate-800"
 									rel="noreferrer"
 								>
 									<Github size={16} />
@@ -135,7 +135,7 @@ export function ProjectsSection() {
 								{project.caseStudySlug ? (
 									<Link
 										href={`/projects/${project.caseStudySlug}`}
-										className="accent-solid inline-flex w-full items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition sm:w-fit sm:justify-start"
+										className="accent-solid inline-flex w-fit items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition"
 									>
 										Read Case Study
 										<ArrowUpRight size={16} />
@@ -145,7 +145,7 @@ export function ProjectsSection() {
 								<a
 									href={project.githubUrl}
 									target="_blank"
-									className="accent-outline inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-200 bg-white/85 px-4 py-2 text-sm font-semibold text-slate-900 dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-100 dark:hover:bg-slate-800 sm:w-fit sm:justify-start"
+									className="accent-outline inline-flex w-fit items-center justify-center gap-2 rounded-full border border-slate-200 bg-white/85 px-4 py-2 text-sm font-semibold text-slate-900 dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-100 dark:hover:bg-slate-800"
 									rel="noreferrer"
 								>
 									<Github size={16} />
