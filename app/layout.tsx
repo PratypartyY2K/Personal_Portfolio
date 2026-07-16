@@ -6,15 +6,20 @@ import { ThemeProvider } from "@/components/theme-provider";
 const themeInitScript = `
   (function() {
     try {
-      var storageKey = 'pk-theme';
-      var stored = window.localStorage.getItem(storageKey);
-      var theme = stored === 'light' || stored === 'dark' ? stored : 'dark';
+      var themeStorageKey = 'pk-theme';
+      var accentStorageKey = 'pk-accent';
+      var storedTheme = window.localStorage.getItem(themeStorageKey);
+      var storedAccent = window.localStorage.getItem(accentStorageKey);
+      var theme = storedTheme === 'light' || storedTheme === 'dark' ? storedTheme : 'dark';
+      var accent = storedAccent === 'sky' || storedAccent === 'emerald' || storedAccent === 'amber' || storedAccent === 'rose' ? storedAccent : 'sky';
       var root = document.documentElement;
       root.classList.remove('light', 'dark');
       root.classList.add(theme);
       root.dataset.theme = theme;
+      root.dataset.accent = accent;
     } catch (err) {
       document.documentElement.classList.add('dark');
+      document.documentElement.dataset.accent = 'sky';
     }
   })();
 `;
@@ -43,7 +48,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrains.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${inter.variable} ${jetbrains.variable}`}
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
       <body className="font-sans antialiased bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-50">
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         <ThemeProvider>{children}</ThemeProvider>

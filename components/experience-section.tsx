@@ -10,9 +10,9 @@ export function ExperienceSection() {
     <section
       id="experience"
       aria-labelledby={headingId}
-      className="relative border-t border-slate-200/70 py-28 bg-gradient-to-b from-slate-100 via-white to-slate-50 dark:border-slate-800/70 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"
+      className="section-transition relative bg-gradient-to-b from-slate-100 via-white to-slate-50 py-28 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950"
     >
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="relative z-10 mx-auto max-w-[90rem] px-6 xl:px-8 2xl:px-10">
         <h2 id={headingId} className="text-3xl font-semibold text-slate-900 dark:text-white">
           Education & Experience
         </h2>

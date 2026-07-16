@@ -24,17 +24,6 @@ export function ProfileCard() {
           MSCS @ Penn State
           <span className="mt-1 block">Backend • Performance • Distributed Systems</span>
         </p>
-
-        <div className="mt-5 flex flex-wrap justify-center gap-2">
-          {["Production Systems", "C++", "Neo4j", "GPU Performance"].map((item) => (
-            <span
-              key={item}
-              className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[11px] font-medium text-sky-700 dark:border-slate-700 dark:bg-slate-900/60 dark:text-sky-200"
-            >
-              {item}
-            </span>
-          ))}
-        </div>
       </div>
     </div>
   );

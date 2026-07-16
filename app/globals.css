@@ -29,6 +29,19 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --accent-solid: rgb(2 132 199);
+    --accent-solid-hover: rgb(3 105 161);
+    --accent-soft: rgba(14, 165, 233, 0.12);
+    --accent-soft-strong: rgba(14, 165, 233, 0.18);
+    --accent-border: rgba(14, 165, 233, 0.3);
+    --accent-border-strong: rgba(14, 165, 233, 0.48);
+    --accent-text: rgb(3 105 161);
+    --accent-text-strong: rgb(12 74 110);
+    --accent-glow: rgba(14, 165, 233, 0.32);
+    --accent-glow-strong: rgba(14, 165, 233, 0.44);
+    --accent-wash: rgba(56, 189, 248, 0.12);
+    --accent-panel-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.98), color-mix(in srgb, var(--accent-wash) 45%, white));
+    --accent-panel-overlay: radial-gradient(circle at top right, var(--accent-soft-strong), transparent 45%);
   }
   .dark {
     --background: 222.2 84% 4.9%;
@@ -55,7 +68,60 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --accent-text: rgb(125 211 252);
+    --accent-text-strong: rgb(224 242 254);
+    --accent-soft: rgba(56, 189, 248, 0.14);
+    --accent-soft-strong: rgba(56, 189, 248, 0.2);
+    --accent-border: rgba(56, 189, 248, 0.28);
+    --accent-border-strong: rgba(56, 189, 248, 0.4);
+    --accent-glow: rgba(56, 189, 248, 0.3);
+    --accent-glow-strong: rgba(56, 189, 248, 0.42);
+    --accent-wash: rgba(56, 189, 248, 0.14);
+    --accent-panel-bg: linear-gradient(135deg, rgba(15, 23, 42, 0.95), color-mix(in srgb, var(--accent-soft) 20%, rgba(12, 18, 31, 0.98)));
+    --accent-panel-overlay: radial-gradient(circle at top right, var(--accent-soft), transparent 45%);
   }
+}
+
+[data-accent="emerald"] {
+  --accent-solid: rgb(5 150 105);
+  --accent-solid-hover: rgb(4 120 87);
+  --accent-soft: rgba(16, 185, 129, 0.12);
+  --accent-soft-strong: rgba(16, 185, 129, 0.18);
+  --accent-border: rgba(16, 185, 129, 0.3);
+  --accent-border-strong: rgba(16, 185, 129, 0.48);
+  --accent-text: rgb(5 150 105);
+  --accent-text-strong: rgb(6 95 70);
+  --accent-glow: rgba(16, 185, 129, 0.28);
+  --accent-glow-strong: rgba(16, 185, 129, 0.42);
+  --accent-wash: rgba(52, 211, 153, 0.14);
+}
+
+[data-accent="amber"] {
+  --accent-solid: rgb(217 119 6);
+  --accent-solid-hover: rgb(180 83 9);
+  --accent-soft: rgba(245, 158, 11, 0.14);
+  --accent-soft-strong: rgba(245, 158, 11, 0.2);
+  --accent-border: rgba(245, 158, 11, 0.34);
+  --accent-border-strong: rgba(245, 158, 11, 0.5);
+  --accent-text: rgb(180 83 9);
+  --accent-text-strong: rgb(120 53 15);
+  --accent-glow: rgba(245, 158, 11, 0.28);
+  --accent-glow-strong: rgba(245, 158, 11, 0.42);
+  --accent-wash: rgba(251, 191, 36, 0.16);
+}
+
+[data-accent="rose"] {
+  --accent-solid: rgb(225 29 72);
+  --accent-solid-hover: rgb(190 24 93);
+  --accent-soft: rgba(244, 63, 94, 0.12);
+  --accent-soft-strong: rgba(244, 63, 94, 0.18);
+  --accent-border: rgba(244, 63, 94, 0.28);
+  --accent-border-strong: rgba(244, 63, 94, 0.46);
+  --accent-text: rgb(225 29 72);
+  --accent-text-strong: rgb(159 18 57);
+  --accent-glow: rgba(244, 63, 94, 0.28);
+  --accent-glow-strong: rgba(244, 63, 94, 0.4);
+  --accent-wash: rgba(251, 113, 133, 0.14);
 }
 
 
@@ -71,21 +137,107 @@
   body {
     @apply bg-background text-foreground antialiased;
     background-image:
-      radial-gradient(circle at top left, rgba(56, 189, 248, 0.10), transparent 28rem),
+      radial-gradient(circle at top left, var(--accent-wash), transparent 28rem),
       radial-gradient(circle at top right, rgba(251, 191, 36, 0.08), transparent 24rem),
       linear-gradient(to bottom, rgba(248, 250, 252, 0.96), rgba(255, 255, 255, 1));
   }
 
   .dark body {
     background-image:
-      radial-gradient(circle at top left, rgba(56, 189, 248, 0.12), transparent 28rem),
+      radial-gradient(circle at top left, var(--accent-wash), transparent 28rem),
       radial-gradient(circle at top right, rgba(245, 158, 11, 0.08), transparent 24rem),
       linear-gradient(to bottom, rgba(2, 6, 23, 0.98), rgba(2, 6, 23, 1));
   }
 
   ::selection {
-    background: rgba(56, 189, 248, 0.22);
+    background: var(--accent-soft-strong);
     color: inherit;
+  }
+}
+
+@layer components {
+  .accent-solid {
+    background-color: var(--accent-solid);
+    color: white;
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+
+  .accent-solid:hover {
+    background-color: var(--accent-solid-hover);
+    box-shadow: 0 0 30px var(--accent-glow-strong);
+  }
+
+  .accent-solid:focus-visible {
+    outline: 2px solid var(--accent-solid);
+    outline-offset: 2px;
+  }
+
+  .accent-outline {
+    transition-property: color, background-color, border-color, box-shadow, transform;
+  }
+
+  .accent-outline:hover {
+    border-color: var(--accent-border-strong);
+    background-color: var(--accent-soft);
+    color: var(--accent-text);
+  }
+
+  .accent-outline:focus-visible {
+    outline: 2px solid var(--accent-solid);
+    outline-offset: 2px;
+  }
+
+  .accent-text {
+    color: var(--accent-text);
+  }
+
+  .accent-chip {
+    border-color: var(--accent-border);
+    background-color: var(--accent-soft);
+    color: var(--accent-text);
+  }
+
+  .accent-dot {
+    background-color: var(--accent-solid);
+    box-shadow: 0 0 0 1px var(--accent-border), 0 0 12px var(--accent-glow);
+  }
+
+  .accent-card-hover {
+    transition-property: border-color, box-shadow, transform, background-color, color;
+  }
+
+  .accent-card-hover:hover {
+    border-color: var(--accent-border-strong);
+    box-shadow: 0 24px 72px color-mix(in srgb, var(--accent-glow) 40%, rgba(15, 23, 42, 0.08));
+  }
+
+  .section-transition {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .section-transition::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3.5rem;
+    pointer-events: none;
+    background: linear-gradient(
+      to bottom,
+      rgba(248, 250, 252, 0.96),
+      rgba(248, 250, 252, 0.72),
+      transparent
+    );
+    z-index: 0;
+  }
+
+  .dark .section-transition::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(2, 6, 23, 0.96),
+      rgba(2, 6, 23, 0.74),
+      transparent
+    );
   }
 }
 

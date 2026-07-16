@@ -1,16 +1,23 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Palette, Sun } from "lucide-react";
 import { useTheme } from "./theme-provider";
 
 const HINT_TIMEOUT_MS = 6000;
+const accents = [
+  { value: "sky", label: "Sky", swatch: "bg-sky-500" },
+  { value: "emerald", label: "Emerald", swatch: "bg-emerald-500" },
+  { value: "amber", label: "Amber", swatch: "bg-amber-500" },
+  { value: "rose", label: "Rose", swatch: "bg-rose-500" },
+] as const;
 
 export function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme();
+  const { accent, setAccent, theme, toggleTheme } = useTheme();
   // tooltip hidden by default to avoid unexpected overlays; it can be enabled programmatically
   const [showHint, setShowHint] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [showAccentPicker, setShowAccentPicker] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -35,15 +42,48 @@ export function ThemeToggle() {
   const hintMessage = resolvedTheme === "dark" ? "Change to light Mode" : "Change to dark Mode";
 
   return (
-    <div className="relative inline-flex">
+    <div className="relative inline-flex items-center gap-2">
+      <div className="relative">
+        <button
+          type="button"
+          onClick={() => setShowAccentPicker((prev) => !prev)}
+          aria-label="Change accent color"
+          aria-expanded={showAccentPicker}
+          className="accent-outline inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300/70 bg-white/70 text-slate-700 shadow-sm dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-100"
+        >
+          <Palette size={17} className="accent-text" />
+        </button>
+        {showAccentPicker && (
+          <div className="absolute right-0 top-full mt-2 flex items-center gap-2 rounded-full border border-slate-200/90 bg-white/95 px-2 py-2 shadow-[0_18px_40px_rgba(15,23,42,0.16)] backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-950/95">
+            {accents.map((option) => (
+              <button
+                key={option.value}
+                type="button"
+                onClick={() => {
+                  setAccent(option.value);
+                  setShowAccentPicker(false);
+                }}
+                aria-label={`Use ${option.label.toLowerCase()} accent`}
+                className={`inline-flex h-7 w-7 items-center justify-center rounded-full border transition ${
+                  accent === option.value
+                    ? "border-slate-900 ring-2 ring-slate-300 dark:border-white dark:ring-slate-600"
+                    : "border-white/60 ring-1 ring-slate-200/80 dark:border-slate-800 dark:ring-slate-700"
+                }`}
+              >
+                <span className={`h-4 w-4 rounded-full ${option.swatch}`} />
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
       <button
         type="button"
         onClick={handleToggle}
         aria-label="Toggle color theme"
-        className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300/70 bg-white/70 text-slate-700 shadow-sm transition-all hover:border-sky-300 hover:text-sky-700 dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-100 dark:hover:border-sky-400"
+        className="accent-outline inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300/70 bg-white/70 text-slate-700 shadow-sm dark:border-slate-700 dark:bg-slate-900/70 dark:text-slate-100"
       >
         <span suppressHydrationWarning>
-          {resolvedTheme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          {resolvedTheme === "dark" ? <Sun size={18} className="accent-text" /> : <Moon size={18} className="accent-text" />}
         </span>
       </button>
       {showHint && (

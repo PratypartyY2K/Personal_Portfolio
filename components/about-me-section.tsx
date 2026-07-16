@@ -1,11 +1,17 @@
 import { SectionContainer } from "./section-container";
-import { Button } from "./ui/button";
 
 export function AboutSection() {
   const headingId = "about-heading";
   return (
-    <SectionContainer id="about" ariaLabelledby={headingId} className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.10),_transparent_70%)]" />
+    <SectionContainer
+      id="about"
+      ariaLabelledby={headingId}
+      className="relative overflow-hidden bg-slate-50 dark:bg-slate-950"
+    >
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{ backgroundImage: "radial-gradient(circle at top, var(--accent-wash), transparent 70%)" }}
+      />
 
       <div className="relative z-10 grid gap-5 sm:gap-8 lg:grid-cols-[minmax(0,1.45fr)_minmax(0,1fr)]">
         <div className="rounded-[1.6rem] border border-slate-200/80 bg-white/82 p-5 shadow-[0_20px_60px_rgba(15,23,42,0.07)] backdrop-blur-md dark:border-slate-800/80 dark:bg-[rgba(15,23,42,0.72)] sm:rounded-[2rem] sm:p-8 md:p-10">
@@ -57,13 +63,6 @@ export function AboutSection() {
             I&apos;m currently pursuing an MS in Computer Science at Penn State, with a focus on backend systems and distributed systems.
           </p>
 
-          <Button
-            asChild
-            size="lg"
-            className="mt-6 w-full rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800 dark:bg-slate-50 dark:text-slate-900 sm:mt-8 sm:w-auto"
-          >
-            <a href="#contact">Start a Conversation</a>
-          </Button>
         </div>
 
         <div className="grid gap-4 sm:gap-6">
@@ -100,7 +99,7 @@ export function AboutSection() {
             </p>
             <ul className="mt-4 space-y-4">
               <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/90 ring-1 ring-sky-300/30" aria-hidden />
+                <span className="accent-dot mt-1 h-2 w-2 flex-shrink-0 rounded-full" aria-hidden />
                 <span className="text-sm text-slate-700 dark:text-slate-200">
                   Built{" "}
                   <span className="font-semibold text-slate-900 dark:text-slate-50">Holocron Timeline Engine</span>{" "}
@@ -109,7 +108,7 @@ export function AboutSection() {
               </li>
 
               <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/90 ring-1 ring-sky-300/30" aria-hidden />
+                <span className="accent-dot mt-1 h-2 w-2 flex-shrink-0 rounded-full" aria-hidden />
                 <span className="text-sm text-slate-700 dark:text-slate-200">
                   Built{" "}
                   <span className="font-semibold text-slate-900 dark:text-slate-50">FairShare</span>{" "}
@@ -118,7 +117,7 @@ export function AboutSection() {
               </li>
 
               <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/90 ring-1 ring-sky-300/30" aria-hidden />
+                <span className="accent-dot mt-1 h-2 w-2 flex-shrink-0 rounded-full" aria-hidden />
                 <span className="text-sm text-slate-700 dark:text-slate-200">
                   Benchmarking and optimizing{" "}
                   <span className="font-semibold text-slate-900 dark:text-slate-50">GEMM workloads across CPU and GPU architectures</span>{" "}
@@ -127,7 +126,7 @@ export function AboutSection() {
               </li>
 
               <li className="flex items-start gap-3">
-                <span className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/90 ring-1 ring-sky-300/30" aria-hidden />
+                <span className="accent-dot mt-1 h-2 w-2 flex-shrink-0 rounded-full" aria-hidden />
                 <span className="text-sm text-slate-700 dark:text-slate-200">
                   Pursuing an MS in Computer Science at{" "}
                   <span className="font-semibold text-slate-900 dark:text-slate-50">Penn State University</span>{" "}

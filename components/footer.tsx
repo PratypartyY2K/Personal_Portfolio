@@ -1,7 +1,6 @@
 export function Footer() {
   return (
-    <footer className="relative mt-24 border-t border-slate-200 bg-slate-100 
-      py-10 text-center text-xs text-slate-700 dark:border-slate-800/60 dark:bg-slate-950/80 dark:text-slate-300 overflow-hidden">
+    <footer className="section-transition relative mt-24 overflow-hidden bg-slate-100 py-10 text-center text-xs text-slate-700 dark:bg-slate-950/80 dark:text-slate-300">
 
       {/* soft radial glow behind footer content */}
       <div className="pointer-events-none absolute inset-x-0 -top-8 h-36 z-0 blur-2xl"
