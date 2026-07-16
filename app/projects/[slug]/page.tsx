@@ -38,19 +38,22 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
 
   return (
     <main className="site-grid min-h-screen bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-50">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[32rem] bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.14),_transparent_55%)] dark:bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.16),_transparent_55%)]" />
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-[32rem]"
+        style={{ backgroundImage: "radial-gradient(circle at top, var(--accent-soft-strong), transparent 55%)" }}
+      />
 
       <div className="relative mx-auto w-full max-w-[90rem] px-4 pb-20 pt-24 sm:px-6 xl:px-8 2xl:px-10">
         <div className="max-w-5xl">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 text-sm text-slate-600 transition hover:text-sky-700 dark:text-slate-300 dark:hover:text-sky-200"
+            className="accent-outline inline-flex items-center gap-2 rounded-full border border-transparent px-3 py-2 text-sm text-slate-600 transition dark:text-slate-300"
           >
             <ArrowLeft size={16} />
             Back to projects
           </Link>
 
-          <p className="mt-8 text-xs font-semibold uppercase tracking-[0.24em] text-sky-700 dark:text-sky-300">
+          <p className="accent-text mt-8 text-xs font-semibold uppercase tracking-[0.24em]">
             {project.eyebrow}
           </p>
 
@@ -70,7 +73,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
             <Button
               asChild
               size="lg"
-              className="w-full rounded-full bg-sky-500 text-slate-950 hover:bg-sky-400 sm:w-auto"
+              className="accent-solid w-full rounded-full sm:w-auto"
             >
               <a href={project.githubUrl} target="_blank" rel="noreferrer">
                 <Github size={16} />
@@ -117,7 +120,7 @@ export default async function ProjectCaseStudyPage({ params }: PageProps) {
               {project.stack.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-slate-200 bg-slate-50/90 px-3 py-1.5 text-xs font-medium text-sky-700 dark:border-slate-700 dark:bg-slate-950/40 dark:text-sky-200"
+                  className="accent-chip rounded-full border px-3 py-1.5 text-xs font-medium dark:border-slate-700 dark:bg-slate-950/40"
                 >
                   {item}
                 </span>

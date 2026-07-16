@@ -6,15 +6,20 @@ import { ThemeProvider } from "@/components/theme-provider";
 const themeInitScript = `
   (function() {
     try {
-      var storageKey = 'pk-theme';
-      var stored = window.localStorage.getItem(storageKey);
-      var theme = stored === 'light' || stored === 'dark' ? stored : 'dark';
+      var themeStorageKey = 'pk-theme';
+      var accentStorageKey = 'pk-accent';
+      var storedTheme = window.localStorage.getItem(themeStorageKey);
+      var storedAccent = window.localStorage.getItem(accentStorageKey);
+      var theme = storedTheme === 'light' || storedTheme === 'dark' ? storedTheme : 'dark';
+      var accent = storedAccent === 'sky' || storedAccent === 'emerald' || storedAccent === 'amber' || storedAccent === 'rose' ? storedAccent : 'sky';
       var root = document.documentElement;
       root.classList.remove('light', 'dark');
       root.classList.add(theme);
       root.dataset.theme = theme;
+      root.dataset.accent = accent;
     } catch (err) {
       document.documentElement.classList.add('dark');
+      document.documentElement.dataset.accent = 'sky';
     }
   })();
 `;

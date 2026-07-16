@@ -108,9 +108,9 @@ export function TimelineList({ items }: TimelineListProps) {
       {items.map((item) => (
         <article
           key={item.title}
-          className="relative border-l border-slate-200 pl-6 transition hover:border-sky-200 dark:border-slate-700 dark:hover:border-sky-500/40"
+          className="accent-card-hover relative border-l border-slate-200 pl-6 transition dark:border-slate-700"
         >
-          <div className="absolute -left-[7px] top-2 h-3 w-3 rounded-full bg-sky-400 shadow-[0_0_12px_3px_rgba(56,189,248,0.5)]" />
+          <div className="accent-dot absolute -left-[7px] top-2 h-3 w-3 rounded-full" />
 
           <p className="text-xs font-medium text-slate-500 dark:text-slate-400">
             {item.date}
@@ -151,7 +151,7 @@ export function TimelineList({ items }: TimelineListProps) {
               {item.highlights.map((h, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span
-                    className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-sky-500/90 ring-1 ring-sky-300/30"
+                    className="accent-dot mt-2 h-2 w-2 flex-shrink-0 rounded-full"
                     aria-hidden
                   />
                   <p className="text-[13px] leading-6 text-slate-700 dark:text-slate-200">
@@ -167,7 +167,7 @@ export function TimelineList({ items }: TimelineListProps) {
               {item.tech.map((t) => (
                 <span
                   key={t}
-                  className="rounded-md bg-slate-100 px-2 py-1 text-xs text-sky-700 dark:bg-slate-800 dark:text-sky-200"
+                  className="accent-chip rounded-md border px-2 py-1 text-xs"
                 >
                   {t}
                 </span>

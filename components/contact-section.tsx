@@ -7,13 +7,16 @@ export function ContactSection() {
     <SectionContainer
       id="contact"
       ariaLabelledby={headingId}
-      className="relative overflow-hidden py-20 text-center sm:py-24 md:py-28 bg-white dark:bg-transparent"
+      className="relative overflow-hidden bg-white py-20 text-center dark:bg-slate-950 sm:py-24 md:py-28"
     >
 
       <div className="absolute -top-24 left-0 right-0 h-32 
-        bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.12),_transparent_70%)]
+        [background-image:radial-gradient(circle_at_top,var(--accent-wash),transparent_70%)]
         blur-xl pointer-events-none" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(56,189,248,0.08),_transparent_35%)]" />
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{ backgroundImage: "radial-gradient(circle at bottom right, var(--accent-soft), transparent 35%)" }}
+      />
 
       <div className="relative z-10 grid gap-5 sm:gap-8 lg:grid-cols-[minmax(0,320px)_1fr] lg:items-start">
         <div className="order-2 mx-auto hidden max-w-sm lg:order-1 lg:mx-0 lg:block lg:pt-24">
@@ -39,7 +42,7 @@ export function ContactSection() {
           <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
             <a
               href="mailto:pratyushkum4@gmail.com"
-              className="inline-flex w-full items-center justify-center rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-[0_0_18px_rgba(56,189,248,0.45)] transition hover:bg-sky-500 hover:shadow-[0_0_26px_rgba(56,189,248,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 sm:w-auto"
+              className="accent-solid inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition sm:w-auto"
             >
               Start a Conversation
             </a>
@@ -47,7 +50,7 @@ export function ContactSection() {
               href="https://linkedin.com/in/pratyushkumar123"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex w-full items-center justify-center rounded-full border border-slate-200 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-sky-300 hover:text-sky-700 dark:border-slate-700 dark:bg-slate-950/30 dark:text-slate-200 dark:hover:border-sky-400 dark:hover:text-sky-200 sm:w-auto"
+              className="accent-outline inline-flex w-full items-center justify-center rounded-full border border-slate-200 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-950/30 dark:text-slate-200 sm:w-auto"
             >
               LinkedIn
             </a>
@@ -55,7 +58,7 @@ export function ContactSection() {
               href="https://github.com/PratypartyY2K"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex w-full items-center justify-center rounded-full border border-slate-200 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-sky-300 hover:text-sky-700 dark:border-slate-700 dark:bg-slate-950/30 dark:text-slate-200 dark:hover:border-sky-400 dark:hover:text-sky-200 sm:w-auto"
+              className="accent-outline inline-flex w-full items-center justify-center rounded-full border border-slate-200 bg-white/70 px-5 py-3 text-sm font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-950/30 dark:text-slate-200 sm:w-auto"
             >
               GitHub
             </a>

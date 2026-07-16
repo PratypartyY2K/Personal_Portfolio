@@ -76,11 +76,11 @@ export function SkillsSection() {
     <SectionContainer
       id="skills"
       ariaLabelledby={headingId}
-      className="relative py-28 bg-white dark:bg-transparent"
+      className="relative bg-white py-28 dark:bg-slate-950"
     >
       <div
         className="absolute -top-20 left-0 right-0 h-32
-        bg-[radial-gradient(circle_at_top,_rgba(56,189,248,0.12),_transparent_75%)]
+        [background-image:radial-gradient(circle_at_top,var(--accent-wash),transparent_75%)]
         blur-xl pointer-events-none"
       />
 
@@ -114,9 +114,12 @@ export function SkillsSection() {
         {Object.entries(skills).map(([category, group]) => (
           <div
             key={category}
-            className="relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white/85 p-6 shadow-[0_16px_50px_rgba(15,23,42,0.06)] backdrop-blur-md transition-transform duration-300 hover:-translate-y-1 hover:border-sky-300/50 dark:border-slate-800/80 dark:bg-slate-900/60"
+            className="accent-card-hover relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white/85 p-6 shadow-[0_16px_50px_rgba(15,23,42,0.06)] backdrop-blur-md transition-transform duration-300 hover:-translate-y-1 dark:border-slate-800/80 dark:bg-slate-900/60"
           >
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(56,189,248,0.10),_transparent_40%)]" />
+            <div
+              className="pointer-events-none absolute inset-0"
+              style={{ backgroundImage: "radial-gradient(circle at top right, var(--accent-soft), transparent 40%)" }}
+            />
             <div className="relative">
               <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200">
                 {category}
@@ -129,10 +132,7 @@ export function SkillsSection() {
                 {group.items.map((skill) => (
                   <div
                     key={skill}
-                    className="rounded-full border border-slate-200 bg-slate-50/95
-                               px-3 py-1.5 text-xs sm:text-sm text-sky-700 shadow-[0_0_10px_rgba(14,165,233,0.08)]
-                               transition-all hover:shadow-[0_0_14px_rgba(14,165,233,0.25)]
-                               dark:border-slate-700/70 dark:bg-slate-900/60 dark:text-sky-200"
+                    className="accent-chip rounded-full border px-3 py-1.5 text-xs shadow-[0_0_10px_var(--accent-glow)] transition-all hover:shadow-[0_0_14px_var(--accent-glow-strong)] dark:border-slate-700/70 dark:bg-slate-900/60 sm:text-sm"
                   >
                     {skill}
                   </div>

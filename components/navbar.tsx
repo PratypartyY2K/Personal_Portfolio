@@ -40,7 +40,7 @@ export function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="rounded-full border border-transparent px-3.5 py-2 text-slate-800 transition-all duration-300 hover:border-sky-200 hover:bg-sky-50/90 hover:text-sky-800 dark:text-slate-100 dark:hover:border-sky-500/30 dark:hover:bg-sky-500/10 dark:hover:text-sky-200"
+                className="accent-outline rounded-full border border-transparent px-3.5 py-2 text-slate-800 transition-all duration-300 dark:text-slate-100"
               >
                 {l.label}
               </a>
@@ -79,7 +79,7 @@ export function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="rounded-xl border border-transparent px-3 py-2 text-base font-medium transition hover:border-sky-200 hover:bg-slate-100 hover:text-sky-600 dark:hover:border-sky-500/30 dark:hover:bg-slate-900 dark:hover:text-sky-300"
+                className="accent-outline rounded-xl border border-transparent px-3 py-2 text-base font-medium transition dark:hover:bg-slate-900"
                 onClick={() => setOpen(false)}
               >
                 {l.label}
