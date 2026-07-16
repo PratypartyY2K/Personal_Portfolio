@@ -108,7 +108,7 @@ export function TimelineList({ items }: TimelineListProps) {
       {items.map((item) => (
         <article
           key={item.title}
-          className="accent-card-hover relative border-l border-slate-200 pl-6 transition dark:border-slate-700"
+          className="relative border-l border-slate-200 pl-6 dark:border-slate-700"
         >
           <div className="accent-dot absolute -left-[7px] top-2 h-3 w-3 rounded-full" />
 
