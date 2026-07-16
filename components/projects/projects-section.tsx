@@ -66,7 +66,7 @@ export function ProjectsSection() {
 								</div>
 							</div>
 
-							<div className="relative mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+							<div className="relative mt-6 flex flex-row flex-wrap gap-3">
 								{project.caseStudySlug ? (
 									<Link
 										href={`/projects/${project.caseStudySlug}`}
@@ -131,7 +131,7 @@ export function ProjectsSection() {
 								</div>
 							</div>
 
-							<div className="mt-5 flex flex-col gap-3 sm:mt-6 sm:flex-row sm:flex-wrap">
+							<div className="mt-5 flex flex-row flex-wrap gap-3 sm:mt-6">
 								{project.caseStudySlug ? (
 									<Link
 										href={`/projects/${project.caseStudySlug}`}
