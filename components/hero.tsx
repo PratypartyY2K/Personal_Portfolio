@@ -42,15 +42,7 @@ export function Hero() {
           Formerly at Enphase Energy · MSCS @ Penn State
         </p>
 
-        <div className="mt-8 relative w-full max-w-[15rem] overflow-hidden rounded-full border border-slate-200 bg-white/85 shadow-none backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/60 sm:max-w-[17rem] sm:shadow-2xl md:max-w-[19rem] xl:max-w-[22rem] 2xl:max-w-[24rem]">
-          <div
-            className="pointer-events-none absolute -inset-8 rounded-full blur-3xl"
-            style={{ backgroundColor: "var(--accent-soft-strong)" }}
-          />
-          <div
-            className="absolute inset-0"
-            style={{ backgroundImage: "radial-gradient(circle at top, var(--accent-soft-strong), transparent 70%)" }}
-          />
+        <div className="relative mt-8 w-full max-w-[15rem] overflow-hidden rounded-full border border-slate-200 shadow-2xl dark:border-slate-800 sm:max-w-[17rem] md:max-w-[19rem] xl:max-w-[22rem] 2xl:max-w-[24rem]">
           <div className="relative aspect-square w-full">
             <Image
               src="/self_portrait.webp"
