@@ -77,6 +77,30 @@ export const projectCards: ProjectCardData[] = [
     caseStudySlug: "holocron-timeline-engine",
   },
   {
+    title: "Faithful Clinical Summarization",
+    punchline: "Clinical summarization pipeline that evaluates generated discharge notes through atomic claim verification.",
+    proof: "Improved every reported overlap metric through narrative-only target filtering and built claim-level support, contradiction, and disagreement analysis beyond ROUGE alone.",
+    bullets: [
+      "Built an end-to-end MIMIC-III pipeline for ingestion, preprocessing, QLoRA summarizer training, and full-model evaluation",
+      "Trained an NLI-style verifier to classify atomic claims as entailed, contradicted, or unsupported by the source note",
+      "Compared ROUGE and BERTScore with claim-level faithfulness metrics and added a human-annotation workflow for validation",
+    ],
+    tech: ["Python", "PyTorch", "QLoRA", "Gemma", "DeBERTa", "MIMIC-III"],
+    githubUrl: "https://github.com/PratypartyY2K/faithful-clinical-summarization",
+  },
+  {
+    title: "Communication-Avoiding GEMM",
+    punchline: "CPU and GPU matrix-multiplication study spanning cache-aware OpenMP, tiled CUDA execution, cuBLAS, and roofline analysis.",
+    proof: "Measured about 15 TFLOP/s with cuBLAS and showed how tile size, launch overhead, cache behavior, and arithmetic intensity shape performance.",
+    bullets: [
+      "Implemented naive and blocked CPU GEMM, a CAKE-inspired tiled GPU path, and a cuBLAS performance baseline",
+      "Benchmarked thread scaling and tile sensitivity across matrices up to 16,384 × 16,384 on an NVIDIA RTX A4500",
+      "Used bandwidth measurements and roofline analysis to explain memory-bound CPU behavior and compute-bound GPU execution",
+    ],
+    tech: ["CUDA", "C++", "cuBLAS", "OpenMP", "CMake", "Roofline Analysis"],
+    githubUrl: "https://github.com/PratypartyY2K/cake-gemm-hpc",
+  },
+  {
     title: "Distributed Key-Value Store (ABD)",
     punchline: "Quorum-based key-value store comparing linearizable ABD against a blocking baseline.",
     proof: "Benchmarked crash scenarios across 1, 3, and 5 replicas with latency instrumentation for concurrent workloads.",
@@ -99,6 +123,30 @@ export const projectCards: ProjectCardData[] = [
     ],
     tech: ["Python", "PyQt6", "SQLite", "pytest", "GitHub Actions"],
     githubUrl: "https://github.com/PratypartyY2K/app-aware-clipboard",
+  },
+  {
+    title: "InstructBLIP Image Captioning",
+    punchline: "Vision-language experimentation toolkit for zero-shot evaluation and parameter-efficient Flickr8k fine-tuning.",
+    proof: "Built reproducible zero-shot and QLoRA evaluation paths with multiple decoding strategies and standard caption-quality metrics.",
+    bullets: [
+      "Fine-tuned InstructBLIP with 4-bit NF4 quantization and LoRA adapters on the Flickr8k Karpathy split",
+      "Implemented greedy and beam-search evaluation with BLEU, ROUGE-L, CIDEr, and optional SPICE scoring",
+      "Added COCO-format exports and qualitative comparisons between generated and reference captions",
+    ],
+    tech: ["Python", "InstructBLIP", "QLoRA", "PyTorch", "Flickr8k", "COCO Eval"],
+    githubUrl: "https://github.com/PratypartyY2K/InstructBLIP_Improvement",
+  },
+  {
+    title: "AR Object Rendering Pipeline",
+    punchline: "Computer-vision pipeline that reconstructs a scene, finds a dominant plane, and renders a 3D object into video.",
+    proof: "Implemented the geometry pipeline from plane fitting and coordinate-frame estimation through camera projection and frame-by-frame compositing.",
+    bullets: [
+      "Parsed COLMAP reconstruction outputs and implemented RANSAC plane fitting from scratch over the sparse 3D point cloud",
+      "Estimated a plane-aligned coordinate frame and transformed an icosahedron into the reconstructed scene",
+      "Projected the mesh through recovered camera poses, rasterized faces with depth ordering, and produced the final AR video",
+    ],
+    tech: ["Python", "OpenCV", "COLMAP", "NumPy", "RANSAC", "3D Geometry"],
+    githubUrl: "https://github.com/PratypartyY2K/CSE_556_project_2",
   },
 ];
 

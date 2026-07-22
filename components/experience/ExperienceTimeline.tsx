@@ -100,16 +100,65 @@ export const experienceTimelineItems: TimelineItem[] = [
 
 interface TimelineListProps {
   items: TimelineItem[];
+  listId: string;
+  openItem: string | null;
+  onToggle: (itemId: string) => void;
 }
 
-export function TimelineList({ items }: TimelineListProps) {
+export function TimelineList({ items, listId, openItem, onToggle }: TimelineListProps) {
   return (
-    <div className="space-y-12">
-      {items.map((item) => (
-        <article
-          key={item.title}
-          className="relative border-l border-slate-200 pl-6 dark:border-slate-700"
-        >
+    <div className="space-y-8 lg:space-y-12">
+      {items.map((item, index) => {
+        const itemId = `${listId}-${index}`;
+        const detailsId = `${itemId}-details`;
+        const isOpen = openItem === itemId;
+        const detailCount = (item.description ? 1 : 0) + (item.highlights?.length ?? 0);
+        const hasDetails = detailCount > 0 || Boolean(item.tech?.length);
+
+        const details = (
+          <>
+            {item.description ? (
+              <p className="mt-3 text-[13px] leading-6 text-slate-600 dark:text-slate-300/90">
+                {item.description}
+              </p>
+            ) : null}
+
+            {item.highlights && item.highlights.length > 0 ? (
+              <ul className="ml-3 mt-4 list-none space-y-2">
+                {item.highlights.map((highlight) => (
+                  <li key={highlight} className="flex items-start gap-3">
+                    <span
+                      className="accent-dot mt-2 h-2 w-2 flex-shrink-0 rounded-full"
+                      aria-hidden
+                    />
+                    <p className="text-[13px] leading-6 text-slate-700 dark:text-slate-200">
+                      {highlight}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+
+            {item.tech && item.tech.length ? (
+              <div className="mt-4 flex flex-wrap gap-2">
+                {item.tech.map((technology) => (
+                  <span
+                    key={technology}
+                    className="accent-chip rounded-md border px-2 py-1 text-xs"
+                  >
+                    {technology}
+                  </span>
+                ))}
+              </div>
+            ) : null}
+          </>
+        );
+
+        return (
+          <article
+            key={item.title}
+            className="relative border-l border-slate-200 pl-6 dark:border-slate-700"
+          >
           <div className="accent-dot absolute -left-[7px] top-2 h-3 w-3 rounded-full" />
 
           <p className="text-xs font-medium text-slate-500 dark:text-slate-400">
@@ -140,42 +189,36 @@ export function TimelineList({ items }: TimelineListProps) {
             </p>
           ) : null}
 
-          {item.description ? (
-            <p className="mt-3 text-[13px] leading-6 text-slate-600 dark:text-slate-300/90">
-              {item.description}
-            </p>
-          ) : null}
-
-          {item.highlights && item.highlights.length > 0 ? (
-            <ul className="mt-4 space-y-2 ml-3 list-none">
-              {item.highlights.map((h, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span
-                    className="accent-dot mt-2 h-2 w-2 flex-shrink-0 rounded-full"
-                    aria-hidden
-                  />
-                  <p className="text-[13px] leading-6 text-slate-700 dark:text-slate-200">
-                    {h}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          ) : null}
-
-          {item.tech && item.tech.length ? (
-            <div className="mt-4 flex flex-wrap gap-2">
-              {item.tech.map((t) => (
-                <span
-                  key={t}
-                  className="accent-chip rounded-md border px-2 py-1 text-xs"
+            {hasDetails ? (
+              <>
+                <button
+                  type="button"
+                  className="accent-outline mt-4 inline-flex min-h-11 items-center rounded-full border border-slate-200 bg-white/75 px-4 py-2 text-xs font-semibold text-slate-700 transition dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-200 lg:hidden"
+                  aria-expanded={isOpen}
+                  aria-controls={detailsId}
+                  onClick={() => onToggle(itemId)}
                 >
-                  {t}
-                </span>
-              ))}
-            </div>
-          ) : null}
-        </article>
-      ))}
+                  {isOpen
+                    ? "Hide details"
+                    : `View ${detailCount || "technical"} detail${detailCount === 1 ? "" : "s"}`}
+                  <span
+                    aria-hidden
+                    className={`ml-2 transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                  >
+                    ↓
+                  </span>
+                </button>
+
+                <div id={detailsId} className={isOpen ? "lg:hidden" : "hidden"}>
+                  {details}
+                </div>
+
+                <div className="hidden lg:block">{details}</div>
+              </>
+            ) : null}
+          </article>
+        );
+      })}
     </div>
   );
 }

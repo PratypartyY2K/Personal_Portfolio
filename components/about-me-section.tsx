@@ -23,30 +23,30 @@ export function AboutSection() {
             id={headingId}
             className="mt-3 text-[1.95rem] font-semibold tracking-tight text-slate-900 dark:text-slate-50 sm:mt-4 sm:text-3xl md:text-4xl"
           >
-            I build backend systems that stay fast, reliable, and correct under load.
+            I turn ambiguous backend problems into reliable, maintainable systems.
           </h2>
 
           <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 dark:text-slate-300/90 sm:mt-5 md:text-[15px] md:leading-7">
-            I&apos;m Pratyush, a software engineer focused on backend systems, distributed services, and performance engineering. I care about building software that is not just functional, but efficient, robust, and correct.
+            I&apos;m Pratyush, a software engineer who takes ownership from problem definition through production. I care about clear abstractions, thoughtful tradeoffs, and software that remains understandable as it scales.
           </p>
 
           <p className="mt-3 hidden max-w-3xl text-sm leading-6 text-slate-600 dark:text-slate-300/90 sm:block md:text-[15px] md:leading-7">
-            At Enphase Energy, I built and scaled backend services for IoT dashboards used by 5,500+ users, improving reliability and reducing integration failures. My recent work includes optimizing a C++ MapReduce framework for 7x higher throughput, building ledger-backed product systems, and benchmarking GEMM workloads across CPU and GPU architectures.
+            At Enphase Energy, I improved backend services used by 5,500+ people, reduced integration failures, and automated workflows for both users and engineers. Projects such as my C++ MapReduce framework are evidence of the same approach: measure first, find the real bottleneck, and make the system simpler and faster.
           </p>
 
           <div className="mt-5 grid gap-3 sm:mt-8 sm:gap-4 sm:grid-cols-3">
             {[
               {
-                label: "Backend systems",
-                text: "I design services and infrastructure that hold up under scale, failure, and operational complexity.",
+                label: "Ownership",
+                text: "I take work from an unclear problem to a shipped, measurable result and stay accountable for how it behaves in production.",
               },
               {
-                label: "Performance engineering",
-                text: "I like profiling, benchmarking, and pushing systems closer to their hardware and concurrency limits.",
+                label: "Engineering judgment",
+                text: "I use data to find the real constraint, weigh tradeoffs, and choose solutions that fit the system instead of chasing complexity.",
               },
               {
-                label: "Product systems",
-                text: "I like products with non-trivial backend logic, state management, and correctness constraints.",
+                label: "Reliable execution",
+                text: "I build with testing, observability, correctness, and maintainability in mind—not as cleanup after the feature ships.",
               },
             ].map((item) => (
               <div
