@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 import {
   TimelineList,
   educationTimelineItems,
@@ -6,6 +10,12 @@ import {
 
 export function ExperienceSection() {
   const headingId = "experience-heading";
+  const [openItem, setOpenItem] = useState<string | null>(null);
+
+  const toggleItem = (itemId: string) => {
+    setOpenItem((current) => (current === itemId ? null : itemId));
+  };
+
   return (
     <section
       id="experience"
@@ -26,7 +36,12 @@ export function ExperienceSection() {
               Education
             </p>
             <div className="mt-6">
-              <TimelineList items={educationTimelineItems} />
+              <TimelineList
+                items={educationTimelineItems}
+                listId="education"
+                openItem={openItem}
+                onToggle={toggleItem}
+              />
             </div>
           </div>
           <div>
@@ -34,7 +49,12 @@ export function ExperienceSection() {
               Experience
             </p>
             <div className="mt-6">
-              <TimelineList items={experienceTimelineItems} />
+              <TimelineList
+                items={experienceTimelineItems}
+                listId="experience"
+                openItem={openItem}
+                onToggle={toggleItem}
+              />
             </div>
           </div>
         </div>
