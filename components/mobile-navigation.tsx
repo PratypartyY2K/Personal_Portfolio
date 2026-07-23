@@ -75,15 +75,15 @@ export function MobileNavigation() {
             <a
               key={item.id}
               href={item.href}
+              aria-label={item.label}
               aria-current={isActive ? "page" : undefined}
-              className={`flex min-h-12 flex-col items-center justify-center gap-0.5 rounded-2xl px-1 text-[10px] font-medium transition ${
+              className={`flex min-h-11 items-center justify-center rounded-2xl px-1 transition ${
                 isActive
                   ? "accent-text bg-slate-100 dark:bg-slate-900"
                   : "text-slate-500 dark:text-slate-400"
               }`}
             >
               <Icon size={18} strokeWidth={isActive ? 2.4 : 2} aria-hidden />
-              <span>{item.label}</span>
             </a>
           );
         })}
@@ -92,7 +92,7 @@ export function MobileNavigation() {
           type="button"
           onClick={toggleTheme}
           aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
-          className="flex min-h-12 flex-col items-center justify-center gap-0.5 rounded-2xl px-1 text-[10px] font-medium text-slate-500 transition active:bg-slate-100 dark:text-slate-400 dark:active:bg-slate-900"
+          className="flex min-h-11 items-center justify-center rounded-2xl px-1 text-slate-500 transition active:bg-slate-100 dark:text-slate-400 dark:active:bg-slate-900"
         >
           <span suppressHydrationWarning>
             {resolvedTheme === "dark" ? (
@@ -101,7 +101,6 @@ export function MobileNavigation() {
               <Moon size={18} aria-hidden />
             )}
           </span>
-          <span>Theme</span>
         </button>
       </div>
     </nav>
