@@ -9,11 +9,13 @@ import { AboutSection } from "@/components/about-me-section";
 import { VisuallyHidden } from "@/components/visually-hidden";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { StickyContactButton } from "@/components/sticky-contact-button";
+import { MobileNavigation } from "@/components/mobile-navigation";
 
 export default function HomePage() {
   return (
     <>
       <Navbar />
+      <MobileNavigation />
       <main id="top" className="site-grid relative overflow-hidden">
         <VisuallyHidden as="h1">
           Pratyush Kumar – Distributed systems engineer portfolio

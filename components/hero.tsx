@@ -37,7 +37,7 @@ export function Hero() {
       />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-gradient-to-b from-transparent via-white/10 to-white dark:via-slate-950/85 dark:to-slate-950" />
 
-      <div className="relative z-10 mx-auto flex w-full max-w-[90rem] flex-col items-center px-4 pb-14 pt-24 text-center text-slate-900 sm:pb-16 md:pb-20 md:pt-24 lg:pb-24 lg:pt-28 dark:text-slate-50">
+      <div className="relative z-10 mx-auto flex w-full max-w-[90rem] flex-col items-center px-4 pb-14 pt-10 text-center text-slate-900 sm:pb-16 sm:pt-16 md:pb-20 md:pt-24 lg:pb-24 lg:pt-28 dark:text-slate-50">
         <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-600 dark:text-slate-300/80 sm:text-xs sm:tracking-[0.25em]">
           Formerly at Enphase Energy · MSCS @ Penn State
         </p>
