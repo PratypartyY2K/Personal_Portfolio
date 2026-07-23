@@ -64,7 +64,7 @@ export function MobileNavigation() {
   return (
     <nav
       aria-label="Mobile navigation"
-      className="fixed inset-x-3 bottom-3 z-50 rounded-[1.4rem] border border-slate-200/90 bg-white/92 px-1.5 pb-[max(0.375rem,env(safe-area-inset-bottom))] pt-1.5 shadow-[0_18px_50px_rgba(15,23,42,0.2)] backdrop-blur-xl dark:border-slate-700/80 dark:bg-slate-950/92 md:hidden"
+      className="fixed bottom-3 left-1/2 z-50 w-[calc(100%_-_4rem)] max-w-[20rem] -translate-x-1/2 rounded-[1.4rem] border border-slate-200/90 bg-white/92 px-1.5 pb-[max(0.375rem,env(safe-area-inset-bottom))] pt-1.5 shadow-[0_18px_50px_rgba(15,23,42,0.2)] backdrop-blur-xl dark:border-slate-700/80 dark:bg-slate-950/92 md:hidden"
     >
       <div className="grid grid-cols-5 items-stretch">
         {navigationItems.map((item) => {
